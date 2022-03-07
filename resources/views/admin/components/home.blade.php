@@ -10,19 +10,58 @@
         </div>
     </div>
     <div>
-        <form name="add-blog-post-form" id="add-blog-post-form" method="get" action="{{ url('exam-attendances/create') }}">
+        <form name="add-blog-post-form" id="add-blog-post-form" method="get"
+            action="{{ url('exam-attendances/create') }}">
             @csrf
 
             <div class="form-group">
-                <input required type="text" id="student_id" name="student_id" class="form-control form-elements" >
+                <input required type="text" id="student_id" name="student_id" class="form-control form-elements">
             </div>
             <button type="submit" class="button">Submit</button>
 
         </form>
+
+
+        <button type="button" class="waves-effect btn btn-lg btn-danger taks" id="get_data_button">
+            Get Data
+        </button>
     </div>
 
 
     <script type="text/javascript">
+        // setInterval(function() {
+        //     // location.reload();
+        // }, 5000);
+
+        $("#get_data_button").click(function() {
+            var c = confirm('Are you sure?');
+            if (c) {
+                $.ajax({
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        'student_id' : document.getElementById('student_id').value
+                    },
+                    type: 'POST',
+                    url: "{!! route('exam-attendances.show') !!}",
+                    success: function(response) {
+                        console.log(response);
+                        if (response) {
+                            // location.reload();
+                            var message = $('' +
+                                '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +
+                                '</div>');
+                            $(".content-wrapper").prepend(message);
+                            $('#success-message').fadeOut(10000, function() {
+                                $(this).remove();
+                            })
+                        }
+
+                    }
+                });
+
+            }
+        })
+
         function onScanSuccess(qrCodeMessage) {
             document.getElementById('student_id').value = qrCodeMessage;
         }

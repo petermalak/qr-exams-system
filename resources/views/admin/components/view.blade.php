@@ -66,102 +66,102 @@
             </table>
         </div>
 
-        <button type="button" class="waves-effect btn btn-lg btn-light alhan" id="alhan_button">
-            Alhan
-        </button>
-        <button type="button" class="waves-effect btn btn-lg btn-light coptic" id="coptic_button">
-            Coptic
-        </button>
-        <button type="button" class="waves-effect btn btn-lg btn-light taks" id="taks_button">
-            Taks
-        </button>
-        <button type="button" class="waves-effect btn btn-lg btn-light taks" id="exit_button">
+{{--        <button type="button" class="waves-effect btn btn-lg btn-light alhan" id="alhan_button">--}}
+{{--            Alhan--}}
+{{--        </button>--}}
+{{--        <button type="button" class="waves-effect btn btn-lg btn-light coptic" id="coptic_button">--}}
+{{--            Coptic--}}
+{{--        </button>--}}
+{{--        <button type="button" class="waves-effect btn btn-lg btn-light taks" id="taks_button">--}}
+{{--            Taks--}}
+{{--        </button>--}}
+        <button type="button" class="waves-effect btn btn-lg btn-danger taks" id="exit_button">
             Exit
         </button>
     </div>
-
+\7
 
     <script>
-        $("#alhan_button").click(function() {
-            var c = confirm('Are you sure?');
-            if (c) {
-                $.ajax({
-                    data: {
-                        "_token": "{{ csrf_token() }}"
-                    },
-                    type: 'POST',
-                    url: "{!! route('attendance.alhan', ['student_id' => $student->id]) !!}",
-                    success: function(response) {
-                        if (response) {
-                            location.reload();
-                            var message = $('' +
-                                '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +
-                                '</div>');
-                            $(".content-wrapper").prepend(message);
-                            $('#success-message').fadeOut(10000, function() {
-                                $(this).remove();
-                            })
-                        }
+        {{--$("#alhan_button").click(function() {--}}
+        {{--    var c = confirm('Are you sure?');--}}
+        {{--    if (c) {--}}
+        {{--        $.ajax({--}}
+        {{--            data: {--}}
+        {{--                "_token": "{{ csrf_token() }}"--}}
+        {{--            },--}}
+        {{--            type: 'POST',--}}
+        {{--            url: "{!! route('attendance.alhan', ['student_id' => $student->id]) !!}",--}}
+        {{--            success: function(response) {--}}
+        {{--                if (response) {--}}
+        {{--                    location.reload();--}}
+        {{--                    var message = $('' +--}}
+        {{--                        '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +--}}
+        {{--                        '</div>');--}}
+        {{--                    $(".content-wrapper").prepend(message);--}}
+        {{--                    $('#success-message').fadeOut(10000, function() {--}}
+        {{--                        $(this).remove();--}}
+        {{--                    })--}}
+        {{--                }--}}
 
-                    }
-                });
+        {{--            }--}}
+        {{--        });--}}
 
-            }
-        })
+        {{--    }--}}
+        {{--})--}}
 
-        $("#coptic_button").click(function() {
-            var c = confirm('Are you sure?');
-            if (c) {
-                $.ajax({
-                    data: {
-                        "_token": "{{ csrf_token() }}"
-                    },
-                    type: 'POST',
-                    url: "{!! route('attendance.coptic', ['student_id' => $student->id]) !!}",
-                    success: function(response) {
-                        if (response) {
-                            location.reload();
-                            var message = $('' +
-                                '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +
-                                '</div>');
-                            $(".content-wrapper").prepend(message);
-                            $('#success-message').fadeOut(10000, function() {
-                                $(this).remove();
-                            })
-                        }
+        {{--$("#coptic_button").click(function() {--}}
+        {{--    var c = confirm('Are you sure?');--}}
+        {{--    if (c) {--}}
+        {{--        $.ajax({--}}
+        {{--            data: {--}}
+        {{--                "_token": "{{ csrf_token() }}"--}}
+        {{--            },--}}
+        {{--            type: 'POST',--}}
+        {{--            url: "{!! route('attendance.coptic', ['student_id' => $student->id]) !!}",--}}
+        {{--            success: function(response) {--}}
+        {{--                if (response) {--}}
+        {{--                    location.reload();--}}
+        {{--                    var message = $('' +--}}
+        {{--                        '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +--}}
+        {{--                        '</div>');--}}
+        {{--                    $(".content-wrapper").prepend(message);--}}
+        {{--                    $('#success-message').fadeOut(10000, function() {--}}
+        {{--                        $(this).remove();--}}
+        {{--                    })--}}
+        {{--                }--}}
 
-                    }
-                });
+        {{--            }--}}
+        {{--        });--}}
 
-            }
-        })
+        {{--    }--}}
+        {{--})--}}
 
-        $("#taks_button").click(function() {
-            var c = confirm('Are you sure?');
-            if (c) {
-                $.ajax({
-                    data: {
-                        "_token": "{{ csrf_token() }}"
-                    },
-                    type: 'POST',
-                    url: "{!! route('attendance.taks', ['student_id' => $student->id]) !!}",
-                    success: function(response) {
-                        if (response) {
-                            location.reload();
-                            var message = $('' +
-                                '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +
-                                '</div>');
-                            $(".content-wrapper").prepend(message);
-                            $('#success-message').fadeOut(10000, function() {
-                                $(this).remove();
-                            })
-                        }
+        {{--$("#taks_button").click(function() {--}}
+        {{--    var c = confirm('Are you sure?');--}}
+        {{--    if (c) {--}}
+        {{--        $.ajax({--}}
+        {{--            data: {--}}
+        {{--                "_token": "{{ csrf_token() }}"--}}
+        {{--            },--}}
+        {{--            type: 'POST',--}}
+        {{--            url: "{!! route('attendance.taks', ['student_id' => $student->id]) !!}",--}}
+        {{--            success: function(response) {--}}
+        {{--                if (response) {--}}
+        {{--                    location.reload();--}}
+        {{--                    var message = $('' +--}}
+        {{--                        '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +--}}
+        {{--                        '</div>');--}}
+        {{--                    $(".content-wrapper").prepend(message);--}}
+        {{--                    $('#success-message').fadeOut(10000, function() {--}}
+        {{--                        $(this).remove();--}}
+        {{--                    })--}}
+        {{--                }--}}
 
-                    }
-                });
+        {{--            }--}}
+        {{--        });--}}
 
-            }
-        })
+        {{--    }--}}
+        {{--})--}}
 
         $("#exit_button").click(function() {
             var c = confirm('Are you sure?');

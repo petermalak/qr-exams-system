@@ -2,8 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\AlhanExamAttendancesDataTable;
+use App\DataTables\CopticExamAttendancesDataTable;
+use App\DataTables\TaksExamAttendancesDataTable;
 use App\Models\ExamAttendance;
 use App\Models\Student;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -13,17 +21,25 @@ class AttendanceController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function alhan_index(AlhanExamAttendancesDataTable $dataTable)
     {
-        //
+        return $dataTable->render('admin.components.attendance.alhan_table');
     }
 
+    public function coptic_index(CopticExamAttendancesDataTable $dataTable)
+    {
+        return $dataTable->render('admin.components.attendance.coptic_table');
+    }
+
+    public function taks_index(TaksExamAttendancesDataTable $dataTable)
+    {
+        return $dataTable->render('admin.components.attendance.taks_table');
+    }
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function create(Request $request)
     {
@@ -38,62 +54,26 @@ class AttendanceController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return array|RedirectResponse
      */
-    public function store(Request $request)
+    public function get_student_exam_data(Request $request)
     {
-        //
+        $inputs = $request->all();
+        $validator = Validator::make($inputs, ['student_id' => 'required']);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $student_attendance = ExamAttendance::where('student_id' ,$inputs['student_id'])->first();
+        $student = Student::findOrFail($inputs['student_id']);
+        return [
+            'student' => $student,
+            'student_attendance' => $student_attendance
+        ];
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function alhanAttendance(Request $request)
+    public function alhanAttendance(Request $request): bool
     {
         $inputs = $request->all();
         unset($inputs['token']);
@@ -103,7 +83,7 @@ class AttendanceController extends Controller
         return true;
     }
 
-    public function copticAttendance(Request $request)
+    public function copticAttendance(Request $request): bool
     {
         $inputs = $request->all();
         unset($inputs['token']);
@@ -113,7 +93,7 @@ class AttendanceController extends Controller
         return true;
     }
 
-    public function taksAttendance(Request $request)
+    public function taksAttendance(Request $request): bool
     {
         $inputs = $request->all();
         unset($inputs['token']);
@@ -124,7 +104,7 @@ class AttendanceController extends Controller
     }
 
 
-    public function exitAttendance(Request $request)
+    public function exitAttendance(Request $request): bool
     {
         $inputs = $request->all();
         unset($inputs['token']);

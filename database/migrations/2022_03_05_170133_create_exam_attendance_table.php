@@ -16,10 +16,10 @@ class CreateExamAttendanceTable extends Migration
         Schema::create('exam_attendance', function (Blueprint $table) {
             $table->id();
             $table->boolean('in_hall');
-            $table->boolean('alhan')->nullable();
-            $table->boolean('coptic')->nullable();
-            $table->boolean('taks')->nullable();
-            $table->boolean('out_hall')->nullable();
+            $table->boolean('alhan')->default(0);
+            $table->boolean('coptic')->default(0);
+            $table->boolean('taks')->default(0);
+            $table->boolean('out_hall')->default(0);
             $table->unsignedBigInteger("student_id");
             $table->foreign("student_id")->references("id")->on("students")->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();

@@ -15,15 +15,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.components.home');
-})->name('home');
+Route::get('/', function () { return view('admin.components.home'); })->name('home');
 
-Route::resource('/exam-attendances', AttendanceController::class);
-Route::post('/exam-attendances/alhan',  [ AttendanceController::class,'alhanAttendance' ])->name('attendance.alhan');
-Route::post('/exam-attendances/coptic',  [ AttendanceController::class,'copticAttendance' ])->name('attendance.coptic');
-Route::post('/exam-attendances/taks',  [ AttendanceController::class,'taksAttendance' ])->name('attendance.taks');
-Route::post('/exam-attendances/exit',  [ AttendanceController::class,'exitAttendance' ])->name('attendance.exit');
+Route::resource('/exam-attendances', AttendanceController::class)->only('create');
+Route::post('/exam-attendances',  [ AttendanceController::class,'get_student_exam_data' ])->name('exam-attendances.show');
 
+Route::prefix('door')->group(function () {
+    Route::get('/', function () { return view('admin.components.home'); })->name('home');
+    Route::post('/exam-attendances',  [ AttendanceController::class,'exitAttendance' ])->name('attendance.exit');
+});
+
+
+//Route::post('/exam-attendances/exit',  [ AttendanceController::class,'exitAttendance' ])->name('attendance.exit');
+
+Route::prefix('alhan')->group(function () {
+    Route::get('/exam-attendances',  [ AttendanceController::class,'alhan_index' ])->name('attendance.alhan_table');
+    Route::post('/exam-attendances',  [ AttendanceController::class,'alhanAttendance' ])->name('attendance.alhan');
+});
+
+Route::prefix('coptic')->group(function () {
+    Route::get('/exam-attendances',  [ AttendanceController::class,'coptic_index' ])->name('attendance.coptic_table');
+    Route::post('/exam-attendances',  [ AttendanceController::class,'copticAttendance' ])->name('attendance.coptic');
+
+});
+
+Route::prefix('taks')->group(function () {
+    Route::get('/exam-attendances',  [ AttendanceController::class,'taks_index' ])->name('attendance.taks_table');
+    Route::post('/exam-attendances',  [ AttendanceController::class,'taksAttendance' ])->name('attendance.taks');
+});
 
 Route::resource('/students', StudentController::class);
