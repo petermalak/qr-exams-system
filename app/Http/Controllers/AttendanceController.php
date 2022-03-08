@@ -56,7 +56,6 @@ class AttendanceController extends Controller
     /**
      *
      * @param Request $request
-     * @return array|RedirectResponse
      */
     public function get_student_exam_data(Request $request)
     {
@@ -67,10 +66,10 @@ class AttendanceController extends Controller
         }
         $student_attendance = ExamAttendance::where('student_id' ,$inputs['student_id'])->first();
         $student = Student::findOrFail($inputs['student_id']);
-        return [
+        return response()->json([
             'student' => $student,
             'student_attendance' => $student_attendance
-        ];
+        ], 200);
     }
 
     public function alhanAttendance(Request $request): bool

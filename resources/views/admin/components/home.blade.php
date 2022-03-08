@@ -17,18 +17,44 @@
             <div class="form-group">
                 <input required type="text" id="student_id" name="student_id" class="form-control form-elements">
             </div>
-            <button type="submit" class="button">Submit</button>
 
         </form>
+        <button type="submit" class="button" id="get_data_button">Submit</button>
 
-
-        <button type="button" class="waves-effect btn btn-lg btn-danger taks" id="get_data_button">
-            Get Data
-        </button>
+{{--        <button type="button" class="waves-effect btn btn-lg btn-danger taks" id="get_data_button">--}}
+{{--            Get Data--}}
+{{--        </button>--}}
     </div>
 
+    <div class="card-body table-responsive p-0">
+        <table class="table table-bordered table-striped table-responsive-stack" id="tableOne" hidden>
+            <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Group Number</th>
+                <th>In Hall</th>
+                <th>Alhan</th>
+                <th>Coptic</th>
+                <th>Taks</th>
+                <th>Out Hall</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
 
     <script type="text/javascript">
+
+        function onScanError(errorMessage) {}
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", {
+                fps: 10,
+                // qrbox: 250
+            });
+        html5QrcodeScanner.render(onScanSuccess, onScanError);
         // setInterval(function() {
         //     // location.reload();
         // }, 5000);
@@ -47,6 +73,8 @@
                         console.log(response);
                         if (response) {
                             // location.reload();
+                            var student = response.student;
+                            var student_attendance = response.student_attendance
                             var message = $('' +
                                 '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +
                                 '</div>');
@@ -54,6 +82,7 @@
                             $('#success-message').fadeOut(10000, function() {
                                 $(this).remove();
                             })
+                            console.log(student , student_attendance);
                         }
 
                     }
@@ -64,15 +93,41 @@
 
         function onScanSuccess(qrCodeMessage) {
             document.getElementById('student_id').value = qrCodeMessage;
+
+            $.ajax({
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    'student_id' : qrCodeMessage
+                },
+                type: 'POST',
+                url: "{!! route('exam-attendances.show') !!}",
+                success: function(response) {
+
+                    if (response) {
+                        // location.reload();
+                        var student = response.student;
+                        var student_attendance = response.student_attendance
+                        var message = $('' +
+                            '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +
+                            '</div>');
+                        $(".content-wrapper").prepend(message);
+                        $('#success-message').fadeOut(10000, function() {
+                            $(this).remove();
+                        })
+                        console.log(student , student_attendance);
+                        var result ='<tr>'+
+                            '<td>'+student.id+'</td>'+
+                            '<td>'+student.name+'</td>'+
+                            '<td>'+student.group_number+'</td>'+
+                            '</tr>';
+                        $('tbody').html(result);
+                        $('table').removeAttr('hidden');
+                    }
+
+                }
+            });
         }
 
-        function onScanError(errorMessage) {}
-        var html5QrcodeScanner = new Html5QrcodeScanner(
-            "reader", {
-                fps: 10,
-                // qrbox: 250
-            });
-        html5QrcodeScanner.render(onScanSuccess, onScanError);
     </script>
 
 
