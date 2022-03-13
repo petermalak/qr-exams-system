@@ -34,14 +34,39 @@
                 <th>Name</th>
                 <th>Group Number</th>
                 <th>In Hall</th>
-                <th>Alhan</th>
-                <th>Coptic</th>
-                <th>Taks</th>
-                <th>Out Hall</th>
+                @if(Request::route()->getPrefix() == '/alhan' || Request::route()->getPrefix() == '/door')
+                    <th>Alhan</th>
+                @endif
+                @if(Request::route()->getPrefix() == '/coptic' || Request::route()->getPrefix() == '/door')
+                    <th>Coptic</th>
+                @endif
+                @if(Request::route()->getPrefix() == '/taks' || Request::route()->getPrefix() == '/door')
+                    <th>Taks</th>
+                @endif
+                <th >Out Hall</th>
             </tr>
             </thead>
             <tbody>
-
+                <td id="student_id"></td>
+                <td id="student_name"></td>
+                <td id="student_group_number"></td>
+                <td id="student_inhall"></td>
+                @if(Request::route()->getPrefix() == '/alhan' || Request::route()->getPrefix() == '/door' || )
+                    <td id="student_alhan"> </td>
+                @else
+                    <td hidden id="student_alhan"> </td>
+                @endif
+                @if(Request::route()->getPrefix() == '/coptic' || Request::route()->getPrefix() == '/door')
+                    <td id="student_coptic"></td>
+                @else
+                    <td hidden id="student_coptic"> </td>
+                @endif
+                @if(Request::route()->getPrefix() == '/taks' || Request::route()->getPrefix() == '/door')
+                    <td id="student_taks"></td>
+                @else
+                    <td hidden id="student_taks"> </td>
+                @endif
+                <td id="student_outhall"></td>
             </tbody>
         </table>
     </div>
@@ -71,20 +96,6 @@
                     url: "{!! route('exam-attendances.show') !!}",
                     success: function(response) {
                         console.log(response);
-                        if (response) {
-                            // location.reload();
-                            var student = response.student;
-                            var student_attendance = response.student_attendance
-                            var message = $('' +
-                                '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +
-                                '</div>');
-                            $(".content-wrapper").prepend(message);
-                            $('#success-message').fadeOut(10000, function() {
-                                $(this).remove();
-                            })
-                            console.log(student , student_attendance);
-                        }
-
                     }
                 });
 
@@ -92,40 +103,78 @@
         })
 
         function onScanSuccess(qrCodeMessage) {
-            document.getElementById('student_id').value = qrCodeMessage;
+            // document.getElementById('student_id').value = qrCodeMessage;
 
             $.ajax({
                 data: {
                     "_token": "{{ csrf_token() }}",
-                    'student_id' : qrCodeMessage
+                    'student_id' : qrCodeMessage,
+                    'prefix' : '{{Request::route()->getPrefix()}}'
                 },
                 type: 'POST',
                 url: "{!! route('exam-attendances.show') !!}",
-                success: function(response) {
-
-                    if (response) {
-                        // location.reload();
-                        var student = response.student;
-                        var student_attendance = response.student_attendance
-                        var message = $('' +
-                            '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +
+                statusCode: {
+                    400: function(response) {
+                        let student = response.responseJSON.student;
+                        let student_attendance = response.responseJSON.student_attendance;
+                        console.log(student,student_attendance)
+                        let message = $('' +
+                            '<div class="alert alert-dange m-1" id ="error-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">There is Exam missing</p> <br>' +
                             '</div>');
                         $(".content-wrapper").prepend(message);
-                        $('#success-message').fadeOut(10000, function() {
+                        $('#success-message').fadeOut(2000, function() {
                             $(this).remove();
                         })
-                        console.log(student , student_attendance);
-                        var result ='<tr>'+
-                            '<td>'+student.id+'</td>'+
-                            '<td>'+student.name+'</td>'+
-                            '<td>'+student.group_number+'</td>'+
-                            '</tr>';
-                        $('tbody').html(result);
-                        $('table').removeAttr('hidden');
+                        add_values_to_table(student , student_attendance)
+                    },
+                    200: function (response){
+                        if (response) {
+                            // location.reload();
+                            let student = response.student;
+                            let student_attendance = response.student_attendance;
+                            let message = $('' +
+                                '<div class="alert alert-success m-1" id ="success-message" style="margin:15px; height:2.5rem"  role="alert"> <p class="justify-content-center mb-3">Succesfully</p> <br>' +
+                                '</div>');
+                            $(".content-wrapper").prepend(message);
+                            $('#success-message').fadeOut(2000, function() {
+                                $(this).remove();
+                            })
+                            add_values_to_table(student , student_attendance)
+                        }
                     }
-
-                }
+                },
             });
+        }
+
+        function convert_bool_to_string(value) {
+            if (value) return 'Examed';
+            else return 'Not Examed'
+        }
+        function add_cell_style(element_id) {
+            let element = document.getElementById(element_id);
+            let html = document.getElementById(element_id).innerHTML;
+            if(html === 'Examed'){
+                element.classList.add('green_background');
+            }
+            else{
+                element.classList.add('red_background');
+            }
+        }
+        function add_values_to_table(student , student_attendance){
+            $('#student_id').html(student.id);
+            $('#student_name').html(student.name);
+            $('#student_group_number').html(student.group_number);
+            $('#student_inhall').html(convert_bool_to_string(student_attendance.in_hall));
+            add_cell_style('student_inhall')
+            $('#student_alhan').html(convert_bool_to_string(student_attendance.alhan));
+            add_cell_style('student_alhan')
+            $('#student_coptic').html(convert_bool_to_string(student_attendance.coptic));
+            add_cell_style('student_coptic')
+            $('#student_taks').html(convert_bool_to_string(student_attendance.taks));
+            add_cell_style('student_taks')
+            $('#student_outhall').html(convert_bool_to_string(student_attendance.out_hall));
+            add_cell_style('student_outhall')
+            $('table').removeAttr('hidden');
         }
 
     </script>
@@ -180,5 +229,11 @@
             margin-right: auto;
         }
 
+        .green_background{
+            background-color:#27a800
+        }
+        .red_background{
+            background-color:#FF0000
+        }
     </style>
 @endsection

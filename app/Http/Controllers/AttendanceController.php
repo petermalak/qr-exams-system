@@ -60,60 +60,104 @@ class AttendanceController extends Controller
     public function get_student_exam_data(Request $request)
     {
         $inputs = $request->all();
-        $validator = Validator::make($inputs, ['student_id' => 'required']);
+        $validator = Validator::make($inputs, ['student_id' => 'required', 'prefix' => 'required|string']);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
         $student_attendance = ExamAttendance::where('student_id' ,$inputs['student_id'])->first();
+        if ($student_attendance == null) {
+            $inputs['in_hall'] = 1;
+            $student_attendance = ExamAttendance::create($inputs);
+        }
         $student = Student::findOrFail($inputs['student_id']);
+
+        if($inputs['prefix'] == '/alhan'){
+            $response = $this->alhanAttendance($inputs['student_id']);
+            if($response){
+                return response()->json([
+                    'student' => $student,
+                    'student_attendance' => $student_attendance
+                ], 200);
+            }
+        }
+        elseif ($inputs['prefix'] == '/coptic'){
+            $response = $this->copticAttendance($inputs['student_id']);
+            if($response){
+                return response()->json([
+                    'student' => $student,
+                    'student_attendance' => $student_attendance
+                ], 200);
+            }
+        }
+        elseif ($inputs['prefix'] == '/taks'){
+            $response = $this->taksAttendance($inputs['student_id']);
+            if($response){
+                return response()->json([
+                    'student' => $student,
+                    'student_attendance' => $student_attendance
+                ], 200);
+            }
+        }
+        elseif ($inputs['prefix'] == '/door-entrance'){
+            return response()->json([
+                'student' => $student,
+                'student_attendance' => $student_attendance
+            ], 200);
+        }
+        elseif ($inputs['prefix'] == '/door-exit'){
+            $response = $this->exitAttendance($inputs['student_id']);
+            if($response){
+                return response()->json([
+                    'student' => $student,
+                    'student_attendance' => $student_attendance
+                ], 200);
+            }
+            else{
+                return response()->json(['error' => 'There is exam missing','student' => $student,'student_attendance' => $student_attendance],400);
+            }
+        }
+
+
         return response()->json([
             'student' => $student,
             'student_attendance' => $student_attendance
         ], 200);
     }
 
-    public function alhanAttendance(Request $request): bool
+    public function alhanAttendance($student_id): bool
     {
-        $inputs = $request->all();
-        unset($inputs['token']);
-        $student_attendance = ExamAttendance::where('student_id' ,$inputs['student_id'])->first();
+        $student_attendance = ExamAttendance::where('student_id' ,$student_id)->first();
         $student_attendance->alhan = 1;
         $student_attendance->save();
         return true;
     }
 
-    public function copticAttendance(Request $request): bool
+    public function copticAttendance($student_id): bool
     {
-        $inputs = $request->all();
-        unset($inputs['token']);
-        $student_attendance = ExamAttendance::where('student_id' ,$inputs['student_id'])->first();
+        $student_attendance = ExamAttendance::where('student_id' ,$student_id)->first();
         $student_attendance->coptic = 1;
         $student_attendance->save();
         return true;
     }
 
-    public function taksAttendance(Request $request): bool
+    public function taksAttendance($student_id): bool
     {
-        $inputs = $request->all();
-        unset($inputs['token']);
-        $student_attendance = ExamAttendance::where('student_id' ,$inputs['student_id'])->first();
+        $student_attendance = ExamAttendance::where('student_id' ,$student_id)->first();
         $student_attendance->taks = 1;
         $student_attendance->save();
         return true;
     }
 
 
-    public function exitAttendance(Request $request): bool
+    public function exitAttendance($student_id): bool
     {
-        $inputs = $request->all();
-        unset($inputs['token']);
-        $student_attendance = ExamAttendance::where('student_id' ,$inputs['student_id'])->first();
+        $student_attendance = ExamAttendance::where('student_id' ,$student_id)->first();
         if ($student_attendance->alhan == 1 && $student_attendance->coptic == 1 && $student_attendance->taks == 1) {
             $student_attendance->out_hall = 1;
             $student_attendance->save();
             return true;
         }
-        else
-            return false;
+        else{ return false; }
+
     }
 }

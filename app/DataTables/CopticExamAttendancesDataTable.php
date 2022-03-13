@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\ExamAttendance;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Builder;
 use Yajra\DataTables\DataTableAbstract;
 use Yajra\DataTables\Html\Button;
@@ -25,6 +26,8 @@ class CopticExamAttendancesDataTable extends DataTable
             ->eloquent($query)
             ->editColumn("coptic", function ($data) {
                 return $data->coptic == 0 ? 'Not Examed' : 'Examed';
+            })->editColumn("student name", function ($data) {
+                return Student::find($data->student_id)->name;
             });
     }
 
@@ -36,7 +39,8 @@ class CopticExamAttendancesDataTable extends DataTable
      */
     public function query(ExamAttendance $model): Builder
     {
-        return $model->newQuery();
+        return $model->newQuery()->where('coptic',0);
+//        return $model->newQuery();
     }
 
     /**
@@ -71,6 +75,7 @@ class CopticExamAttendancesDataTable extends DataTable
         return [
             Column::make('id')->title("ID"),
             Column::make('coptic'),
+            Column::make('student name'),
             Column::make('student_id'),
         ];
     }

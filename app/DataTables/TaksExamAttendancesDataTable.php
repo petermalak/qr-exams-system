@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\ExamAttendance;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Builder;
 use Yajra\DataTables\DataTableAbstract;
 use Yajra\DataTables\Html\Button;
@@ -25,6 +26,8 @@ class TaksExamAttendancesDataTable extends DataTable
             ->eloquent($query)
             ->editColumn("taks", function ($data) {
                 return $data->taks == 0 ? 'Not Examed' : 'Examed';
+            })->editColumn("student name", function ($data) {
+                return Student::find($data->student_id)->name;
             });
     }
 
@@ -71,6 +74,7 @@ class TaksExamAttendancesDataTable extends DataTable
         return [
             Column::make('id')->title("ID"),
             Column::make('taks'),
+            Column::make('student name'),
             Column::make('student_id'),
         ];
     }
