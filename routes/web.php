@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () { return view('admin.components.home'); })->name('home');
+Route::post('/students/import', [StudentController::class,'import_students'])->name('exam-attendances.show');
 
 Route::resource('/exam-attendances', AttendanceController::class)->only('create');
 Route::post('/exam-attendances',  [ AttendanceController::class,'get_student_exam_data' ])->name('exam-attendances.show');
@@ -42,5 +42,3 @@ Route::prefix('taks')->group(function () {
     Route::get('/', function () { return view('admin.components.home'); })->name('home');
     Route::get('/exam-attendances',  [ AttendanceController::class,'taks_index' ])->name('attendance.taks_table');
 });
-
-Route::resource('/students', StudentController::class);
