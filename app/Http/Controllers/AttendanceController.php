@@ -74,6 +74,7 @@ class AttendanceController extends Controller
         if($inputs['prefix'] == '/alhan'){
             $response = $this->alhanAttendance($inputs['student_id']);
             if($response){
+                $student_attendance = ExamAttendance::where('student_id' ,$inputs['student_id'])->first();
                 return response()->json([
                     'student' => $student,
                     'student_attendance' => $student_attendance
@@ -83,6 +84,7 @@ class AttendanceController extends Controller
         elseif ($inputs['prefix'] == '/coptic'){
             $response = $this->copticAttendance($inputs['student_id']);
             if($response){
+                $student_attendance = ExamAttendance::where('student_id' ,$inputs['student_id'])->first();
                 return response()->json([
                     'student' => $student,
                     'student_attendance' => $student_attendance
@@ -92,6 +94,7 @@ class AttendanceController extends Controller
         elseif ($inputs['prefix'] == '/taks'){
             $response = $this->taksAttendance($inputs['student_id']);
             if($response){
+                $student_attendance = ExamAttendance::where('student_id' ,$inputs['student_id'])->first();
                 return response()->json([
                     'student' => $student,
                     'student_attendance' => $student_attendance
@@ -107,6 +110,7 @@ class AttendanceController extends Controller
         elseif ($inputs['prefix'] == '/door-exit'){
             $response = $this->exitAttendance($inputs['student_id']);
             if($response){
+                $student_attendance = ExamAttendance::where('student_id' ,$inputs['student_id'])->first();
                 return response()->json([
                     'student' => $student,
                     'student_attendance' => $student_attendance

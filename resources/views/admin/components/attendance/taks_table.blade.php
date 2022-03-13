@@ -1,5 +1,5 @@
 @extends("admin.layouts.index")
-@section("content")
+@section('content')
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -35,8 +35,13 @@
 @endsection
 
 @push('scripts')
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
-    <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+    <link rel="stylesheet" href="/datatables/buttons.dataTables.min.css">
+    <script src="/datatables/dataTables.buttons.min.js"></script>
     <script src="/datatables/buttons.server-side.js"></script>
+    <script>
+        setInterval(function() {
+            $("#datatable").DataTable().ajax.reload()
+        }, 3000);
+    </script>
     {!! $dataTable->scripts() !!}
 @endpush
