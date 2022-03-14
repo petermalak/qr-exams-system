@@ -162,6 +162,5 @@ class AttendanceController extends Controller
             return true;
         }
         else{ return false; }
-
     }
 }

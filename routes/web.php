@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/students/import', [StudentController::class,'import_students'])->name('exam-attendances.show');
+Route::post('/students/import', [StudentController::class,'import_students'])->name('import-students');
+Route::get('/students/import', [StudentController::class,'upload_file'])->name('import-view');
+Route::get('/students/export', [StudentController::class,'export_exam_attendance'])->name('export-file');
 
 Route::resource('/exam-attendances', AttendanceController::class)->only('create');
 Route::post('/exam-attendances',  [ AttendanceController::class,'get_student_exam_data' ])->name('exam-attendances.show');

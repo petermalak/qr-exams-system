@@ -2,15 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExamAttendanceExport;
 use App\Imports\StudentsImport;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class StudentController extends Controller
 {
-   public function import_students(Request $request){
-       dd($request->hasFile('students'));
-    $students = Excel::import(new StudentsImport, $request->file('students'));
-    dd($students);
+    /**
+     * Show the form for creating a new resource.
+     *
+     */
+    public function upload_file()
+    {
+        return view('admin.components.student.import');
+    }
+
+   public function import_students(Request $request): RedirectResponse
+   {
+       $input = $request->all();
+       $validator = Validator::make($input, [ 'file' => 'required' ] );
+       if ($validator->fails()) {
+           return redirect()->route('import-view')->withErrors($validator)->withInput();
+       }
+       Excel::import(new StudentsImport, $request->file('file'));
+       return redirect()->route('import-view')->with(['success' => 'Students Added Successfully']);
+   }
+
+   public function export_exam_attendance()
+   {
+       return Excel::download(new ExamAttendanceExport(), 'students.xlsx')->sendHeaders();
    }
 }
