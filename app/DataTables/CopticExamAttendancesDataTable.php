@@ -40,7 +40,6 @@ class CopticExamAttendancesDataTable extends DataTable
     public function query(ExamAttendance $model): Builder
     {
         return $model->newQuery()->where('coptic',0);
-//        return $model->newQuery();
     }
 
     /**
@@ -73,7 +72,7 @@ class CopticExamAttendancesDataTable extends DataTable
     protected function getColumns(): array
     {
         return [
-            Column::make('id')->title("ID"),
+            // Column::make('id')->title("ID"),
             Column::make('coptic'),
             Column::make('student name'),
             Column::make('student_id'),

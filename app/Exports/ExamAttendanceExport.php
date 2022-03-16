@@ -25,11 +25,11 @@ class ExamAttendanceExport implements FromCollection, WithHeadings, WithMapping
         return [
             $row->student_id,
             Student::find($row->student_id)->name,
-            $row->in_hall ? 'Entered' : 'Not Entered',
-            $row->alhan  ? 'Entered' : 'Not Entered',
-            $row->coptic ? 'Entered' : 'Not Entered',
-            $row->taks  ? 'Entered' : 'Not Entered',
-            $row->out_hall ? 'Entered' : 'Not Entered',
+            $row->in_hall ? '1' : '0',
+            $row->alhan  ? '1' : '0',
+            $row->coptic ? '1' : '0',
+            $row->taks  ? '1' : '0',
+            $row->out_hall ? '1' : '0',
         ];
     }
 

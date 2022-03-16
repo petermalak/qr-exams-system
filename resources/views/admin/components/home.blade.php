@@ -61,9 +61,7 @@
             </tbody>
         </table>
     </div>
-
     <script type="text/javascript">
-
         function onScanError(errorMessage) {}
         var html5QrcodeScanner = new Html5QrcodeScanner(
             "reader", {
@@ -94,6 +92,9 @@
                             add_success_message()
                             add_values_to_table(student, student_attendance)
                         }
+                    },
+                    401: function(response) {
+                        alert('Error : This Student not recorded from Entrance Door\nNote : You Have to Make a Scan from the entrance')
                     }
                 },
             });
@@ -113,7 +114,6 @@
                     400: function(response) {
                         let student = response.responseJSON.student;
                         let student_attendance = response.responseJSON.student_attendance;
-                        console.log(student, student_attendance)
                         add_error_message()
                         add_values_to_table(student, student_attendance)
                     },
@@ -124,6 +124,9 @@
                             add_success_message()
                             add_values_to_table(student, student_attendance)
                         }
+                    },
+                    401: function(response) {
+                        alert('Error : This Student not recorded from Entrance Door\nNote : You Have to Make a Scan from the entrance')
                     }
                 },
             });
@@ -137,11 +140,10 @@
         function add_cell_style(element_id) {
             let element = document.getElementById(element_id);
             let html = document.getElementById(element_id).innerHTML;
+            $("#" + element_id).removeClass();
             if (html === 'Examed') {
-                element.removeClass;
                 element.classList.add('green_background');
             } else {
-                element.removeClass;
                 element.classList.add('red_background');
             }
         }
@@ -192,7 +194,6 @@
                 return false;
             }
         });
-
     </script>
 
 
