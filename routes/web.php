@@ -31,16 +31,16 @@ Route::prefix('door-exit')->group(function () {
 
 Route::prefix('alhan')->group(function () {
     Route::get('/', function () { return view('admin.components.home'); })->name('home');
-    Route::get('/exam-attendances',  [ AttendanceController::class,'alhan_index' ])->name('attendance.alhan_table');
+    Route::get('/exam',  [ AttendanceController::class,'alhan_index' ])->name('attendance.alhan_table');
 });
 
 Route::prefix('coptic')->group(function () {
     Route::get('/', function () { return view('admin.components.home'); })->name('home');
-    Route::get('/exam-attendances',  [ AttendanceController::class,'coptic_index' ])->name('attendance.coptic_table');
+    Route::get('/exam',  [ AttendanceController::class,'coptic_index' ])->name('attendance.coptic_table');
 
 });
 
 Route::prefix('taks')->group(function () {
     Route::get('/', function () { return view('admin.components.home'); })->name('home');
-    Route::get('/exam-attendances',  [ AttendanceController::class,'taks_index' ])->name('attendance.taks_table');
+    Route::get('/exam',  [ AttendanceController::class,'taks_index' ])->name('attendance.taks_table');
 });
