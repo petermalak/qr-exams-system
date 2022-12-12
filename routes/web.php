@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClassModelController;
+use App\Http\Controllers\ExamController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AttendanceController;
 use Illuminate\Support\Facades\Route;
@@ -15,9 +17,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/students/import', [StudentController::class,'import_students'])->name('import-students');
-Route::get('/students/import', [StudentController::class,'upload_file'])->name('import-view');
-Route::get('/students/export', [StudentController::class,'export_exam_attendance'])->name('export-file');
+Route::prefix('students')->group(function () {
+    Route::post('/import', [StudentController::class,'import_students'])->name('import-students');
+    Route::get('/import', [StudentController::class,'upload_file'])->name('import-student-view');
+    Route::get('/export', [StudentController::class,'export_exam_attendance'])->name('export-file');
+});
+
+Route::prefix('classes')->group(function () {
+    Route::post('/import', [ClassModelController::class,'import_classes'])->name('import-classes');
+    Route::get('/import', [ClassModelController::class,'upload_file'])->name('import-class-view');
+    Route::get('/export', [ClassModelController::class,'export_classes'])->name('export-file');
+});
+
+Route::prefix('exams')->group(function () {
+    Route::post('/import', [ExamController::class,'import_exams'])->name('import-exams');
+    Route::get('/import', [ExamController::class,'upload_file'])->name('import-exam-view');
+    Route::get('/export', [ExamController::class,'export_exams'])->name('export-file');
+});
+
+
 
 Route::resource('/exam-attendances', AttendanceController::class)->only('create');
 Route::post('/exam-attendances',  [ AttendanceController::class,'get_student_exam_data' ])->name('exam-attendances.show');

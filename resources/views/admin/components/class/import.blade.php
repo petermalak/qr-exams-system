@@ -1,7 +1,7 @@
 @extends("admin.layouts.index")
 @section('content')
     <div class="container mt-5">
-        <form action="{{route('import-students')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('import-classes')}}" method="post" enctype="multipart/form-data">
             <h3 class="text-center mb-5">Upload File</h3>
             @csrf
             <div class="custom-file">

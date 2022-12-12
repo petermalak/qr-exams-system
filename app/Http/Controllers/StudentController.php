@@ -26,10 +26,10 @@ class StudentController extends Controller
        $input = $request->all();
        $validator = Validator::make($input, [ 'file' => 'required' ] );
        if ($validator->fails()) {
-           return redirect()->route('import-view')->withErrors($validator)->withInput();
+           return redirect()->route('import-student-view')->withErrors($validator)->withInput();
        }
        Excel::import(new StudentsImport, $request->file('file'));
-       return redirect()->route('import-view')->with(['success' => 'Students Added Successfully']);
+       return redirect()->route('import-student-view')->with(['success' => 'Students Added Successfully']);
    }
 
    public function export_exam_attendance()
