@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ExamAnswer extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $table = 'exams_answers';
+    protected $fillable = ['type','examiner','answers','student_id'];
 }

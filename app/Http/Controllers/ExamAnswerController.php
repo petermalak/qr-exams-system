@@ -2,83 +2,88 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClassModel;
+use App\Models\Exam;
+use App\Models\ExamAnswer;
+use App\Models\Student;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class ExamAnswerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function index()
     {
-        //
+        return view('admin.components.examiner.index');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View|RedirectResponse
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
-    }
+        $inputs = $request->all();
+        $validator = Validator::make($inputs, ['student_id' => 'required', 'examiner' => 'required', 'type' => 'required']);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        unset($inputs['_token']);
+        //        $inputs['student_id'] = (int)$inputs['student_id'];
+        $student = Student::find($inputs['student_id']);
+        $class = ClassModel::find($student->class_id);
+        $exam = Exam::where('class_id', $student->class_id)->where('type', $inputs['type'])->first();
+        $questions = json_decode($exam->questions);
+        foreach ($questions as $item) {
+            $item->score = 0;
+        }
+        //        $inputs['answers'] = $questions;
+        $exam_answer = ExamAnswer::where('student_id', $inputs['student_id'])->where('type', $inputs['type'])->first();
+        if (!$exam_answer) {
+            $exam_answer = ExamAnswer::create($inputs);
+            $exam_answer->answers = $questions;
+            $exam_answer->save();
+        } else {
+            $exam_answer->answers = json_decode($exam_answer->answers);
+        }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return view('admin.components.examiner.exam_show', compact('exam_answer', 'class', 'student', 'exam'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Application|Factory|View|RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $inputs = $request->all();
+        $validator = Validator::make($inputs, [
+            'student_id' => 'required',
+            'examiner' => 'required',
+            'type' => 'required',
+            'answers' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        unset($inputs['_token']);
+        $exam_answer = ExamAnswer::find($inputs['id']);
+        $exam_answer->update($inputs);
+        $exam_answer->save();
+        Session::flash('success', 'لقد تم تسجيل الاجابات بنجاح');
+        return view('admin.components.examiner.index');
     }
 }

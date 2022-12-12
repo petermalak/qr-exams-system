@@ -1,11 +1,11 @@
-@extends("admin.layouts.index")
+@extends('admin.layouts.index')
 @section('content')
-    <script src="/admin/html5-qrcode.min.js"></script>
+    <script src=" {{ asset('./admin/html5-qrcode.min.js') }}"></script>
 
     <h1 style="text-align: center;"> Scanner (sahmamsa school)</h1>
     <div class="row" style="text-align: center;">
         <div class="col">
-            <div style="width: 500px; height:500px; margin: auto;" id="reader"></div>
+            <div style="width: 70%; height:500px; margin: auto;" id="reader"></div>
         </div>
     </div>
     <div>
@@ -25,13 +25,19 @@
                     <th>Name</th>
                     <th>Group Number</th>
                     <th>In Hall</th>
-                    @if (Request::route()->getPrefix() == '/alhan' || Request::route()->getPrefix() == '/door-entrance' || Request::route()->getPrefix() == '/door-exit')
+                    @if (Request::route()->getPrefix() == '/alhan' ||
+                        Request::route()->getPrefix() == '/door-entrance' ||
+                        Request::route()->getPrefix() == '/door-exit')
                         <th>Alhan</th>
                     @endif
-                    @if (Request::route()->getPrefix() == '/coptic' || Request::route()->getPrefix() == '/door-entrance' || Request::route()->getPrefix() == '/door-exit')
+                    @if (Request::route()->getPrefix() == '/coptic' ||
+                        Request::route()->getPrefix() == '/door-entrance' ||
+                        Request::route()->getPrefix() == '/door-exit')
                         <th>Coptic</th>
                     @endif
-                    @if (Request::route()->getPrefix() == '/taks' || Request::route()->getPrefix() == '/door-entrance' || Request::route()->getPrefix() == '/door-exit')
+                    @if (Request::route()->getPrefix() == '/taks' ||
+                        Request::route()->getPrefix() == '/door-entrance' ||
+                        Request::route()->getPrefix() == '/door-exit')
                         <th>Taks</th>
                     @endif
                     <th>Out Hall</th>
@@ -42,17 +48,23 @@
                 <td id="student_name"></td>
                 <td id="student_group_number"></td>
                 <td id="student_inhall"></td>
-                @if (Request::route()->getPrefix() == '/alhan' || Request::route()->getPrefix() == '/door-entrance' || Request::route()->getPrefix() == '/door-exit')
+                @if (Request::route()->getPrefix() == '/alhan' ||
+                    Request::route()->getPrefix() == '/door-entrance' ||
+                    Request::route()->getPrefix() == '/door-exit')
                     <td id="student_alhan"> </td>
                 @else
                     <td hidden id="student_alhan"> </td>
                 @endif
-                @if (Request::route()->getPrefix() == '/coptic' || Request::route()->getPrefix() == '/door-entrance' || Request::route()->getPrefix() == '/door-exit')
+                @if (Request::route()->getPrefix() == '/coptic' ||
+                    Request::route()->getPrefix() == '/door-entrance' ||
+                    Request::route()->getPrefix() == '/door-exit')
                     <td id="student_coptic"></td>
                 @else
                     <td hidden id="student_coptic"> </td>
                 @endif
-                @if (Request::route()->getPrefix() == '/taks' || Request::route()->getPrefix() == '/door-entrance' || Request::route()->getPrefix() == '/door-exit')
+                @if (Request::route()->getPrefix() == '/taks' ||
+                    Request::route()->getPrefix() == '/door-entrance' ||
+                    Request::route()->getPrefix() == '/door-exit')
                     <td id="student_taks"></td>
                 @else
                     <td hidden id="student_taks"> </td>
@@ -67,7 +79,11 @@
             "reader", {
                 fps: 10,
             });
-        html5QrcodeScanner.render(onScanSuccess, onScanError);
+        html5QrcodeScanner.render({
+            facingMode: {
+                exact: "environment"
+            }
+        }, onScanSuccess, onScanError);
 
         $("#get_data_button").click(function() {
             $.ajax({
@@ -94,7 +110,9 @@
                         }
                     },
                     401: function(response) {
-                        alert('Error : This Student not recorded from Entrance Door\nNote : You Have to Make a Scan from the entrance')
+                        alert(
+                            'Error : This Student not recorded from Entrance Door\nNote : You Have to Make a Scan from the entrance'
+                        )
                     }
                 },
             });
@@ -126,7 +144,9 @@
                         }
                     },
                     401: function(response) {
-                        alert('Error : This Student not recorded from Entrance Door\nNote : You Have to Make a Scan from the entrance')
+                        alert(
+                            'Error : This Student not recorded from Entrance Door\nNote : You Have to Make a Scan from the entrance'
+                        )
                     }
                 },
             });
@@ -253,6 +273,5 @@
         .red_background {
             background-color: #FF0000
         }
-
     </style>
 @endsection

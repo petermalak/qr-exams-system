@@ -17,7 +17,7 @@ class CreateExamsAnswersTable extends Migration
             $table->id();
             $table->string('type');
             $table->string('examiner')->nullable();
-            $table->json('answers');
+            $table->json('answers')->nullable();
             $table->unsignedBigInteger("student_id");
             $table->foreign("student_id")->references("id")->on("students")->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();

@@ -2,16 +2,27 @@
 
 namespace App\Imports;
 
-use Illuminate\Support\Collection;
-use Maatwebsite\Excel\Concerns\ToCollection;
+use App\Models\Exam;
+use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class ExamImport implements ToCollection
+class ExamImport implements ToModel, WithHeadingRow
 {
     /**
-    * @param Collection $collection
-    */
-    public function collection(Collection $collection)
+     * @param array $row
+     * @return Exam
+     */
+    public function model(array $row): Exam
     {
-        //
+        return new Exam([
+            'type'    => $row['type'],
+            'questions' => $row['questions'],
+            'class_id' => $row['class_id'],
+        ]);
+    }
+
+    public function headingRow(): int
+    {
+        return 1;
     }
 }

@@ -13,8 +13,8 @@ class AddClassStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
-            $table->unsignedBigInteger("class_id");
+        Schema::table('students', function (Blueprint $table) {
+            $table->unsignedBigInteger("class_id")->nullable();
             $table->foreign("class_id")->references("id")->on("classes")->onDelete("cascade")->onUpdate("cascade");
         });
     }
