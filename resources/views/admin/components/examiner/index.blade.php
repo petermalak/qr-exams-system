@@ -71,26 +71,111 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="type">اسم الامتحان</label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="type" value="alhan" id="alhan">الحان
+
+                                    <div class="wrapper">
+                                        <input type="radio" name="type" value="alhan" id="option-1">
+                                        <input type="radio" name="type" value="coptic" id="option-2">
+                                        <input type="radio" name="type" value="taks" id="option-3">
+
+                                        <label for="option-1" class="option option-1">
+                                            <div class="dot"></div>
+                                            <span>ألحان</span>
                                         </label>
-                                        <label>
-                                            <input type="radio" name="type" value="coptic" id="coptic">قبطى
+                                        <label for="option-2" class="option option-2">
+                                            <div class="dot"></div>
+                                            <span>قبطى</span>
                                         </label>
-                                        <label>
-                                            <input type="radio" name="type" value="taks" id="taks">طقس
+                                        <label for="option-3" class="option option-3">
+                                            <div class="dot"></div>
+                                            <span>طقس</span>
                                         </label>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-block btn-success">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
+    <style>
+        .wrapper .option {
+            background: #fff;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 0 10px;
+            border: 2px solid lightgrey;
+            transition: all 0.3s ease;
+
+        }
+
+        .wrapper .option .dot {
+            height: 20px;
+            width: 20px;
+            background: #d9d9d9;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .wrapper .option .dot::before {
+            position: absolute;
+            content: "";
+            top: 4px;
+            left: 4px;
+            width: 12px;
+            height: 12px;
+            background: #0069d9;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(1.5);
+            transition: all 0.3s ease;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        #option-1:checked:checked~.option-1,
+        #option-2:checked:checked~.option-2,
+        #option-3:checked:checked~.option-3 {
+            border-color: #0069d9;
+            background: #0069d9;
+        }
+
+        #option-1:checked:checked~.option-1 .dot,
+        #option-2:checked:checked~.option-2 .dot,
+        #option-3:checked:checked~.option-3 .dot {
+            background: #fff;
+        }
+
+        #option-1:checked:checked~.option-1 .dot::before,
+        #option-2:checked:checked~.option-2 .dot::before,
+        #option-3:checked:checked~.option-3 .dot::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .wrapper .option span {
+            font-size: 20px;
+            color: #808080;
+        }
+
+        #option-1:checked:checked~.option-1 span,
+        #option-2:checked:checked~.option-2 span,
+        #option-3:checked:checked~.option-3 span {
+            color: #fff;
+        }
+    </style>
     <script type="text/javascript">
         function onScanError(errorMessage) {}
         var html5QrcodeScanner = new Html5QrcodeScanner(
