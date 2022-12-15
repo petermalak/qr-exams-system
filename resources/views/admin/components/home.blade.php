@@ -3,9 +3,20 @@
     <script src=" {{ asset('./admin/html5-qrcode.min.js') }}"></script>
 
     <h1 style="text-align: center;"> Scanner (sahmamsa school)</h1>
+    @if (Request::route()->getPrefix() == '/door-entrance')
+        <h2 style="text-align: center;">Door Entrance</h2>
+    @elseif(Request::route()->getPrefix() == '/door-exit')
+        <h2 style="text-align: center;"> Door exit</h2>
+    @elseif(Request::route()->getPrefix() == '/alhan')
+        <h2 style="text-align: center;"> Alhan</h2>
+    @elseif(Request::route()->getPrefix() == '/coptic')
+        <h2 style="text-align: center;"> Coptic</h2>
+    @elseif(Request::route()->getPrefix() == '/taks')
+        <h2 style="text-align: center;"> Taks</h2>
+    @endif
     <div class="row" style="text-align: center;">
         <div class="col">
-            <div style="width: 70%; height:500px; margin: auto;" id="reader"></div>
+            <div style="width: 70%; height:50%; margin: auto;" id="reader"></div>
         </div>
     </div>
     <div>

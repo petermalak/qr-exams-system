@@ -43,7 +43,7 @@
                     <h1 style="text-align: center;"> Scanner (sahmamsa school)</h1>
                     <div class="row" style="text-align: center;">
                         <div class="col">
-                            <div style="width: 70%; height:400px; margin: auto;" id="reader"></div>
+                            <div style="width: 70%; height:50%; margin: auto;" id="reader"></div>
                         </div>
                     </div>
 

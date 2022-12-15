@@ -40,8 +40,11 @@ class ExamAnswerController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
         unset($inputs['_token']);
-        //        $inputs['student_id'] = (int)$inputs['student_id'];
         $student = Student::find($inputs['student_id']);
+        if (!$student) {
+            return redirect()->back()->withErrors(['error' => 'Student not found'])->withInput();
+        }
+        unset($inputs['_token']);
         $class = ClassModel::find($student->class_id);
         $exam = Exam::where('class_id', $student->class_id)->where('type', $inputs['type'])->first();
         $questions = json_decode($exam->questions);
