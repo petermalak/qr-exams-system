@@ -19,13 +19,21 @@
             <div style="width: 70%; height:50%; margin: auto;" id="reader"></div>
         </div>
     </div>
-    <div>
+    <div class="container">
         <form name="add-blog-post-form" id="add-blog-post-form">
-            <div class="form-group">
-                <input required type="text" id="student_id" name="student_id" class="form-control form-elements">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <input required type="text" id="student_id" name="student_id" class="form-control form-elements">
+                    </div>
+                </div>
             </div>
         </form>
-        <button type="submit" class="button" id="get_data_button">Submit</button>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-success" id="get_data_button">Submit</button>
+            </div>
+        </div>
     </div>
 
     <div class="card-body table-responsive p-0">

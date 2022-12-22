@@ -99,7 +99,8 @@
                                         <td id="student_inhall">
                                             <input type="number" min="0" max="{{ $item->wight }}"
                                                 class="form-control input-name" id="mark-{{ $key }}"
-                                                name="answers[{{ $key }}][score]" value="{{ $item->score }}">
+                                                name="answers[{{ $key }}][score]" required
+                                                value="{{ $item->score }}">
                                         </td>
                                     </tr>
                                 @endforeach

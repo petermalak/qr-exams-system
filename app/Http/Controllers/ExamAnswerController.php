@@ -49,7 +49,7 @@ class ExamAnswerController extends Controller
         $exam = Exam::where('class_id', $student->class_id)->where('type', $inputs['type'])->first();
         $questions = json_decode($exam->questions);
         foreach ($questions as $item) {
-            $item->score = 0;
+            $item->score = null;
         }
         //        $inputs['answers'] = $questions;
         $exam_answer = ExamAnswer::where('student_id', $inputs['student_id'])->where('type', $inputs['type'])->first();

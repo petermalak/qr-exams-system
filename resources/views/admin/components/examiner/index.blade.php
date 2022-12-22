@@ -90,12 +90,10 @@
                                             <span>طقس</span>
                                         </label>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-block btn-success">Submit</button>
+                        <button type="submit" class="btn btn-block btn-success mb-3">Submit</button>
                     </form>
                 </div>
             </div>
@@ -148,8 +146,8 @@
         #option-1:checked:checked~.option-1,
         #option-2:checked:checked~.option-2,
         #option-3:checked:checked~.option-3 {
-            border-color: #0069d9;
-            background: #0069d9;
+            border-color: #888d92;
+            background: #888d92;
         }
 
         #option-1:checked:checked~.option-1 .dot,

@@ -76,3 +76,9 @@ Route::prefix('taks')->group(function () {
     })->name('home');
     Route::get('/exam',  [AttendanceController::class, 'taks_index'])->name('attendance.taks_table');
 });
+
+Route::get('/', function () {
+    return view('admin.main');
+})->name('home');
+
+//
