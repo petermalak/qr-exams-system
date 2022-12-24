@@ -3,15 +3,15 @@
     <script src=" {{ asset('./admin/html5-qrcode.min.js') }}"></script>
 
     <h1 style="text-align: center;"> Scanner (sahmamsa school)</h1>
-    @if (Request::route()->getPrefix() == '/door-entrance')
+    @if (Request::route()->getPrefix() == 'door-entrance')
         <h2 style="text-align: center;">Door Entrance</h2>
-    @elseif(Request::route()->getPrefix() == '/door-exit')
+    @elseif(Request::route()->getPrefix() == 'door-exit')
         <h2 style="text-align: center;"> Door exit</h2>
-    @elseif(Request::route()->getPrefix() == '/alhan')
+    @elseif(Request::route()->getPrefix() == 'alhan')
         <h2 style="text-align: center;"> Alhan</h2>
-    @elseif(Request::route()->getPrefix() == '/coptic')
+    @elseif(Request::route()->getPrefix() == 'coptic')
         <h2 style="text-align: center;"> Coptic</h2>
-    @elseif(Request::route()->getPrefix() == '/taks')
+    @elseif(Request::route()->getPrefix() == 'taks')
         <h2 style="text-align: center;"> Taks</h2>
     @endif
     <div class="row" style="text-align: center;">
@@ -44,19 +44,19 @@
                     <th>Name</th>
                     <th>Group Number</th>
                     <th>In Hall</th>
-                    @if (Request::route()->getPrefix() == '/alhan' ||
-                        Request::route()->getPrefix() == '/door-entrance' ||
-                        Request::route()->getPrefix() == '/door-exit')
+                    @if (Request::route()->getPrefix() == 'alhan' ||
+                        Request::route()->getPrefix() == 'door-entrance' ||
+                        Request::route()->getPrefix() == 'door-exit')
                         <th>Alhan</th>
                     @endif
-                    @if (Request::route()->getPrefix() == '/coptic' ||
-                        Request::route()->getPrefix() == '/door-entrance' ||
-                        Request::route()->getPrefix() == '/door-exit')
+                    @if (Request::route()->getPrefix() == 'coptic' ||
+                        Request::route()->getPrefix() == 'door-entrance' ||
+                        Request::route()->getPrefix() == 'door-exit')
                         <th>Coptic</th>
                     @endif
-                    @if (Request::route()->getPrefix() == '/taks' ||
-                        Request::route()->getPrefix() == '/door-entrance' ||
-                        Request::route()->getPrefix() == '/door-exit')
+                    @if (Request::route()->getPrefix() == 'taks' ||
+                        Request::route()->getPrefix() == 'door-entrance' ||
+                        Request::route()->getPrefix() == 'door-exit')
                         <th>Taks</th>
                     @endif
                     <th>Out Hall</th>
@@ -67,23 +67,23 @@
                 <td id="student_name"></td>
                 <td id="student_group_number"></td>
                 <td id="student_inhall"></td>
-                @if (Request::route()->getPrefix() == '/alhan' ||
-                    Request::route()->getPrefix() == '/door-entrance' ||
-                    Request::route()->getPrefix() == '/door-exit')
+                @if (Request::route()->getPrefix() == 'alhan' ||
+                    Request::route()->getPrefix() == 'door-entrance' ||
+                    Request::route()->getPrefix() == 'door-exit')
                     <td id="student_alhan"> </td>
                 @else
                     <td hidden id="student_alhan"> </td>
                 @endif
-                @if (Request::route()->getPrefix() == '/coptic' ||
-                    Request::route()->getPrefix() == '/door-entrance' ||
-                    Request::route()->getPrefix() == '/door-exit')
+                @if (Request::route()->getPrefix() == 'coptic' ||
+                    Request::route()->getPrefix() == 'door-entrance' ||
+                    Request::route()->getPrefix() == 'door-exit')
                     <td id="student_coptic"></td>
                 @else
                     <td hidden id="student_coptic"> </td>
                 @endif
-                @if (Request::route()->getPrefix() == '/taks' ||
-                    Request::route()->getPrefix() == '/door-entrance' ||
-                    Request::route()->getPrefix() == '/door-exit')
+                @if (Request::route()->getPrefix() == 'taks' ||
+                    Request::route()->getPrefix() == 'door-entrance' ||
+                    Request::route()->getPrefix() == 'door-exit')
                     <td id="student_taks"></td>
                 @else
                     <td hidden id="student_taks"> </td>
@@ -98,11 +98,7 @@
             "reader", {
                 fps: 10,
             });
-        html5QrcodeScanner.render({
-            facingMode: {
-                exact: "environment"
-            }
-        }, onScanSuccess, onScanError);
+        html5QrcodeScanner.render(onScanSuccess, onScanError);
 
         $("#get_data_button").click(function() {
             $.ajax({
