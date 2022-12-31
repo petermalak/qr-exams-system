@@ -5,7 +5,7 @@
     },
     "routes": [{
         "src": "/(.*)",
-        "dest": "/api/index.php"
+        "dest": "/app/index.php"
     }],
     "env": {
         "APP_NAME": "Laravel Vercel",
