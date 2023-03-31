@@ -78,7 +78,7 @@ class AttendanceController extends Controller
         if ($student_attendance != null && $inputs['prefix'] != 'door-entrance') {
 
 
-            if ($inputs['prefix'] == 'alhan' || || $inputs['prefix'] == '/alhan') {
+            if ($inputs['prefix'] == 'alhan' || $inputs['prefix'] == '/alhan') {
                 $response = $this->alhanAttendance($inputs['student_id']);
                 if ($response) {
                     $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
@@ -87,7 +87,7 @@ class AttendanceController extends Controller
                         'student_attendance' => $student_attendance
                     ], 200);
                 }
-            } elseif ($inputs['prefix'] == 'coptic' || || $inputs['prefix'] == '/coptic') {
+            } elseif ($inputs['prefix'] == 'coptic' || $inputs['prefix'] == '/coptic') {
                 $response = $this->copticAttendance($inputs['student_id']);
                 if ($response) {
                     $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
@@ -96,7 +96,7 @@ class AttendanceController extends Controller
                         'student_attendance' => $student_attendance
                     ], 200);
                 }
-            } elseif ($inputs['prefix'] == 'taks' || || $inputs['prefix'] == '/taks') {
+            } elseif ($inputs['prefix'] == 'taks' || $inputs['prefix'] == '/taks') {
                 $response = $this->taksAttendance($inputs['student_id']);
                 if ($response) {
                     $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
@@ -105,12 +105,12 @@ class AttendanceController extends Controller
                         'student_attendance' => $student_attendance
                     ], 200);
                 }
-            } elseif ($inputs['prefix'] == 'door-entrance' || || $inputs['prefix'] == '/door-entrance') {
+            } elseif ($inputs['prefix'] == 'door-entrance' || $inputs['prefix'] == '/door-entrance') {
                 return response()->json([
                     'student' => $student,
                     'student_attendance' => $student_attendance
                 ], 200);
-            } elseif ($inputs['prefix'] == 'door-exit' || || $inputs['prefix'] == '/door-exit') {
+            } elseif ($inputs['prefix'] == 'door-exit' || $inputs['prefix'] == '/door-exit') {
                 $response = $this->exitAttendance($inputs['student_id']);
                 if ($response) {
                     $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
