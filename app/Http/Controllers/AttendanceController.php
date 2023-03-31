@@ -60,6 +60,7 @@ class AttendanceController extends Controller
     public function get_student_exam_data(Request $request)
     {
         $inputs = $request->all();
+        dd($inputs);
         $validator = Validator::make($inputs, ['student_id' => 'required', 'prefix' => 'required|string']);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
