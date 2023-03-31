@@ -67,7 +67,7 @@ class AttendanceController extends Controller
         $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
         $student = Student::findOrFail($inputs['student_id']);
 
-        if ($student_attendance == null && ($inputs['prefix'] == 'door-entrance') || $inputs['prefix'] == '/door-entrance')) {
+        if ($student_attendance == null && ($inputs['prefix'] == 'door-entrance' || $inputs['prefix'] == '/door-entrance') ) {
             $inputs['in_hall'] = 1;
             $student_attendance = ExamAttendance::create($inputs);
         }
