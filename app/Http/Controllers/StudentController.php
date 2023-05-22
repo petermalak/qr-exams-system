@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExamAnswersExport;
 use App\Exports\ExamAttendanceExport;
 use App\Imports\StudentsImport;
+use App\Models\ExamAnswer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -35,5 +37,10 @@ class StudentController extends Controller
    public function export_exam_attendance()
    {
        return Excel::download(new ExamAttendanceExport(), 'students.xlsx')->sendHeaders();
+   }
+
+   public function export_exam_answers()
+   {
+       return Excel::download(new ExamAnswersExport(), 'answers.xlsx')->sendHeaders();
    }
 }

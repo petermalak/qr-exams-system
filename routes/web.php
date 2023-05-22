@@ -22,6 +22,8 @@ Route::prefix('students')->group(function () {
     Route::post('/import', [StudentController::class, 'import_students'])->name('import-students');
     Route::get('/import', [StudentController::class, 'upload_file'])->name('import-student-view');
     Route::get('/export', [StudentController::class, 'export_exam_attendance'])->name('export-file');
+    Route::get('/export-answers', [StudentController::class, 'export_exam_answers'])->name('export-answers');
+
 });
 
 Route::prefix('classes')->group(function () {
