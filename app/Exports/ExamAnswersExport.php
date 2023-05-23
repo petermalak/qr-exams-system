@@ -23,6 +23,7 @@ class ExamAnswersExport implements FromCollection,WithMapping
         $class = ClassModel::find($student->class_id);
         $rowData = [
             $row->student_id,
+            $row->type,
             $student->name,
             $class->name,
             $row->examiner,
