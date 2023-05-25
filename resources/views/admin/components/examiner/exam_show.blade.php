@@ -97,7 +97,7 @@
                                         <input type="hidden" class="form-control input-name" id="wight{{ $key }}"
                                             name="answers[{{ $key }}][wight]" value="{{ $item->wight }}">
                                         <td id="student_inhall">
-                                            <input type="number" min="0" max="{{ $item->wight }}"
+                                            <input type="number" min="0" step="0.1" max="{{ $item->wight }}"
                                                 class="form-control input-name" id="mark-{{ $key }}"
                                                 name="answers[{{ $key }}][score]" required
                                                 value="{{ $item->score }}">
