@@ -85,7 +85,7 @@ Route::get('/main', function () {
 });
 
 Route::get('/q', function () {
-    $exams_attendance = ExamAttendance::where(['hall_in' == 1])->get();
+    $exams_attendance = ExamAttendance::where(['in_hall' == 1])->get();
     foreach($exams_attendance as $attendance ){
         $attendance->coptic = 1;
         $attendance->taks = 1;
