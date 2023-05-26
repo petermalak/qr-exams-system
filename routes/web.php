@@ -6,6 +6,7 @@ use App\Http\Controllers\ExamController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AttendanceController;
 use Illuminate\Support\Facades\Route;
+use App\Models\ExamAttendance;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,7 +84,13 @@ Route::get('/main', function () {
     return view('admin.main');
 });
 
-Route::get('/test', function () {
-    dd(now());
+Route::get('/q', function () {
+    $exams_attendance = ExamAttendance::where(['hall_in' == 1])->get();
+    foreach($exams_attendance as $attendance ){
+        $attendance->coptic = 1;
+        $attendance->taks = 1;
+        $attendance->save();
+    }
+    return 'nice';
 });
 
