@@ -83,3 +83,7 @@ Route::get('/main', function () {
     return view('admin.main');
 });
 
+Route::get('/test', function () {
+    dd(Carbon::now());
+});
+
