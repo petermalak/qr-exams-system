@@ -84,6 +84,6 @@ Route::get('/main', function () {
 });
 
 Route::get('/test', function () {
-    dd(Carbon::now());
+    dd(now());
 });
 
