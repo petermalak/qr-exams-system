@@ -164,6 +164,12 @@ class AttendanceController extends Controller
     public function exitAttendance($student_id): bool
     {
         $student_attendance = ExamAttendance::where('student_id', $student_id)->first();
+        $student = Student::find($student_id);
+        if($student->class_id > 8){
+            $student_attendance->alhan = 1;
+            $student_attendance->taks = 1;
+            $student_attendance->coptic = 1;
+        }
         if ($student_attendance->alhan == 1 && $student_attendance->coptic == 1 && $student_attendance->taks == 1) {
             $student_attendance->out_hall = 1;
             $student_attendance->save();
