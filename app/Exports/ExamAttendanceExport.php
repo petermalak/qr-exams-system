@@ -30,6 +30,7 @@ class ExamAttendanceExport implements FromCollection, WithHeadings, WithMapping
             $row->coptic ? '1' : '0',
             $row->taks  ? '1' : '0',
             $row->out_hall ? '1' : '0',
+            $row->created_at,
         ];
     }
 
