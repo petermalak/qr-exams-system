@@ -89,7 +89,11 @@
                                     @endphp --}}
                                     <tr>
                                         {{-- <td id="question_number">{{ $key }}</td> --}}
-                                        <td id="question">{{ $item->question }}</td>
+                                        @if (str_contains($item->question, 'div'))
+                                            <td id="question">{!! html_entity_decode($item->question) !!}</td>
+                                        @else
+                                            <td id="question">{{ $item->question }}</td>
+                                        @endif
                                         <input type="hidden" class="form-control input-name"
                                             id="question-{{ $key }}"
                                             name="answers[{{ $key }}][question]" value="{{ $item->question }}">

@@ -10,4 +10,5 @@ class ClassModel extends Model
 
     use HasFactory;
     protected $table = "classes";
+    protected $fillable = ['id','name','alhan_level', 'coptic_level', 'taks_level' ];
 }
