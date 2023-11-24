@@ -16,7 +16,7 @@
         </div>
     </section>
 
-        <div class="container mt-5">
+    <div class="container mt-5">
         <div class="card">
             <div class="card-header">
                 <h1 class="text-center">تعليمات هامة</h1>
@@ -24,7 +24,7 @@
             <div class="card-body text-center">
                 <?php
                 if ($instructionsObject !== null) {
-                    $instructionsLines = explode("+", $instructionsObject);
+                    $instructionsLines = explode('+', $instructionsObject);
                     foreach ($instructionsLines as $line) {
                         echo "<p>{$line}+</p>";
                     }
@@ -34,7 +34,11 @@
         </div>
     </div>
     <div class="card-body text-center">
-        <h2><span>اسم الفصل : {{$class_name}}</span></h2><span><h2>اسم خادم الفصل : {{$teacher_name}}</h2></span><span><h2> رقم تليفون الخادم :  {{$teacher_phone}}</h2></span>
+        <h2><span>اسم الفصل : {{ $class_name }}</span></h2><span>
+            <h2>اسم خادم الفصل : {{ $teacher_name }}</h2>
+        </span><span>
+            <h2> رقم تليفون الخادم : {{ $teacher_phone }}</h2>
+        </span>
     </div>
 
 
@@ -113,11 +117,20 @@
                                     @endphp --}}
                                     <tr>
                                         {{-- <td id="question_number">{{ $key }}</td> --}}
-                                        <td id="question">
-        <input type="hidden" class="form-control input-name original-question"
-            name="answers[{{ $key }}][original-question]" value="{{ $item->question }}">
-        {{ $item->question }}
-    </td>
+                                        {{-- <td id="question">
+                                            <input type="hidden" class="form-control input-name original-question"
+                                                name="answers[{{ $key }}][original-question]"
+                                                value="{{ $item->question }}">
+                                            {{ $item->question }}
+                                        </td> --}}
+                                        @if (str_contains($item->question, 'div'))
+                                            <td id="question">{!! html_entity_decode($item->question) !!}</td>
+                                        @else
+                                            <td id="question">{{ $item->question }}</td>
+                                        @endif
+                                        <input type="hidden" class="form-control input-name"
+                                            id="question-{{ $key }}"
+                                            name="answers[{{ $key }}][question]" value="{{ $item->question }}">
                                         <td id="wight">{{ $item->wight }}</td>
                                         <input type="hidden" class="form-control input-name" id="wight{{ $key }}"
                                             name="answers[{{ $key }}][wight]" value="{{ $item->wight }}">
@@ -128,8 +141,9 @@
                                                 value="{{ $item->score }}">
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-info show-answer-btn" data-answer="{{ $answers[$key] }}">
-                                            Show Answer
+                                            <button type="button" class="btn btn-info show-answer-btn"
+                                                data-answer="{{ $answers[$key] }}">
+                                                Show Answer
                                             </button>
                                         </td>
                                     </tr>
@@ -143,29 +157,27 @@
         </div>
     </section>
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const showAnswerButtons = document.querySelectorAll('.show-answer-btn');
+        document.addEventListener('DOMContentLoaded', function() {
+            const showAnswerButtons = document.querySelectorAll('.show-answer-btn');
 
-        showAnswerButtons.forEach(function (button) {
-            // Store the original question outside the loop
-            const originalQuestion = button.closest('tr').querySelector('.original-question').value;
+            showAnswerButtons.forEach(function(button) {
+                // Store the original question outside the loop
+                const originalQuestion = button.closest('tr').querySelector('.original-question').value;
 
-            button.addEventListener('click', function () {
-                const row = this.closest('tr');
-                const answerCell = row.querySelector('#question');
-                const answer = this.getAttribute('data-answer');
+                button.addEventListener('click', function() {
+                    const row = this.closest('tr');
+                    const answerCell = row.querySelector('#question');
+                    const answer = this.getAttribute('data-answer');
 
-                if (this.textContent.trim() === 'Show Answer') {
-                    answerCell.innerHTML = answer; // Show the answer
-                    this.textContent = 'Hide Answer';
-                } else {
-                    answerCell.innerHTML = originalQuestion; // Show the original question
-                    this.textContent = 'Show Answer';
-                }
+                    if (this.textContent.trim() === 'Show Answer') {
+                        answerCell.innerHTML = answer; // Show the answer
+                        this.textContent = 'Hide Answer';
+                    } else {
+                        answerCell.innerHTML = originalQuestion; // Show the original question
+                        this.textContent = 'Show Answer';
+                    }
+                });
             });
         });
-    });
-</script>
-
-
+    </script>
 @endsection
