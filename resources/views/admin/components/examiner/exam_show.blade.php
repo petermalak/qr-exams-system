@@ -33,13 +33,13 @@
             </div>
         </div>
     </div>
-    <div class="card-body text-center">
+    {{-- <div class="card-body text-center">
         <h2><span>اسم الفصل : {{ $class_name }}</span></h2><span>
             <h2>اسم خادم الفصل : {{ $teacher_name }}</h2>
         </span><span>
             <h2> رقم تليفون الخادم : {{ $teacher_phone }}</h2>
         </span>
-    </div>
+    </div> --}}
 
 
 
@@ -115,42 +115,53 @@
                                     {{-- @php
                                         $key += 1;
                                     @endphp --}}
-                                    <tr>
-                                        {{-- <td id="question_number">{{ $key }}</td> --}}
-                                        {{-- <td id="question">
-                                            <input type="hidden" class="form-control input-name original-question"
-                                                name="answers[{{ $key }}][original-question]"
-                                                value="{{ $item->question }}">
-                                            {{ $item->question }}
-                                        </td> --}}
-                                        @if (str_contains($item->question, 'div'))
-                                            <td id="question">{!! html_entity_decode($item->question) !!}</td>
-                                        @else
-                                            <td id="question">{{ $item->question }}</td>
-                                        @endif
-                                        <input type="hidden" class="form-control input-name"
-                                            id="question-{{ $key }}"
-                                            name="answers[{{ $key }}][question]" value="{{ $item->question }}">
-                                        <td id="wight">{{ $item->wight }}</td>
-                                        <input type="hidden" class="form-control input-name" id="wight{{ $key }}"
-                                            name="answers[{{ $key }}][wight]" value="{{ $item->wight }}">
-                                        <td id="student_inhall">
-                                            <input type="number" min="0" step="0.1" max="{{ $item->wight }}"
-                                                class="form-control input-name" id="mark-{{ $key }}"
-                                                name="answers[{{ $key }}][score]" required
-                                                value="{{ $item->score }}">
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-info show-answer-btn"
-                                                data-answer="{{ $answers[$key] }}">
-                                                Show Answer
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    @if ($key === 0)
+                                        @continue
+                                    @endif
+                                    @if (isset($item->question))
+                                        <tr>
+                                            {{-- <td id="question_number">{{ $key }}</td> --}}
+
+                                            @if (str_contains($item->question, 'div'))
+                                                <td id="question">
+                                                    <input type="hidden" class="form-control input-name original-question"
+                                                        name="answers[{{ $key + 1 }}][original-question]"
+                                                        value="{{ $item->question }}">
+                                                    {!! html_entity_decode($item->question) !!}
+                                                </td>
+                                            @else
+                                                <td id="question">
+                                                    <input type="hidden" class="form-control input-name original-question"
+                                                        name="answers[{{ $key }}][original-question]"
+                                                        value="{{ $item->question }}">
+                                                    {{ $item->question }}
+                                                </td>
+                                            @endif
+
+
+                                            <td id="wight">{{ $item->wight }}</td>
+                                            <input type="hidden" class="form-control input-name"
+                                                id="wight{{ $key }}" name="answers[{{ $key }}][wight]"
+                                                value="{{ $item->wight }}">
+                                            <td id="student_inhall">
+                                                <input type="number" min="0" step="0.1"
+                                                    max="{{ $item->wight }}" class="form-control input-name"
+                                                    id="mark-{{ $key }}"
+                                                    name="answers[{{ $key }}][score]" required
+                                                    value="{{ $item->score }}">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info show-answer-btn"
+                                                    data-answer="{{ $answers[$key - 1] }}">
+                                                    Show Answer
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endif
                                 @endforeach
                             </tbody>
                         </table>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" onclick="showConfirmation()" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
@@ -179,5 +190,18 @@
                 });
             });
         });
+
+        function showConfirmation() {
+            const confirmation = confirm('Are you sure you want to submit the form?');
+
+            if (confirmation) {
+                // Handle form submission
+                const myForm = document.getElementById('exam-selection');
+                myForm.submit();
+            } else {
+                // Cancel form submission
+                console.log('Form submission cancelled');
+            }
+        }
     </script>
 @endsection

@@ -6,83 +6,103 @@
         },
         {
             "question": "1-\tفى الكنيسة (نصلى) و (نرنم) و (نتعلم)",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "2- فرحت   (بالقائلين)  لى إلى  (بيت)  الرب  (نذهب) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "3- أما أنا  (فبكثرة)  رحمتك  (أدخل)  بيتك و (أسجد)  قدام  (هيكل)  قدسك  (بمخافتك) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "4- فى الكنيسة بنشوف أيقونات (بابا يسوع)   و(ماما العذراء)  و  (القديسين والقديسات) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "5-\tالكنيسة هى بيتنا كلنا وبيت (الملائكة) و (القديسين) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "6-\tمساكنك (محبوبة)  أيها الرب  إله (القوات) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "7-\tلما بشوف الصينية والنجمة بافتكر (المذود)",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "8-\tالشورية بتفكرنا لما كان بابا يسوع فى  (بطن ماما العذراء) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "<div><span>9-\t    </span><img src='/admin/images/taks/01(1).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>10-\t    </span><img src='/admin/images/taks/01(2).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>11-\t    </span><img src='/admin/images/taks/01(3).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>12-\t    </span><img src='/admin/images/taks/01(4).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>13-\t    </span><img src='/admin/images/taks/01(5).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>14-\t    </span><img src='/admin/images/taks/01(6).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>15-\t    </span><img src='/admin/images/taks/01(7).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>16-\t    </span><img src='/admin/images/taks/01(8).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>17-\t    </span><img src='/admin/images/taks/01(9).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>18-\t    </span><img src='/admin/images/taks/01(10).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "19-\tأبانا الذى فى السموات (بالعربي) ",
-            "wight": "10"
+            "wight": "10",
+            "answer": "1"
         },
         {
             "question": "17-\tأبانا الذى فى السموات (بالقبطي) - الجزء الاول إلى (نان إيـﭭـول)",
-            "wight": "15"
+            "wight": "15",
+            "answer": "1"
         }
     ],
     "key": "022 - 021",
