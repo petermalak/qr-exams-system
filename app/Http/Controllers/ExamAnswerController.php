@@ -51,7 +51,13 @@ class ExamAnswerController extends Controller
         // $teacher_name = Teatcher::where('class_id', $student->class_id)->where('subject',$inputs['type'])->first()->name;
         $teacher_name = '';
 
+        // $teacher_name = Teatcher::where('class_id', $student->class_id)->where('subject',$inputs['type'])->first()->name;
+        $teacher_name = '';
+
         $class_name = ClassModel::find($student->class_id)->name;
+        // $teacher_phone = Teatcher::where('class_id', $student->class_id)->where('subject',$inputs['type'])->first()->phone;
+        $teacher_phone = '';
+
         // $teacher_phone = Teatcher::where('class_id', $student->class_id)->where('subject',$inputs['type'])->first()->phone;
         $teacher_phone = '';
 
@@ -78,6 +84,7 @@ class ExamAnswerController extends Controller
 
             $exam_answer = ExamAnswer::create($inputs);
             $exam_answer->answers = $questions;
+            
             $exam_answer->save();
         } else {
             $exam_answer->answers = $questions;
