@@ -5,8 +5,11 @@ use App\Http\Controllers\ExamAnswerController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\ExamQuestionsAnswerController;
+use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 use App\Models\ExamAttendance;
+use App\Models\ExamQuestionsAnswer;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +39,15 @@ Route::prefix('exams')->group(function () {
     Route::post('/import', [ExamController::class, 'import_exams'])->name('import-exams');
     Route::get('/import', [ExamController::class, 'upload_file'])->name('import-exam-view');
 });
+
+Route::prefix('questions')->group(function () {
+    Route::post('/import', [QuestionController::class, 'import_questions'])->name('import-questions');
+    Route::get('/import', [QuestionController::class, 'upload_file'])->name('import-question-view');
+});
+
+Route::resource('/take-written-exam', ExamQuestionsAnswerController::class)->only('index', 'create');
+Route::post('/take-written-exam', [ExamQuestionsAnswerController::class, 'update'])->name('take-written-exam.update');
+
 
 Route::resource('/take-exam', ExamAnswerController::class)->only('index', 'create');
 Route::post('/take-exam', [ExamAnswerController::class, 'update'])->name('take-exam.update');
