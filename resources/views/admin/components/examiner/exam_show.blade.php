@@ -134,7 +134,24 @@
                                                     <input type="hidden" class="form-control input-name original-question"
                                                         name="answers[{{ $key }}][original-question]"
                                                         value="{{ $item->question }}">
-                                                    {{ $item->question }}
+
+                                                    @php
+                                                        $text = $item->question;
+                                                        $parts = explode('@', $text);
+                                                    @endphp
+
+                                                    @foreach ($parts as $i => $part)
+                                                        @if ($i % 2 == 0)
+                                                            {{ $part }}
+                                                            <!-- Arabic text or any other non-Coptic content -->
+                                                        @else
+                                                            <span class="coptic-text">{{ $part }}</span>
+                                                            <!-- Coptic text with the applied style -->
+                                                        @endif
+                                                    @endforeach
+
+
+                                                    {{-- {{ $item->question }} --}}
                                                 </td>
                                             @endif
 

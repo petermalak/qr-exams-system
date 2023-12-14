@@ -66,6 +66,12 @@
                         </div>
                     </div>
                     <br>
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="{{ url('/take-written-exam') }}" class="btn btn-block btn-danger">Written Exam</a>
+                        </div>
+                    </div>
+                    <br>
                     <br>
                 </div>
             </div>

@@ -16,3 +16,14 @@
     opacity: .5; /* in FireFox */
     filter: alpha(opacity=50); /* in IE */
 }
+
+
+
+@font-face {
+    font-family: 'AvvaShenouda';
+    src: url('./Avva_Shenouda.ttf') format('truetype');
+}
+
+.coptic-text {
+    font-family: 'AvvaShenouda';
+}
