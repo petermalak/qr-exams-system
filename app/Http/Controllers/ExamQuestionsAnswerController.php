@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\ClassModel;
 use App\Models\Exam;
 use App\Models\ExamAnswer;
+use App\Models\ExamQuestionsAnswer;
+use App\Models\Question;
 use App\Models\Student;
-use App\Models\Teatcher;
+use App\Models\WrittenExam;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
-class ExamAnswerController extends Controller
+class ExamQuestionsAnswerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +26,7 @@ class ExamAnswerController extends Controller
      */
     public function index()
     {
-        return view('admin.components.examiner.index');
+        return view('admin.components.examiner.written');
     }
 
     /**
@@ -47,43 +48,38 @@ class ExamAnswerController extends Controller
         }
         unset($inputs['_token']);
         $class = ClassModel::find($student->class_id);
-        $exam = Exam::where('class_id', $student->class_id)->where('type', $inputs['type'])->first();
-        // $teacher_name = Teatcher::where('class_id', $student->class_id)->where('subject',$inputs['type'])->first()->name;
+        $exam = WrittenExam::where('class_id', $student->class_id)->where('type', $inputs['type'])->first();
         $teacher_name = '';
 
         $class_name = ClassModel::find($student->class_id)->name;
-        // $teacher_phone = Teatcher::where('class_id', $student->class_id)->where('subject',$inputs['type'])->first()->phone;
         $teacher_phone = '';
 
-        $questions = json_decode($exam->questions);
+        $questions = Question::where('written_exam_id', $exam->id)->get();
         $answers = [];
-        foreach ($questions as $question) {
-            if (isset($question->answer))
-                $answers[] = $question->answer;
-        }
+        // foreach ($questions as $question) {
+        //     if (isset($question->answer))
+        //         $answers[] = $question->answer;
+        // }
         // dd($answers);
+
         foreach ($questions as $item) {
-            $item->score = null;
+            $item->score = 0;
+            $item->examiner =  $inputs['examiner'];
         }
-        $instructionsObject = null;
-        foreach ($questions as $question) {
-            if (isset($question->instructions)) {
-                $instructionsObject = $question->instructions;
-                break;
-            }
-        }
+
         //        $inputs['answers'] = $questions;
-        $exam_answer = ExamAnswer::where('student_id', $inputs['student_id'])->where('type', $inputs['type'])->first();
-        if (!$exam_answer) {
+        // $exam_answer = ExamAnswer::where('student_id', $inputs['student_id'])->where('type', $inputs['type'])->first();
+        // if (!$exam_answer) {
 
-            $exam_answer = ExamAnswer::create($inputs);
-            $exam_answer->answers = $questions;
-            $exam_answer->save();
-        } else {
-            $exam_answer->answers = json_decode($exam_answer->answers);
-        }
-
-        return view('admin.components.examiner.exam_show', compact('answers', 'teacher_phone', 'class_name', 'teacher_name', 'exam_answer', 'class', 'student', 'exam', 'instructionsObject'));
+        //     $exam_answer = ExamAnswer::create($inputs);
+        //     $exam_answer->answers = $questions;
+        //     $exam_answer->save();
+        // } else {
+        //     $exam_answer->answers = json_decode($exam_answer->answers);
+        // }
+        $exam_answer = null;
+        $examiner = $inputs['examiner'];
+        return view('admin.components.examiner.written_exam_show', compact('answers', 'teacher_phone', 'class_name', 'teacher_name', 'exam_answer', 'class', 'student', 'exam', 'examiner', 'questions'));
     }
 
     /**
@@ -105,9 +101,25 @@ class ExamAnswerController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
         unset($inputs['_token']);
-        $exam_answer = ExamAnswer::find($inputs['id']);
-        $exam_answer->update($inputs);
-        $exam_answer->save();
+
+        foreach ($inputs['answers'] as $key => $value) {
+
+            $question_answer = ExamQuestionsAnswer::where('student_id', $inputs['student_id'])->where('question_id', $value['question_id'])->first();
+            if (!$question_answer) {
+                ExamQuestionsAnswer::create([
+                    'examiner' => $inputs['examiner'],
+                    'wight' => $value['wight'],
+                    'score' => $value['score'],
+                    'question_id' => $value['question_id'],
+                    'student_id' => $inputs['student_id'],
+                    'type' => $inputs['type']
+                ]);
+            }
+            else{
+                $question_answer->score = $value['score'];
+                $question_answer->save();               
+            }
+        }
         Session::flash('success', 'لقد تم تسجيل الاجابات بنجاح');
         return view('admin.components.examiner.index');
     }

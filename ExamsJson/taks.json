@@ -1,88 +1,116 @@
 {
     "key": "012 - 011",
-    "exam": [{
+    "exam": [
+        {
+            "instructions": "في حالة وجود أي استفسار يُرجَي الرجوع لخدام المادة:+أ/ بيشوي رضا حبيب: 01014222315 + أ/ إسحق إبراهيم: 01220068681"
+        },
+        {
             "question": "1-\tفى الكنيسة (نصلى) و (نرنم) و (نتعلم)",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "2- فرحت   (بالقائلين)  لى إلى  (بيت)  الرب  (نذهب) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "3- أما أنا  (فبكثرة)  رحمتك  (أدخل)  بيتك و (أسجد)  قدام  (هيكل)  قدسك  (بمخافتك) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "4- فى الكنيسة بنشوف أيقونات (بابا يسوع)   و(ماما العذراء)  و  (القديسين والقديسات) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "5-\tالكنيسة هى بيتنا كلنا وبيت (الملائكة) و (القديسين) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "6-\tمساكنك (محبوبة)  أيها الرب  إله (القوات) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "7-\tلما بشوف الصينية والنجمة بافتكر (المذود)",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "8-\tالشورية بتفكرنا لما كان بابا يسوع فى  (بطن ماما العذراء) ",
-            "wight": "2"
+            "wight": "2",
+            "answer": "1"
         },
         {
             "question": "<div><span>9-\t    </span><img src='/admin/images/taks/01(1).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>10-\t    </span><img src='/admin/images/taks/01(2).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>11-\t    </span><img src='/admin/images/taks/01(3).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>12-\t    </span><img src='/admin/images/taks/01(4).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>13-\t    </span><img src='/admin/images/taks/01(5).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>14-\t    </span><img src='/admin/images/taks/01(6).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>15-\t    </span><img src='/admin/images/taks/01(7).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>16-\t    </span><img src='/admin/images/taks/01(8).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>17-\t    </span><img src='/admin/images/taks/01(9).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "<div><span>18-\t    </span><img src='/admin/images/taks/01(10).jpg' ></div>",
-            "wight": "1"
+            "wight": "1",
+            "answer": "1"
         },
         {
             "question": "19-\tأبانا الذى فى السموات (بالعربي) ",
-            "wight": "10"
+            "wight": "10",
+            "answer": "1"
         },
         {
-            "question": "20-\tأبانا الذى فى السموات (بالقبطي) - الجزء الاول إلى (نان إيـﭭـول)",
-            "wight": "15"
+            "question": "17-\tأبانا الذى فى السموات (بالقبطي) - الجزء الاول إلى (نان إيـﭭـول)",
+            "wight": "15",
+            "answer": "1"
         }
     ],
     "key": "022 - 021",
-    "exam": [{
+    "exam": [
+        {
+            "instructions": "في حالة وجود أي استفسار يُرجَي الرجوع لخدام المادة:+أ/ بيشوي رضا حبيب 01014222315+أ/ إسحق إبراهيم 01220068681+أ/ چون عاطف 01284300589 "
+        },
+        {
             "question": "1-\tعدد أسرار الكنيسة ( 4 – 5 – ..7.. )",
             "wight": "2"
         },
@@ -124,7 +152,11 @@
         }
     ],
     "key": "113 - 112 - 111",
-    "exam": [{
+    "exam": [
+        {
+            "instructions": "في حالة وجود أي استفسار يُرجَي الرجوع لخدام المادة:+أ/ چون عاطف 01284300589+أ/ ﭼون مجدي 01275034174 +أ/ ماركو ماهر 01221554457  "
+        },
+        {
             "question": "1-\t ..يكون لون ستر الهيكل فى أسبوع الآلام   ..أسود..    وفى الخماسين    ..أبيض..   أما فى باقى الأيام ..أحمر",
             "wight": "3"
         },
@@ -194,7 +226,11 @@
         }
     ],
     "key": "121",
-    "exam": [{
+    "exam": [
+        {
+            "instructions": "في حالة وجود أي استفسار يُرجَي الرجوع لخدام المادة:+أ/ ﭼون مجدي 01275034174+أ/ ماركو ماهر 01221554457   "
+        },
+        {
             "question": "1-\t مؤسس كل الأسرار هم التلاميذ وسلموها إلى من بعدهم  ( صح - ..خطأ..)",
             "wight": "2"
         },
@@ -246,5 +282,17 @@
             "question": "13-  \tتسميع قانون الايمان",
             "wight": "25"
         }
+    ],
+    "key": "Test",
+    "exam": [
+        {
+            "instructions": "في حالة وجود أي استفسار يُرجَي الرجوع لخدام المادة:+أ/ ﭼون مجدي 01275034174+أ/ ماركو ماهر 01221554457   "
+        },
+        {
+            "question": "1-\t معنى كلمة عسل     @`Ebiw@     ",
+            "wight": "2",
+            "answer": " @`Ebiw@ "
+        }
+
     ]
 }
