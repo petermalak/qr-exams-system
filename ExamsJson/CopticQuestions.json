@@ -2,10 +2,7 @@
     "key": "331",
     "exam": [
         {
-            "instructions": "علي الخادم نُطْقْ الكلمة للمخدوم لأن المخدوم حافظ الكلمة سماعي فقط لا يستطيع القراءة+في حالة وجود أي استفسار يُرجَي الرجوع لخدام المادة:+ت/ ماريا إيليا (01203735337)+ت/ مريم جرجس ( 01286621080 )"
-        },
-        {
-            "question": "1-……………………@ `Cqai `Mpe1114w2 @  ",
+            "question": "1--@ M3na@ ……………………@ `Cqai `Mpe1114w2 @",
             "wight": "3",
             "answers": [
                 {
@@ -24,11 +21,11 @@
             "written_exam_id": 1
         },
         {
-            "question": "2-@ `Teten @ ………………… @`` E Petennov5 @ ",
+            "question": "2-@ Teten @ ………………… @`` E Petennov5 @ ",
             "wight": "3",
             "answers": [
                 {
-                    "answer": "@ `Mei @ ",
+                    "answer": "@ Mei @ ",
                     "status": 0
                 },
                 {
@@ -36,7 +33,7 @@
                     "status": 1
                 },
                 {
-                    "answer": "@ `@l3l @ ",
+                    "answer": "@ `2l3l @",
                     "status": 0
                 }
             ],
@@ -317,11 +314,11 @@
             "answers": [
                 {
                     "answer": "3 ",
-                    "status": 0
+                    "status": 1
                 },
                 {
                     "answer": "6  ",
-                    "status": 1
+                    "status": 0
                 },
                 {
                     "answer": "4",
@@ -336,11 +333,11 @@
             "answers": [
                 {
                     "answer": "32 ",
-                    "status": 0
+                    "status": 1
                 },
                 {
                     "answer": "28 ",
-                    "status": 1
+                    "status": 0
                 },
                 {
                     "answer": "24",
@@ -355,15 +352,15 @@
             "answers": [
                 {
                     "answer": "@ T3bt @",
-                    "status": 0
+                    "status": 1
                 },
                 {
                     "answer": " @  T3b @ ",
                     "status": 0
                 },
                 {
-                    "answer": " @ @ai @ ",
-                    "status": 1
+                    "answer": " @ 2ai @ ",
+                    "status": 0
                 }
             ],
             "written_exam_id": 2
@@ -397,11 +394,11 @@
                 },
                 {
                     "answer": "@  A7ioc @  ",
-                    "status": 1
+                    "status": 0
                 },
                 {
                     "answer": " @ Xaki @ ",
-                    "status": 0
+                    "status": 1
                 }
             ],
             "written_exam_id": 2
@@ -412,11 +409,11 @@
             "answers": [
                 {
                     "answer": "@ Piovai  @",
-                    "status": 1
+                    "status": 0
                 },
                 {
                     "answer": " @  Pi2a24 @ ",
-                    "status": 0
+                    "status": 1
                 },
                 {
                     "answer": " @ Pi2omt @ ",
@@ -445,7 +442,7 @@
             "written_exam_id": 2
         },
         {
-            "question": "9-   ب اذا جاء بعده حرف متحرك@B@ ينطق حرف ",
+            "question": "9- ب اذا جاء بعده حرف متحرك@B@ ينطق حرف ",
             "wight": "3",
             "answers": [
                 {
@@ -465,17 +462,17 @@
             "answers": [
                 {
                     "answer": "صح",
-                    "status": 0
+                    "status": 1
                 },
                 {
                     "answer": "خطا ",
-                    "status": 1
+                    "status": 0
                 }
             ],
             "written_exam_id": 2
         },
         {
-            "question": "11-   تعنى وردة@@ai@ كلمة ",
+            "question": "11-   تعنى وردة@2ai@ كلمة    ",
             "wight": "3",
             "answers": [
                 {
@@ -540,11 +537,11 @@
             "answers": [
                 {
                     "answer": "صح",
-                    "status": 0
+                    "status": 1
                 },
                 {
                     "answer": "خطا ",
-                    "status": 1
+                    "status": 0
                 }
             ],
             "written_exam_id": 2
@@ -643,7 +640,7 @@
             "written_exam_id": 3
         },
         {
-            "question": "7- @ `Pe4nomoc @  كلمة بها صفة ملكية مصرفة مع هو ",
+            "question": "7- @ Pe4nomoc @  كلمة بها صفة ملكية مصرفة مع هو ",
             "wight": "3",
             "answers": [
                 {
@@ -658,7 +655,7 @@
             "written_exam_id": 3
         },
         {
-            "question": "8-@ `Fmwit @ ………………… @ `nire4ernobi @ ",
+            "question": "8-@ `Fmwit @ ………………… @ nire4ernobi @ ",
             "wight": "3",
             "answers": [
                 {
@@ -682,7 +679,7 @@
             "answers": [
                 {
                     "answer": "يلهج",
-                    "status": 0
+                    "status": 1
                 },
                 {
                     "answer": "يصلى ",
@@ -690,13 +687,13 @@
                 },
                 {
                     "answer": " ارادته ",
-                    "status": 1
+                    "status": 0
                 }
             ],
             "written_exam_id": 3
         },
         {
-            "question": "10- @Ovgwb `nta4 `nnec4or4er @   الفعل هنا فى زمن",
+            "question": "10- @Ovgwbi `nta4 `nnec4or4er @   الفعل هنا فى زمن",
             "wight": "3",
             "answers": [
                 {
@@ -708,7 +705,7 @@
                     "status": 1
                 },
                 {
-                    "answer": " المستقبل اليقينى فى الاثبات ",
+                    "answer": " الحاضر الدال على العادة فى النفى  ",
                     "status": 0
                 }
             ],
@@ -761,16 +758,16 @@
             "wight": "3",
             "answers": [
                 {
-                    "answer": "سلوك",
-                    "status": 0
-                },
-                {
-                    "answer": "حكمة ",
-                    "status": 0
-                },
-                {
-                    "answer": "ارادته ",
+                    "answer": "ارادته",
                     "status": 1
+                },
+                {
+                    "answer": "حكمته   ",
+                    "status": 0
+                },
+                {
+                    "answer": "سلوكه  ",
+                    "status": 0
                 }
             ],
             "written_exam_id": 2
@@ -788,7 +785,7 @@
                     "status": 0
                 },
                 {
-                    "answer": "@ @wpi @ ",
+                    "answer": "@ 2wpi @ ",
                     "status": 1
                 }
             ],
@@ -814,12 +811,10 @@
             "written_exam_id": 2
         }
     ],
-
-
     "key": "131-132-133",
     "exam": [
         {
-            "question": "1-@ `@0eh @  ينطق فى كلمة )@ ) ((((@حرف  (  (( ينطق ث – ينطق ت – ينطق س )",
+            "question": "1-@ `20eh @  ينطق فى كلمة )@ ) @حرف  (  (",
             "wight": "3",
             "answers": [
                 {
@@ -838,7 +833,7 @@
             "written_exam_id": 7
         },
         {
-            "question": "2-@ `Nca4 @  ينطق فى كلمة )@ C ((((@حرف  (  (( ينطق ك – ينطق س – ينطق ص )",
+            "question": "2-@ `Nca4 @  ينطق فى كلمة )@ C ((((@حرف  (  (",
             "wight": "3",
             "answers": [
                 {
@@ -857,7 +852,7 @@
             "written_exam_id": 7
         },
         {
-            "question": "3-@ Totc @  ينطق فى كلمة )@ T ((((@حرف  (  (( ينطق د – ينطق ت – ينطق ط )",
+            "question": "3-@ Totc @  ينطق فى كلمة )@ T (@حرف  (  (",
             "wight": "3",
             "answers": [
                 {
@@ -876,7 +871,7 @@
             "written_exam_id": 7
         },
         {
-            "question": "4-@ Jraf3 @  ينطق فى كلمة )@ J ((((@حرف  (  (( ينطق ن – ينطق ج – ينطق غ )",
+            "question": "4-@ Jraf3 @  ينطق فى كلمة )@ J (@حرف  (  (",
             "wight": "3",
             "answers": [
                 {
@@ -895,7 +890,7 @@
             "written_exam_id": 7
         },
         {
-            "question": "5-@ Xere @  ينطق فى كلمة )@ X ((((@حرف  (  (( ينطق ش – ينطق ك – ينطق خ )",
+            "question": "5-@ Xere @  ينطق فى كلمة )@ X (@حرف  (  (",
             "wight": "3",
             "answers": [
                 {
@@ -914,7 +909,7 @@
             "written_exam_id": 7
         },
         {
-            "question": "6-@ Xwra @  ينطق فى كلمة )@ X ((((@حرف  (  (( ينطق خ – ينطق ك – ينطق ش )",
+            "question": "6-@ Xwra @  ينطق فى كلمة )@ X (@حرف  (  (",
             "wight": "3",
             "answers": [
                 {
@@ -932,46 +927,28 @@
             ],
             "written_exam_id": 7
         },
+
         {
-            "question": "7-   مفيش اسالة اكمل ",
+            "question": "7-@ Gov2t @  ينطق فى كلمة )@ G (@حرف  ( ( ",
             "wight": "3",
             "answers": [
                 {
-                    "answer": "@ Piovai  @",
-                    "status": 1
-                },
-                {
-                    "answer": " @  Pi2a24 @ ",
+                    "answer": "ينطق ج ",
                     "status": 0
                 },
                 {
-                    "answer": " @ Pi2omt @ ",
+                    "answer": "ينطق چ ",
+                    "status": 1
+                },
+                {
+                    "answer": " ينطق غ  ",
                     "status": 0
                 }
             ],
             "written_exam_id": 7
         },
         {
-            "question": "8-……………………@ Eron ((((@( معنى كلمة انظر الينا (  @ Gov2t @ - @ Cwtem @  - @ Comc@ )",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ Gov2t @",
-                    "status": 0
-                },
-                {
-                    "answer": "@ Cwtem @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Comc@ ",
-                    "status": 1
-                }
-            ],
-            "written_exam_id": 7
-        },
-        {
-            "question": "9- @ `Fnov5                 Ov@ تنطق  (  (   ق- ى  - اوو )",
+            "question": "8- @ `Fnov5                 Ov@ تنطق ",
             "wight": "3",
             "answers": [
                 {
@@ -990,83 +967,82 @@
             "written_exam_id": 7
         },
         {
-            "question": "10- @ Nai nan @ معناها  (  (  اسمعنا- ارحمنا   - انظر الينا )",
+            "question": "9-@ `Ctavroc @ معنى كلمة (  ",
             "wight": "3",
             "answers": [
                 {
-                    "answer": "اسمعنا",
-                    "status": 0
-                },
-                {
-                    "answer": "ارحمنا",
+                    "answer": "صليب ",
                     "status": 1
                 },
                 {
-                    "answer": "انظر الينا",
+                    "answer": "شهيد  ",
+                    "status": 0
+                },
+                {
+                    "answer": "عيد",
                     "status": 0
                 }
             ],
             "written_exam_id": 7
         },
         {
-            "question": "11-كلمة انت بالقبطى  (( @ `N0ok @ - @  Anok @  - @ Anon @)",
+            "question": "10-@ Ajjeloc @  ينطق فى كلمة )@ J @حرف  (  (",
             "wight": "3",
             "answers": [
                 {
-                    "answer": "@ `N0ok @",
+                    "answer": "الاثنين معا",
                     "status": 1
                 },
                 {
-                    "answer": "@  Anok @",
+                    "answer": "ينطق ج ",
                     "status": 0
                 },
                 {
-                    "answer": "@ Anon @",
+                    "answer": "ينطق غ",
                     "status": 0
                 }
             ],
             "written_exam_id": 7
         },
         {
-            "question": "12-كلمة غلاء معناها اية  (( @ Ovpwn @ - @  Ehbwn @  - @ Ov`hbwn @)",
+            "question": "11- @ E0ovab @ اختصار كلمة قدوس  ",
             "wight": "3",
             "answers": [
                 {
-                    "answer": "@ Ovpwn @",
+                    "answer": "@ `=)=ov @ ",
                     "status": 0
                 },
                 {
-                    "answer": "@  Ehbwn @",
+                    "answer": "@ E==b=b @",
                     "status": 0
                 },
                 {
-                    "answer": "@ Ov`hbwn @",
+                    "answer": "@ =E=0=v @",
+                    "status": 1
+                },                {
+                    "answer": "@ Cob}{|( @",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "12-@ C @ ينطق س & ص & ز  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
                     "status": 1
                 }
             ],
             "written_exam_id": 7
         },
         {
-            "question": "13-كلمة خلاص معناها اية  (( @ @ai @ - @  Nai @  - @ Ovgai @)",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ 2ai @",
-                    "status": 0
-                },
-                {
-                    "answer": "@  Nai @",
-                    "status": 0
-                },
-                {
-                    "answer": "@ Ovgai @",
-                    "status": 1
-                }
-            ],
-            "written_exam_id": 7
-        },
-        {
-            "question": "14- @ gagi @ حرف لا ينطق فى كلمة  (  (  ج - ج – الاثنين معا )",
+            "question": "13- @ gagi @ حرف لا ينطق فى كلمة",
             "wight": "3",
             "answers": [
                 {
@@ -1085,45 +1061,7 @@
             "written_exam_id": 7
         },
         {
-            "question": "15-   مفيش اسالة اكمل ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ Piovai  @",
-                    "status": 1
-                },
-                {
-                    "answer": " @  Pi2a24 @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Pi2omt @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 7
-        },
-        {
-            "question": "16-   مفيش اسالة اكمل ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ Piovai  @",
-                    "status": 1
-                },
-                {
-                    "answer": " @  Pi2a24 @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Pi2omt @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 7
-        },
-        {
-            "question": "17- @ `Psoic @ اختصار كلمة (  (  @ Poic @  -  @ Pock @   -@  Psc  @)",
+            "question": "14- @ `Psoic @ اختصار كلمة",
             "wight": "3",
             "answers": [
                 {
@@ -1140,72 +1078,12 @@
                 }
             ],
             "written_exam_id": 7
-        },
-        {
-            "question": "18-   مفيش اسالة اكمل ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ Piovai  @",
-                    "status": 1
-                },
-                {
-                    "answer": " @  Pi2a24 @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Pi2omt @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 7
-        },
-        {
-            "question": "19-   مفيش اسالة اكمل ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ Piovai  @",
-                    "status": 1
-                },
-                {
-                    "answer": " @  Pi2a24 @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Pi2omt @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 7
-        },
-        {
-            "question": "20-   مفيش اسالة اكمل ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ Piovai  @",
-                    "status": 1
-                },
-                {
-                    "answer": " @  Pi2a24 @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Pi2omt @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 7
         }
-    ],
-
-
-    
+    ],  
     "key": "211-212-221",
     "exam": [
         {
-            "question": "1-@ Twbh @  ينطق فى كلمة )@ T ((((@حرف  (  (( ينطق تى – ينطق ط – ينطق ت )",
+            "question": "1-@ Twbh @  ينطق فى كلمة )@ T @حرف  (  (",
             "wight": "3",
             "answers": [
                 {
@@ -1224,7 +1102,7 @@
             "written_exam_id": 10
         },
         {
-            "question": "2-@ Cohmoc @  ينطق فى كلمة )@ C ((((@حرف  (  (( ينطق ص – ينطق س – ينطق ز)",
+            "question": "2-@ `Cmov @    ينطق فى كلمة ) @ C @حرف  (  (",
             "wight": "3",
             "answers": [
                 {
@@ -1243,7 +1121,7 @@
             "written_exam_id": 10
         },
         {
-            "question": "3-@ Ajjeloc @  ينطق فى كلمة )@ J ((((@حرف  (  (( ينطق ن – ينطق ج – ينطق غ )",
+            "question": "3-@ Ajjeloc @   الثانى  ينطق فى كلمة )@ J @حرف  (  (",
             "wight": "3",
             "answers": [
                 {
@@ -1262,31 +1140,31 @@
             "written_exam_id": 10
         },
         {
-            "question": "4-@ Tobi @  ينطق فى كلمة )@ B ((((@حرف  (  (( ينطق ب – ينطق ب – ينطق ف )",
+            "question": "4-@ Tobi @  ينطق فى كلمة )@ B @حرف  (  (",
             "wight": "3",
             "answers": [
                 {
                     "answer": "ينطق ف ",
-                    "status": 0
-                },
-                {
-                    "answer": "ينطق ب",
-                    "status": 0
-                },
-                {
-                    "answer": "ينطق ب",
                     "status": 1
+                },
+                {
+                    "answer": "ينطق ت",
+                    "status": 0
+                },
+                {
+                    "answer": "ينطق ب",
+                    "status": 0
                 }
             ],
             "written_exam_id": 10
         },
         {
-            "question": "5-@ Entoli @  ينطق فى كلمة )@ t ((((@حرف  (  (( ينطق ط – ينطق ت – ينطق د )",
+            "question": "5-@ Entoli @  ينطق فى كلمة )@ t @حرف  (  (",
             "wight": "3",
             "answers": [
                 {
                     "answer": "ينطق د",
-                    "status": 0
+                    "status": 1
                 },
                 {
                     "answer": "  ينطق ت",
@@ -1294,22 +1172,22 @@
                 },
                 {
                     "answer": "ينطق ط ",
-                    "status": 1
+                    "status": 0
                 }
             ],
             "written_exam_id": 10
         },
         {
-            "question": "6-من الحرف المتحركة القابلة للكسر  (( @ #  I  E  W  @ - @  V   E  I  # @  - @ A  V  E  # @)",
+            "question": "6-من الحرف المتحركة القابلة للكسر ",
             "wight": "3",
             "answers": [
                 {
                     "answer": "@ #  I  E  W  @ ",
-                    "status": 1
+                    "status": 0
                 },
                 {
                     "answer": " @  V   E  I  # @",
-                    "status": 0
+                    "status": 1
                 },
                 {
                     "answer": " @ A  V  E  # @ ",
@@ -1319,31 +1197,12 @@
             "written_exam_id": 10
         },
         {
-            "question": "7-من الحرف المتحركة القابلة للفتح  (( @ W  E  I  @ - @  A @  - @ A   W   V @)",
+            "question": "7-من الحرف المتحركة القابلة للضم  ",
             "wight": "3",
             "answers": [
                 {
-                    "answer": "@ W  E  I  @",
+                    "answer": "@ O  W  @ ",
                     "status": 1
-                },
-                {
-                    "answer": " @  A @  ",
-                    "status": 0
-                },
-                {
-                    "answer": "@ A   W   V @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 10
-        },
-        {
-            "question": "8-من الحرف المتحركة القابلة للضم  (( @ O  W  E  @ - @  O W  A @  - @ O V W @)",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ O  W  E  @",
-                    "status": 0
                 },
                 {
                     "answer": "@  O W  A @ ",
@@ -1351,13 +1210,13 @@
                 },
                 {
                     "answer": " @ O V W @ ",
-                    "status": 1
+                    "status": 0
                 }
             ],
             "written_exam_id": 10
         },
         {
-            "question": "9- عيد سعيد ترجمتها   (( @ No4ri ehooh @ - @  No4ri 2ai @  - @ Nofri 2ai @ -  @ Nov4ri egwrh @)",
+            "question": "8- عيد سعيد ترجمتها   ",
             "wight": "3",
             "answers": [
                 {
@@ -1366,21 +1225,21 @@
                 },
                 {
                     "answer": "@  No4ri 2ai @",
-                    "status": 0
+                    "status": 1
                 },
                 {
                     "answer": "@ Nofri 2ai @",
-                    "status": 1
+                    "status": 0
                 },
                 {
                     "answer": "@ Nov4ri egwrh @",
-                    "status": 1
+                    "status": 0
                 }
             ],
             "written_exam_id": 10
         },
         {
-            "question": "10- شهر قبطى مرتبط بالعذراء مريم  (( @ Pa2nc @ - @  Ep3p @  - @ Koiak @ -  @ Twbi@)",
+            "question": "9- شهر قبطى مرتبط بالعذراء مريم  ",
             "wight": "3",
             "answers": [
                 {
@@ -1389,11 +1248,11 @@
                 },
                 {
                     "answer": " @  Ep3p @",
-                    "status": 1
+                    "status": 0
                 },
                 {
-                    "answer": "@ Koiak @",
-                    "status": 0
+                    "answer": "@ Xoiak  @",
+                    "status": 1
                 },
                 {
                     "answer": "@ Twbi @",
@@ -1403,7 +1262,7 @@
             "written_exam_id": 10
         },
         {
-            "question": "11- @ `Fnov5 @ اختصار كلمة  (  (  @ F5 @ - @  `F5 @  - @ =F==5 @ -  @ Ft3}{|( @)",
+            "question": "10- @ `Fnov5 @ اختصار كلمة ",
             "wight": "3",
             "answers": [
                 {
@@ -1426,7 +1285,7 @@
             "written_exam_id": 10
         },
         {
-            "question": "12- @ E0ovab @ اختصار كلمة قدوس (  (  @ `=)=ov @ - @ E==b=b @  - @ =E=0=v @ -  @ Cob}{|( @)",
+            "question": "11- @ E0ovab @ اختصار كلمة قدوس ",
             "wight": "3",
             "answers": [
                 {
@@ -1449,7 +1308,7 @@
             "written_exam_id": 10
         },
         {
-            "question": "13- @ `Ctavroc @ معنى كلمة (  (  صليب - شهيد  - عيد) ",
+            "question": "12- @ `Ctavroc @ معنى كلمة ",
             "wight": "3",
             "answers": [
                 {
@@ -1468,7 +1327,7 @@
             "written_exam_id": 10
         },
         {
-            "question": "14- @ `Psoic @ معنى كلمة (  ( يسوع - الله  - الرب) ",
+            "question": "13- @ `Psoic @ معنى كلمة  ",
             "wight": "3",
             "answers": [
                 {
@@ -1487,12 +1346,12 @@
             "written_exam_id": 7
         },
         {
-            "question": "15- @ % @ اداة تعريف (  (  للمفرد المذكر- للجمع  - للمفرد المؤنث) ",
+            "question": "14- @ % @ اداة تعريف ",
             "wight": "3",
             "answers": [
                 {
                     "answer": "للمفرد المذكر",
-                    "status": 1
+                    "status": 0
                 },
                 {
                     "answer": " للجمع",
@@ -1500,18 +1359,18 @@
                 },
                 {
                     "answer": "للمفرد المؤنث ",
-                    "status": 0
+                    "status": 1
                 }
             ],
             "written_exam_id": 10
         },
         {
-            "question": "16- @ Xere nwten @ معنى كلمة (  ( السلام لكم – السلام لك  - السلام لكى) ",
+            "question": "15- @ Xere nwten @ معنى كلمة  ",
             "wight": "3",
             "answers": [
                 {
                     "answer": "السلام لكى",
-                    "status": 1
+                    "status": 0
                 },
                 {
                     "answer": " السلام لك ",
@@ -1519,87 +1378,12 @@
                 },
                 {
                     "answer": " السلام لكم ",
-                    "status": 0
+                    "status": 1
                 }
             ],
             "written_exam_id": 10
-        },
-        {
-            "question": "17-   مفيش اسالة اكمل ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ Piovai  @",
-                    "status": 1
-                },
-                {
-                    "answer": " @  Pi2a24 @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Pi2omt @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 10
-        },
-        {
-            "question": "18-   مفيش اسالة اكمل ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ Piovai  @",
-                    "status": 1
-                },
-                {
-                    "answer": " @  Pi2a24 @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Pi2omt @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 10
-        },
-        {
-            "question": "19-   مفيش اسالة اكمل ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ Piovai  @",
-                    "status": 1
-                },
-                {
-                    "answer": " @  Pi2a24 @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Pi2omt @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 7
-        },
-        {
-            "question": "20-   مفيش اسالة اكمل ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ Piovai  @",
-                    "status": 1
-                },
-                {
-                    "answer": " @  Pi2a24 @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Pi2omt @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 7
         }
+       
     ]
 },
 

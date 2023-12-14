@@ -1,0 +1,2350 @@
+{
+    "key": "122",
+    "exam": [
+        {
+            "question": "1- مؤسس سر الإفخارستيا هو",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "السيد المسيح ",
+                    "status": 1
+                },
+                {
+                    "answer": "بطرس الرسول",
+                    "status": 0
+                },
+                {
+                    "answer": "مرقس الرسول",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "2- 'الحكمة بنت بيتها نحتت أعمدتها السبعة' الشاهد أم (..... : .....)",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "١:٩ ",
+                    "status": 1
+                },
+                {
+                    "answer": "٨:٢ ",
+                    "status": 0
+                },
+                {
+                    "answer": "١٠:٢",
+                    "status": 0
+                },
+                {
+                    "answer": "١:٥",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "3- سمى آباء الكنيسة جرن المعمودية",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "باب الكنيسة ",
+                    "status": 0
+                },
+                {
+                    "answer": "بطن الكنيسة ",
+                    "status": 1
+                },
+                {
+                    "answer": " رأس الكنيسة",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "4- عدد رشومات الجسم كله بزيت الميرون",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "٣٦",
+                    "status": 1
+                },
+                {
+                    "answer": "٨٣ ",
+                    "status": 0
+                },
+                {
+                    "answer": "٥٠ ",
+                    "status": 0
+                },
+                {
+                    "answer": "٤٠ ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "5- تكون رسامة الكهنة في القداس بعد ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "المزامير ",
+                    "status": 0
+                },
+                {
+                    "answer": "صلاة الشكر ",
+                    "status": 0
+                },
+                {
+                    "answer": "صلاة الصلح",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "6- 'اشفوا مرضى طهروا برصاً. هذه الآية تدل على",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "الميرون ",
+                    "status": 0
+                },
+                {
+                    "answer": "المعمودية ",
+                    "status": 0
+                },
+                {
+                    "answer": " مسحة المرضى",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "7- قال الرب يسوع 'قم احمل فراشك' للـ ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "المفلوج ",
+                    "status": 1
+                },
+                {
+                    "answer": " السامري  ",
+                    "status": 0
+                },
+                {
+                    "answer": "نازفة الدم",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "8- من إشارات المعمودية فى العهد القديم",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "الطوفان ",
+                    "status": 1
+                },
+                {
+                    "answer": "شجرة الحياة ",
+                    "status": 0
+                },
+                {
+                    "answer": "لوحى الشريعة  ",
+                    "status": 0
+                },
+                {
+                    "answer": "مزامير داود ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "9- أحضر زيت الميرون إلى مصر",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "البابا أثناسيوس الرسولى ",
+                    "status": 0
+                },
+                {
+                    "answer": "البابا كيرلس عمود الدين ",
+                    "status": 0
+                },
+                {
+                    "answer": "مار مرقس الرسول",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "10-  فى طقس الإكليل يوضع الإكليل على رأس",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "الرجل والمرأة ",
+                    "status": 1
+                },
+                {
+                    "answer": "المرأة فقط ",
+                    "status": 0
+                },
+                {
+                    "answer": "الرجل فقط",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "11- مؤسس كل الأسرار هم التلاميذ وسلموها إلى من بعدهم",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "12- يسمى سر الإفخارستيا بسر التناول وسر الأسرار",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "13- يتكون سر مسحة المرضى من 7 صلوات",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "14- سر الاعتراف لا يوجد له زمن أو ميعاد محدد",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 13
+        },
+        {
+            "question": "15- سر المعمودية له المرتبة الثانية بعد الكهنوت لأنه باب يدخل منه المؤمن إلى الكنيسة وملكوت النعمة",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 13
+        }
+    ],
+    "key": "131-132-133",
+    "exam": [
+        {
+            "question": "1. يبدأ اليوم القبطى فى الغروب وينتهى فى الغروب",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "2. يمكن عمل قداس بدون رفع بخور باكر",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "3. يضع الكاهن خمس أيادى بخور فى بداية دورة البخور.",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "4. يفتح الكاهن ستر الهيكل من اليمين إلى الشمال",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "5. يصلى رفع بخور باكر وعشية داخل الهيكل.",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "6. يجب أن يكون قنديل الشرقية (حضن الآب) موقد دائماً ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "7. دُعِيَتْ أرباع الناقوص بهذا الاسم لأنها تُرَتَّل بمصاحبة الدف",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "8. فى الأديرة تُضَاف صلاة النوم بعد صلوات الأجبية",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "9. يقول الكاهن إشليل إيـﭭلوجيسون فى حالة وجود كاهن شريك فى صلاة الشكر",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "10. فى صوم نينوى لا يُرْفَع بخور عشية",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "11. كان مذبخ البخور فى العهد القديم داخل قدس الأقداس",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "12. يخرج الكاهن من الهيكل برجله اليمني دليل القوى",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "13. يتم ممارسة صلوات دورة البخور سراً ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "14. تُصلى أوشية الراقدين في رفع بخور باكر يوم السبت",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "15. أيادي البخور في دورة البخور ترمز إلى جراحات السيد المسيح الخمسة",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "16. يُصلي الكاهن أوشية القرابين امام المذبح في الهيكل",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "17. معظم مردات الشماس تُصلى باللغه اليونانية",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "18. زكريا و هارون من رجال العهد القديم الذين قبلت تقدماتهم",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "19. فى دورة البخور حول المذبح يصلى الشماس الاواشى سرا (السلامة - الاباء - الاجتماعات )",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        }
+    ],
+    "key": "211-212",
+    "exam": [
+        {
+            "question": "1. يرتب الجزء الأول فى القداس )صلاة الاستعداد، ارتداء ملابس الخدمة، صلاة المزامير، غسل الأيدى، تقديم الحمل",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "2. من أسماء القداس 'أنافورا ' وتعنى قبول نعمة",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "3. فى عيد العنصرة يُصَّلى مزامير صلاة الساعة الثالثة فقط",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "4. عدد اصحاحات رسائل بولس الرسول التى كتبها  100 أصحاح ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "5.   أثناء إرتداء ملابس الخدمة 'التونية' يُصَّلى المزمور 29 ، 92",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "6. الأربع أفعال الأساسية فى 'الإفخارستيا' القداس هى أخذ وبارك وكسر وأعطى",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "7. الآية الدالة على مواظبة التلاميذ على كسر الخبز هي ' وأما الأمور الباقية فعندما أجىء أرتبها' ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "8- قداس يُصَلَّي به فى الأعياد السيدية والفرح",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "الباسيبلى ",
+                    "status": 0
+                },
+                {
+                    "answer": "الكيرلسى ",
+                    "status": 0
+                },
+                {
+                    "answer": "الغريغورى",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "9- القداسات التى لا يُصَلَّي فيها مزامير هي:",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "قداس عيد الميلاد ، قداس عيد القيامة ، قداس عيد الغطاس",
+                    "status": 0
+                },
+                {
+                    "answer": "قداس عيد الميلاد ، قداس عيد القيامة ، قداس عيد الغطاس ، قداس خميس العهد ",
+                    "status": 1
+                },
+                {
+                    "answer": " قداس عيد الميلاد ، قداس عيد القيامة ، قداس عيد العنصرة ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "10- أثناء غسل الكاهن يده يقول مزامير:",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": " 50: 7 ، 25: 6-7    ",
+                    "status": 1
+                },
+                {
+                    "answer": "150: 7 ، 25: 9-10   ",
+                    "status": 0
+                },
+                {
+                    "answer": " 50: 6-7  ، 25: 7 ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "11-  من أسماء القداس:",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": " ليتورجيا ، قطمارس ، أنافورا",
+                    "status": 0
+                },
+                {
+                    "answer": "قداس ، أنافورا ، إفخارستيا",
+                    "status": 1
+                },
+                {
+                    "answer": " أنافور ، إبروسفورا ، إبصالموص  ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "12- قبل أن يبدأ الكاهن بطقس تقديم الحمل يجب أن يتأكد من وجود: ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": " قربان الحمل، اللوح المقدس،  قارورة الأباركة، ملابس الخدمة",
+                    "status": 0
+                },
+                {
+                    "answer": " قربان الحمل، القطمارس، قارورة الأباركة، ملابس الخدمة ",
+                    "status": 0
+                },
+                {
+                    "answer": " قربان الحمل، قارورة الأباركة، ملابس الخدمة، أبريق الماء  ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 15
+        },
+        {
+            "question": "13- تُسَمَّى أوشية التقدمة بأوشية: ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": " اللفائف ",
+                    "status": 0
+                },
+                {
+                    "answer": " الغطاء  ",
+                    "status": 1
+                },
+                {
+                    "answer": " الأوانى   ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "14- تستخدم الكنيسة 5 قطمارسات على مدار السنة: ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": " قطمارس أيام وقطمارس آحاد وقطمارس شعانين وقطمارس صوم كبير وقطمارس الخمسين",
+                    "status": 0
+                },
+                {
+                    "answer": " قطمارس أيام وقطمارس آحاد وقطمارس أسبوع الآلام وقطمارس صوم كبير وقطمارس الخمسين",
+                    "status": 1
+                },
+                {
+                    "answer": " قطمارس أيام وقطمارس آحاد وقطمارس أسبوع الآلام وقطمارس كيهكى  وقطمارس الخمسين",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        },
+        {
+            "question": "15- فى حالة وجود خادم شريك فى القداس مع الكاهن الخديم، الذي يقول تحليل الخدام هو:",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": " الكاهن الخديم",
+                    "status": 0
+                },
+                {
+                    "answer": " الكاهن الشريك ",
+                    "status": 1
+                },
+                {
+                    "answer": " الاثنان معا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 14
+        }
+    ],
+    "key": "221-222",
+    "exam": [
+        {
+            "question": "1- معني كلمة  أنافورا ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "القرابين ",
+                    "status": 0
+                },
+                {
+                    "answer": "الصعيدة ",
+                    "status": 1
+                },
+                {
+                    "answer": "الذكري",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "2-  معني كلمة أسبازموس",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "مديح ",
+                    "status": 0
+                },
+                {
+                    "answer": "أفراح ",
+                    "status": 0
+                },
+                {
+                    "answer": "تقبيل ",
+                    "status": 1
+                },
+                {
+                    "answer": "كل ما سبق ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "3- عند قول الكاهن ........................................ يضع يد بخور فى الشورية إشارة إلى التجسد",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "لأنه في كل مرة ",
+                    "status": 0
+                },
+                {
+                    "answer": "لأنه فيما هو راسم",
+                    "status": 1
+                },
+                {
+                    "answer": "تجسد وتأنس وعلمنا طرق الخلاص",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "4- حركة استبدال الكاهن اللفائف التي علي يده ببعضها ترمز إلي ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "حركة الشاروبيم ",
+                    "status": 0
+                },
+                {
+                    "answer": "حركة أجنحة الملائكة ",
+                    "status": 1
+                },
+                {
+                    "answer": "حركة الحمام ",
+                    "status": 0
+                },
+                {
+                    "answer": "كل ما سبق",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "5- ينير الشماس الشموع في القداس أثناء ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "اختيار الحمل ",
+                    "status": 0
+                },
+                {
+                    "answer": " التقديس والقسمة ",
+                    "status": 0
+                },
+                {
+                    "answer": " التناول ",
+                    "status": 0
+                },
+                {
+                    "answer": " كل ماسبق ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "6- يقسم الكاهن الجسد إلى ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "ثلث وثلثين ",
+                    "status": 1
+                },
+                {
+                    "answer": "ثلث وثلث ",
+                    "status": 0
+                },
+                {
+                    "answer": " نصف وثلث ",
+                    "status": 0
+                },
+                {
+                    "answer": " كل ماسبق",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "7- فى صلوات الاستدعاء فى القداس الباسيلى يأمر الشماس الشعب للسجود قائلاً 'اسجدوا لله بخوف ورعدة' وفى القداس الغريغورى تستبدل بـ ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "اسجدوا لله بقوة ورعدة ",
+                    "status": 0
+                },
+                {
+                    "answer": "اسجدوا لله برعدة وخوف ",
+                    "status": 0
+                },
+                {
+                    "answer": " اسجدوا للحمل كلمة الله ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "8- يرشم الكاهن في قطعه أجيوس ثلاث مرات بعلامة الصليب بهذا الترتيب ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "أول مرة علي ذاته ثم علي خدام المذبح ثم علي الشعب",
+                    "status": 1
+                },
+                {
+                    "answer": "أول مرة علي الشعب ثم علي ذاته ثم علي خدام المذبح ",
+                    "status": 0
+                },
+                {
+                    "answer": "أول مرة علي خدام المذبح ثم علي الشعب ثم علي ذاته",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "9- تدور صلاة الصلح حول محورين هما",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "فداء المسيح وقبلة المصالحة. ",
+                    "status": 0
+                },
+                {
+                    "answer": "السلام الذي صنعه الله ليصالحنا معه وطلب الاستحقاق أن يقبل المؤمنين بعضهم بعضاً بقبلة طاهرة  ",
+                    "status": 1
+                },
+                {
+                    "answer": "تجسد المسيح وقبلة المصالحة",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "10- قطعة أجيوس فى القداس الباسيلى تحكى عن:",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "قصة السقوط وتدبير الخلاص",
+                    "status": 1
+                },
+                {
+                    "answer": "غير موصوفة هي حكمة الله.",
+                    "status": 0
+                },
+                {
+                    "answer": "لاحدود لمحبة الله.",
+                    "status": 0
+                },
+                {
+                    "answer": "كل ما سبق.",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "11- الأسبازموس الآدام الشهير في القداس هو 'الشاروبيم يسجدون لك'",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "12- يطلب الكاهن أن يحل الروح القدس على الشعب أولاً ثم على القرابين",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "13- يدور الكاهن بإصبعه علي حافة الكأس مرة عكس عقارب الساعة ومرة أخري مع عقارب الساعة",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "14- تنقسم صلوات التقديس في القداس إلي أربعة أقسام (التأسيس-الذكري-الاستدعاء-الشكر)",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "15- الأسبازموس الواطس الشهير في القداس هو 'افرحي يامريم' ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 7
+        }
+    ],
+    "key": "231",
+    "exam": [
+        {
+            "question": "1. الأجبية تعني ساعة وهي كلمة معربة من اللفظ القبطي",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "وجب ",
+                    "status": 0
+                },
+                {
+                    "answer": "أجب ",
+                    "status": 1
+                },
+                {
+                    "answer": " يجب",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "2. تحتوي الأجبية علي عدد ....... من المزامير. ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "97",
+                    "status": 0
+                },
+                {
+                    "answer": "77",
+                    "status": 1
+                },
+                {
+                    "answer": "87",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "3. تبدأ تسبحة عشية بلحن للمزمور ....... ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "149",
+                    "status": 0
+                },
+                {
+                    "answer": "116",
+                    "status": 1
+                },
+                {
+                    "answer": "119",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "4. يُعْرَف سفر المزامير في العبرية باسم تهليم وتعني ....... ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "غَنَّي ",
+                    "status": 0
+                },
+                {
+                    "answer": "أنشد ",
+                    "status": 0
+                },
+                {
+                    "answer": "الحمد والتسبيح ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "5. المزامير اليتيمة هي التي تُنْسَبْ إلي ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "قورح ",
+                    "status": 0
+                },
+                {
+                    "answer": "  هيمان الأزراحي ",
+                    "status": 0
+                },
+                {
+                    "answer": "لا تُنْسَبْ إلي أحد",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "6. لكل ساعة من سواعي الأجبية عدد .......   مزمور",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "12",
+                    "status": 1
+                },
+                {
+                    "answer": " 15",
+                    "status": 0
+                },
+                {
+                    "answer": " 17 ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "7. صلاة .......   نجد أن لها 19 مزموراً ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "نصف الليل",
+                    "status": 0
+                },
+                {
+                    "answer": "باكر ",
+                    "status": 1
+                },
+                {
+                    "answer": " الستار ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "8. الهوس الثاني هو المزمور....... ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "148 ",
+                    "status": 0
+                },
+                {
+                    "answer": "150 ",
+                    "status": 0
+                },
+                {
+                    "answer": "135",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "9. يُقال المزمور في الأعياد السيدية باللحن .......  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "الشامي ",
+                    "status": 0
+                },
+                {
+                    "answer": " الإدريبي ",
+                    "status": 0
+                },
+                {
+                    "answer": "السنجاري",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "10. يُقال المزمور باللحن .......  في أسبوع الآلام",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "الشامي ",
+                    "status": 0
+                },
+                {
+                    "answer": " الإدريبي ",
+                    "status": 1
+                },
+                {
+                    "answer": "السنجاري",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "11. يُقْرَأ سفر المزامير كاملاً في ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "جمعه ختام الصوم وتجليس البطريرك ",
+                    "status": 0
+                },
+                {
+                    "answer": " ختام صلوات الجمعة العظيمة ونياحة البطريرك أو الأسقف ",
+                    "status": 1
+                },
+                {
+                    "answer": " ختام صوم نينوي",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "12. قبل تسبحة عشية لا تُصَلَّي المزامير في ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "أيام الصوم الكبير ",
+                    "status": 0
+                },
+                {
+                    "answer": " صوم نينوي ",
+                    "status": 0
+                },
+                {
+                    "answer": "عيد البشارة والصليب ",
+                    "status": 0
+                },
+                {
+                    "answer": "كل ماسبق",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "13. قام بتكملة تسبحة الملائكة البابا ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "ديمتريوس ",
+                    "status": 0
+                },
+                {
+                    "answer": "أثناسيوس ",
+                    "status": 1
+                },
+                {
+                    "answer": " سانتيوس",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "14.   تذكرنا  صلاة نصف الليل بـ ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "قيامة السيد المسيح ",
+                    "status": 0
+                },
+                {
+                    "answer": " السهر والاستعداد ",
+                    "status": 1
+                },
+                {
+                    "answer": "حلول الروح القدس",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "15.   في ختام صلوات المزامير نختم بـ ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "كيرياليسون 41 مره ",
+                    "status": 0
+                },
+                {
+                    "answer": " إرحمنا يا الله ثم إرحمنا ",
+                    "status": 1
+                },
+                {
+                    "answer": "مزمور التوبة",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "16.  القطعة الثالثة في صلوات السواعي تختص بالروح القدس",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 130
+        },
+        {
+            "question": "17.  كل أنواع الصلوات في الطقس القبطي بدون استثناء تبدأ بطلب رحمة الرب ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "18. صلاة الشكر هي صلاة ليتورچية حديثة في المسيحية",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "19. نصلي كيرياليسون 41 مرة إشارة لعدد الجلدات التي جُلد بها المسيح",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "20. نصلي في صلاة باكر جزء من رسالة بولس الرسول إلى أهل أفسس (1 : 4-5)",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        }
+    ],
+    "key": "311",
+    "exam": [
+        {
+            "question": "1. كلمة هوس هي كلمة يونانية تعني تسبحة ",
+            "wight": "5",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "2. يقال لحن تين ناف أثناء الفترة من عيد القيامة إلى آخر هاتور",
+            "wight": "5",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "3. الهوس الثالث مأخوذ من تَتِمَّة سِفر دانيال",
+            "wight": "5",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "4. الهوس الثالث يتمحور حول رحمة الله الدائمة",
+            "wight": "5",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "5. الهوس الأول كتبه",
+            "wight": "5",
+            "answers": [
+                {
+                    "answer": "هارون أخو موسى النبى ",
+                    "status": 0
+                },
+                {
+                    "answer": "موسى النبى ",
+                    "status": 1
+                },
+                {
+                    "answer": "سليمان الملك",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "6.مَن أدخَل نظام الأنتيفون في التسبيح هو",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "عزاريا ",
+                    "status": 0
+                },
+                {
+                    "answer": " حنانيا ",
+                    "status": 0
+                },
+                {
+                    "answer": " نحميا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "7.يُعتَبَر التسبيح أرقى أنواع الصلاة لأنه",
+            "wight": "5",
+            "answers": [
+                {
+                    "answer": "عمل الملايكة  ",
+                    "status": 0
+                },
+                {
+                    "answer": "تسبيح وشكر لله دون غرض آخر ",
+                    "status": 1
+                },
+                {
+                    "answer": "لا نقدر أن نعيش بدونه ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "8- لماذا التسبيح في نصف الليل؟ ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "بسبب الهدوء ",
+                    "status": 0
+                },
+                {
+                    "answer": "تكون الكنيسة فى حالة سهر انتظاراً للمسيح مثل العذاري الحكيمات",
+                    "status": 1
+                },
+                {
+                    "answer": "لعمل القداس باكراً بعد التسبحة",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "9- الفرق بين كتابيّ الإبصلمودية السنوية والكيهكية هو",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "الإبصلمودية الكيهكية بها الهوس الكيهكى زيادة فقط  ",
+                    "status": 0
+                },
+                {
+                    "answer": " لا يوجد فرق ",
+                    "status": 0
+                },
+                {
+                    "answer": "الإبصلمودية الكيهكية بها الهوس الكبير وابصاليات وطروحات ومدائح",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "10-وصل",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "- المجمع والذكصولوجيات (12)\n- نعظمك، قانون الإيمان (6)\n- @Ten 03nov@ (2)\n- الهوسات (الأول،الثاني،الثالث) (1)\n- @Ariyalin@ (3)\n- الهوس الرابع (11)\n- الدفنار مع مقدمته (9)\n- ثيؤطوكية اليوم واللبش (4)\n- ختام الثيؤطوكيات (10)\n- @Tenoveh `ncwk@ (8)\n- إبصالية اليوم (7)\n- ختام التسبحة (5)",
+                    "status": 1
+                },
+                {
+                    "answer": "- المجمع والذكصولوجيات (5)\n- نعظمك، قانون الإيمان (11)\n- @Ten 03nov@ (1)\n- الهوسات (الأول،الثاني،الثالث) (2)\n- @Ariyalin@ (3)\n- الهوس الرابع (6)\n- الدفنار مع مقدمته (9)\n- ثيؤطوكية اليوم واللبش (8)\n- ختام الثيؤطوكيات (10)\n- @Tenoveh `ncwk@ (4)\n- إبصالية اليوم (7)\n- ختام التسبحة (12)",
+                    "status": 0
+                },
+                {
+                    "answer": "- المجمع والذكصولوجيات (5)\n- نعظمك، قانون الإيمان (7)\n- @Ten 03nov@ (4)\n- الهوسات (الأول،الثاني،الثالث) (2)\n- @Ariyalin@ (3)\n- الهوس الرابع (12)\n- الدفنار مع مقدمته (9)\n- ثيؤطوكية اليوم واللبش (8)\n- ختام الثيؤطوكيات (10)\n- @Tenoveh `ncwk@ (1)\n- إبصالية اليوم (11)\n- ختام التسبحة (6)",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        }
+    ],
+    "key": "321",
+    "exam": [
+        {
+            "question": "1. تُصَلَّي أوشية الراقدين في عشيات كل الأيام ما عدا الأعياد السيدية",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "2. يُحْتَفل بتذكار أعياد البشارة والميلاد والقيامة في يوم 29 من كل شهر قبطي",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "3. يُصَلَّي لحن 'إنثو تيه تي شوري' في أيام صوم الميلاد",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "4. إذا وقع عيد البشارة يوم سبت لعازر حينئذ يُصَلَّي بالطقس الفرايحي",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "5. لا تُصَـلَّي مزامير السواعي في قداس عيد الميلاد بل رفع الحمل مباشرة ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "6. عيد الختان هو أحد الأعياد السيدية الكبري ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "7. يبدأ تاريخ تقويم الشهداء من عصر الإمبراطور نيرون",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "8. يُصَلَّي بالطقس الفرايحي من أول 1 توت إلي 17 توت",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "9. نصوم يوميّ الأربعاء والجمعة دائماً حتي لو جاء فيهما عيديّ الميلاد والغطاس",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "10. في السنة الكبيسة يتم الاحتفال بعيد الميلاد يوميّ 28، 29 كيهك",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "11. في سبوت وآحاد شهر كيهك نصلي سواعي الثالثة والسادسة والتاسعة",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "12. لا تتكرر قراءات فصول برمون الغطاس حتي لو جاء 3 أيام ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "13.  فصول صوم نينوي من قطمارس الصوم الكبير",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "14. نصلي أول أيام الصوم الكبير وجمعة ختام الصوم بالطقس السنوي",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "15. إذا جاء عيد دخول السيد المسيح إلي الهيكل يوم أحد في الصوم الكبير تُقرأ فصول يوم الأحد",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "16. نصلي صلوات برمون الميلاد بالطقس",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "الكيهكي ",
+                    "status": 0
+                },
+                {
+                    "answer": " السنوي  ",
+                    "status": 1
+                },
+                {
+                    "answer": "الفرايحي ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "17. نحتفل بعيد الغطاس يوم ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "11 طوبة  ",
+                    "status": 0
+                },
+                {
+                    "answer": " 12 طوبة   ",
+                    "status": 0
+                },
+                {
+                    "answer": "11، 12 طوبة ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "18. من برمون الميلاد إلي عيد الختان نقول",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "آكتشي أومس ",
+                    "status": 0
+                },
+                {
+                    "answer": " آك طونك   ",
+                    "status": 0
+                },
+                {
+                    "answer": "آڤ ماسك",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "19. إذا جاء عيد الغطاس يوم الاثنين يكون البرمون",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "يوم واحد ",
+                    "status": 0
+                },
+                {
+                    "answer": " يومان   ",
+                    "status": 0
+                },
+                {
+                    "answer": "ثلاثة أيام",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "20. في سبوت وآحاد الصوم الكبير نصلي سواعي ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "الثالثة والسادسة ",
+                    "status": 1
+                },
+                {
+                    "answer": " الثالثة والسادسة والتاسعة    ",
+                    "status": 0
+                },
+                {
+                    "answer": "الـ 5 سواعي",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        }
+    ],
+    "key": "331",
+    "exam": [
+        {
+            "question": "1. في طقس رسامة الرهبان يُصَلَّي المزمور والإنجيل باللحن الأدريبي فيما عدا الآحاد والخمسين المقدسة يُصَلَّي باللحن الفرايحي",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "2. يتم رسامة الأرشي دياكون برشم الجبهة ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "3. إذا تمت رسامة الدياكون والأرشي دياكون قبل الزواج فلا يتزوج",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "4. كلمة (إبصالتس) تعني قارئ بينما كلمة أغنسطس تعني (مرتل)",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "5. شرط لمن يصير راهباً أن يقيم في الدير سنة يتعلم فيها الرهبنة",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "6. عند رسامة الأغنسطس يُقَصْ شعره 5 قصات رمز لجراحات المسيح",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "7. طقس تكريس المكرسات يتم بوضع اليد",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "8. يتقدم المرشح لدرجة القسيسية وهو لابس ملابس الشماس والزنار علي كتفه اليمين",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "9. يتم استقبال الكاهن الجديد عند دخوله الكنيسة بزفة وهو ممسكاً بالإنجيل",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "10. في طقس حل الزنار للشمامسة نصلي لحن تي شوري",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "11. يجب أن يكون المرشح لدرجة الإيبودياكون ملماً بجميع طقوس الكنيسة وألحانها والوظائف الشماسية",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "12. في طقس تكريس الرهبان تُقال النبوات بعد المزمور الخمسون",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "13. يتم تغطية المتقدم للرهبنة بستر كأنه ميت",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "14. من شروط رسامة الأرشي دياكون أن لا يقل سنه عن 38 سنة ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "15. كلمة (قمص) أو (إيغومانوس) مأخوذة من الكملة القبطية وتعني مدبر",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "16. ينام الأخ المراد رهبنته أمام الهيكل علي ظهره ورأسه للشرق ورجلاه للغرب واضعاً يديه علي صدره",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "17. الشئ المشترك في رسامة الأغنسطس وتكريس الراهبات هو قص الشعر",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "18. طقس رسامة الشمامسة والقس والقمص وتكريس الرهبان والراهبات يتم بعد صلاة الصلح",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "19. يُقال لحن (بي إبنيڤما) في طقس رسامة القس والقمص",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "20. ينفخ الأسقف في فم الكاهن الجديد نفخة الروح القدس بعد الانتهاء من القداس الإلهي",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": " خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 10
+        }
+    ]
+},
+{
+    [
+        "12",
+        "331",
+        "1"
+    ],
+    [
+        "13",
+        "122",
+        "2"
+    ],
+    [
+        "14",
+        "311",
+        "3"
+    ],
+    [
+        "15",
+        "321",
+        "4"
+    ],
+    [
+        "16",
+        "222",
+        "5"
+    ],
+    [
+        "17",
+        "231",
+        "6"
+    ],
+    [
+        "18",
+        "131",
+        "7"
+    ],
+    [
+        "19",
+        "132",
+        "8"
+    ],
+    [
+        "20",
+        "133",
+        "9"
+    ],
+    [
+        "21",
+        "131",
+        "10"
+    ],
+    [
+        "22",
+        "132",
+        "11"
+    ],
+    [
+        "23",
+        "133",
+        "12"
+    ],
+}

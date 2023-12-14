@@ -7,6 +7,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\ExamQuestionsAnswerController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\WrittenExamController;
 use Illuminate\Support\Facades\Route;
 use App\Models\ExamAttendance;
 use App\Models\ExamQuestionsAnswer;
@@ -43,6 +44,11 @@ Route::prefix('exams')->group(function () {
 Route::prefix('questions')->group(function () {
     Route::post('/import', [QuestionController::class, 'import_questions'])->name('import-questions');
     Route::get('/import', [QuestionController::class, 'upload_file'])->name('import-question-view');
+});
+
+Route::prefix('written-exams')->group(function () {
+    Route::post('/import', [WrittenExamController::class, 'import_exmas'])->name('import-written-exams');
+    Route::get('/import', [WrittenExamController::class, 'upload_file'])->name('import-written-exams-view');
 });
 
 Route::resource('/take-written-exam', ExamQuestionsAnswerController::class)->only('index', 'create');
