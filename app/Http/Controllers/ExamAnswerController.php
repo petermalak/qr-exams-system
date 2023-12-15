@@ -51,15 +51,21 @@ class ExamAnswerController extends Controller
         // $teacher_name = Teatcher::where('class_id', $student->class_id)->where('subject',$inputs['type'])->first()->name;
         $teacher_name = '';
 
+        // $teacher_name = Teatcher::where('class_id', $student->class_id)->where('subject',$inputs['type'])->first()->name;
+        $teacher_name = '';
+
         $class_name = ClassModel::find($student->class_id)->name;
+        // $teacher_phone = Teatcher::where('class_id', $student->class_id)->where('subject',$inputs['type'])->first()->phone;
+        $teacher_phone = '';
+
         // $teacher_phone = Teatcher::where('class_id', $student->class_id)->where('subject',$inputs['type'])->first()->phone;
         $teacher_phone = '';
 
         $questions = json_decode($exam->questions);
         $answers = [];
         foreach ($questions as $question) {
-            if (isset($question->answer))
-                $answers[] = $question->answer;
+            if (isset($question->ans))
+                $answers[] = $question->ans;
         }
         // dd($answers);
         foreach ($questions as $item) {
@@ -78,9 +84,12 @@ class ExamAnswerController extends Controller
 
             $exam_answer = ExamAnswer::create($inputs);
             $exam_answer->answers = $questions;
+            
             $exam_answer->save();
         } else {
-            $exam_answer->answers = json_decode($exam_answer->answers);
+            $exam_answer->answers = $questions;
+
+            // $exam_answer->answers = json_decode($exam_answer->answers);
         }
 
         return view('admin.components.examiner.exam_show', compact('answers', 'teacher_phone', 'class_name', 'teacher_name', 'exam_answer', 'class', 'student', 'exam', 'instructionsObject'));
