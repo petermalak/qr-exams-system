@@ -45,20 +45,10 @@ class QuestionController extends Controller
                 'question'    => $value['question'],
                 'wight' => $value['wight'],
                 'answers' => json_encode($value['answers']),
-                'written_exam_id' => 10,
+                'written_exam_id' => 24,
             ]);
-            Question::create([
-                'question'    => $value['question'],
-                'wight' => $value['wight'],
-                'answers' => json_encode($value['answers']),
-                'written_exam_id' => 11,
-            ]);
-            Question::create([
-                'question'    => $value['question'],
-                'wight' => $value['wight'],
-                'answers' => json_encode($value['answers']),
-                'written_exam_id' => 12,
-            ]);
+
+
         }
 
         return redirect()->route('aaa')->with(['success' => 'Questions Added Successfully']);
