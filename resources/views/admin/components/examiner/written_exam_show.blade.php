@@ -19,6 +19,7 @@
 
     <!-- Main content -->
     <section class="content">
+        <div id="timer"></div>
 
         <!-- Default box -->
         <div class="card">
@@ -78,24 +79,14 @@
                         <table class="table table-bordered table-striped table-responsive-stack" id="tableOne">
                             <thead>
                                 <tr>
-                                    {{-- <th>#</th> --}}
                                     <th>السؤال</th>
                                     <th>درجة السؤال</th>
                                     <th>الاختيارات</th>
-                                    {{-- <th>إظهار الإجابة</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($questions as $key => $item)
-                                    {{-- @php
-                                        $key += 1;
-                                    @endphp --}}
-                                    {{-- @if ($key === 0)
-                                        @continue
-                                    @endif --}}
                                     <tr>
-                                        {{-- <td id="question_number">{{ $key }}</td> --}}
-
                                         @if (str_contains($item->question, 'div'))
                                             <td id="question">
                                                 <input type="hidden" class="form-control input-name original-question"
@@ -120,15 +111,10 @@
                                                 @foreach ($parts as $i => $part)
                                                     @if ($i % 2 == 0)
                                                         {{ $part }}
-                                                        <!-- Arabic text or any other non-Coptic content -->
                                                     @else
                                                         <span class="coptic-text">{{ $part }}</span>
-                                                        <!-- Coptic text with the applied style -->
                                                     @endif
                                                 @endforeach
-
-
-                                                {{-- {{ $item->question }} --}}
                                             </td>
                                         @endif
 
@@ -139,43 +125,7 @@
 
 
                                         <td>
-
-                                            @foreach (json_decode($item->answers) as $index => $option)
-                                                @php
-                                                    $text = $option->answer;
-                                                    $parts = explode('@', $text);
-                                                    $parts = array_filter($parts, function ($part) {
-                                                        return trim($part) !== '';
-                                                    });
-                                                @endphp
-
-                                                @foreach ($parts as $i => $part)
-                                                    @if ($i % 2 == 0)
-                                                        <label class="m-1">
-                                                            <input type="radio"
-                                                                name="answers[{{ $key }}][score]"
-                                                                value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif"
-                                                                @if ($option->status == 1) checked @endif>
-                                                            {{ $part }}
-                                                        </label>
-                                                    @else
-                                                        <label class="m-1 coptic-text">
-                                                            <input type="radio"
-                                                                name="answers[{{ $key }}][score]"
-                                                                value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif"
-                                                                @if ($option->status == 1) checked @endif>
-                                                            {{ $part }}
-                                                        </label>
-                                                    @endif
-                                                @endforeach
-                                            @endforeach
-
-
-
-
-
-                                            {{-- <select name="answers[{{ $key }}][score]"
-                                                id="answers[{{ $key }}][score]" class="select2">
+                                            @if (!empty($item->answers))
                                                 @foreach (json_decode($item->answers) as $index => $option)
                                                     @php
                                                         $text = $option->answer;
@@ -187,35 +137,30 @@
 
                                                     @foreach ($parts as $i => $part)
                                                         @if ($i % 2 == 0)
-                                                            <option
-                                                                value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
-                                                                {{ $part }}</option>
+                                                            <label class="m-1">
+                                                                <input type="radio"
+                                                                    name="answers[{{ $key }}][score]"
+                                                                    value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
+                                                                {{ $part }}
+                                                            </label>
                                                         @else
-                                                            <option
-                                                                value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif"
-                                                                class="coptic-text" selected>{{ $part }}</option>
+                                                            <label class="m-1 coptic-text">
+                                                                <input type="radio"
+                                                                    name="answers[{{ $key }}][score]"
+                                                                    value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
+                                                                {{ $part }}
+                                                            </label>
                                                         @endif
                                                     @endforeach
-                                                    </option>
                                                 @endforeach
-                                            </select> --}}
+                                            @else
+                                                <input type="number" min="0" step="0.1"
+                                                    max="{{ $item->wight }}" class="form-control input-name"
+                                                    id="mark-{{ $key }}"
+                                                    name="answers[{{ $key }}][score]" required
+                                                    value="{{ $item->score }}">
+                                            @endif
                                         </td>
-
-
-
-
-                                        {{-- <td id="student_inhall">
-                                            <input type="number" min="0" step="0.1" max="{{ $item->wight }}"
-                                                class="form-control input-name" id="mark-{{ $key }}"
-                                                name="answers[{{ $key }}][score]" required
-                                                value="{{ $item->score }}">
-                                        </td> --}}
-                                        {{-- <td>
-                                                <button type="button" class="btn btn-info show-answer-btn"
-                                                    data-answer="{{ $answers[$key - 1] }}">
-                                                    Show Answer
-                                                </button>
-                                            </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -226,6 +171,21 @@
             </div>
         </div>
     </section>
+
+    <style>
+        #timer {
+            font-size: 24px;
+            text-align: center;
+            margin: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            color: white;
+            background-color: rgb(31, 31, 31);
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const showAnswerButtons = document.querySelectorAll('.show-answer-btn');
@@ -248,6 +208,11 @@
                     }
                 });
             });
+
+
+
+
+
         });
 
         function showConfirmation() {
@@ -262,5 +227,80 @@
                 console.log('Form submission cancelled');
             }
         }
+
+
+
+
+
+
+
+        // Set the timer duration in seconds
+        const timerDuration = 5000; // 5 minutes
+        let timeRemaining = timerDuration;
+
+        // Function to update the timer display
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+
+        // Function to handle timer expiration
+        function onTimerEnd() {
+            const modalContainer = document.createElement('div');
+            modalContainer.id = 'myModal'; // Give it an ID for styling
+            modalContainer.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); // Adjust transparency
+    z-index: 100; // Place modal above other elements
+    display: none; // Initially hidden
+
+  `;
+
+            const modalContent = document.createElement('div');
+            modalContent.style.cssText = `
+    margin: auto;
+    width: 50%;
+    background-color: white;
+    padding: 20px;
+  `;
+
+            // Add your desired content to the modal content element
+            const text = document.createElement('p');
+            text.textContent = 'لقد انتهى الوقت';
+            modalContent.appendChild(text);
+
+            // Add the content to the modal container and append to body
+            modalContainer.appendChild(modalContent);
+            document.body.appendChild(modalContainer);
+
+            // Show the modal
+            modalContainer.style.display = 'block';
+
+            const myForm = document.getElementById('exam-selection');
+            myForm.submit();
+        }
+
+        // Function to start the timer
+        function startTimer() {
+            const timerInterval = setInterval(function() {
+                if (timeRemaining > 0) {
+                    timeRemaining--;
+                    updateTimer();
+                } else {
+                    clearInterval(timerInterval);
+                    onTimerEnd();
+                }
+            }, 1000);
+        }
+
+        // Start the timer when the page loads
+        window.onload = function() {
+            startTimer();
+        };
     </script>
 @endsection

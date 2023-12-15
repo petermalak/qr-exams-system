@@ -8,6 +8,8 @@
                         <h1>امتحان الحان</h1>
                     @elseif($exam_answer->type == 'coptic')
                         <h1>امتحان قبطى</h1>
+                    @elseif($exam_answer->type == 'agbeya')
+                        <h1>امتحان اجبية</h1>
                     @else
                         <h1>امتحان طقس</h1>
                     @endif
@@ -58,6 +60,8 @@
                     <h3 class="card-title">امتحان الحان</h3>
                 @elseif($exam_answer->type == 'coptic')
                     <h3 class="card-title">امتحان قبطى</h3>
+                @elseif($exam_answer->type == 'agbeya')
+                    <h3 class="card-title">امتحان اجبية</h3>
                 @else
                     <h3 class="card-title">امتحان طقس</h3>
                 @endif

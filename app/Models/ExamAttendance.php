@@ -14,6 +14,7 @@ class ExamAttendance extends Model
         'alhan',
         'coptic',
         'taks',
+        'agbeya',
         'out_hall',
         'student_id'
     ];

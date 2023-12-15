@@ -76,6 +76,8 @@
                                         <input type="radio" name="type" value="alhan" id="option-1">
                                         <input type="radio" name="type" value="coptic" id="option-2">
                                         <input type="radio" name="type" value="taks" id="option-3">
+                                        <input type="radio" name="type" value="agbeya" id="option-4">
+
 
                                         <label for="option-1" class="option option-1">
                                             <div class="dot"></div>
@@ -88,6 +90,10 @@
                                         <label for="option-3" class="option option-3">
                                             <div class="dot"></div>
                                             <span>طقس</span>
+                                        </label>
+                                        <label for="option-4" class="option option-4">
+                                            <div class="dot"></div>
+                                            <span>اجبية</span>
                                         </label>
                                     </div>
                                 </div>

@@ -42,27 +42,33 @@
                     <br>
                     <br>
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-3">
                             <a href="{{ url('/alhan') }}" class="btn btn-block btn-primary">Alhan Out</a>
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
                             <a href="{{ url('/coptic') }}" class="btn btn-block btn-primary">Coptic Out </a>
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
                             <a href="{{ url('/taks') }}" class="btn btn-block btn-primary">Taks Out </a>
+                        </div>
+                        <div class="col-3">
+                            <a href="{{ url('/agbeya') }}" class="btn btn-block btn-primary">Agbeya Out </a>
                         </div>
                     </div>
                     <br>
                     <br>
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-3">
                             <a href="{{ url('/alhan/exam') }}" class="btn btn-block btn-primary">Alhan In</a>
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
                             <a href="{{ url('/coptic/exam') }}" class="btn btn-block btn-primary">Coptic In</a>
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
                             <a href="{{ url('/taks/exam') }}" class="btn btn-block btn-primary">Taks In</a>
+                        </div>
+                        <div class="col-3">
+                            <a href="{{ url('/agbeya/exam') }}" class="btn btn-block btn-primary">Agbeya In</a>
                         </div>
                     </div>
                     <br>

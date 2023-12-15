@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\AgbeyaExamAttendancesDataTable;
 use App\DataTables\AlhanExamAttendancesDataTable;
 use App\DataTables\CopticExamAttendancesDataTable;
 use App\DataTables\TaksExamAttendancesDataTable;
@@ -36,6 +37,10 @@ class AttendanceController extends Controller
     {
         return $dataTable->render('admin.components.attendance.taks_table');
     }
+    public function agbeya_index(AgbeyaExamAttendancesDataTable $dataTable)
+    {
+        return $dataTable->render('admin.components.attendance.agbeya_table');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -67,11 +72,10 @@ class AttendanceController extends Controller
         $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
         $student = Student::findOrFail($inputs['student_id']);
 
-        if ($student_attendance == null && ($inputs['prefix'] == 'door-entrance' || $inputs['prefix'] == '/door-entrance') ) {
+        if ($student_attendance == null && ($inputs['prefix'] == 'door-entrance' || $inputs['prefix'] == '/door-entrance')) {
             $inputs['in_hall'] = 1;
             $student_attendance = ExamAttendance::create($inputs);
-        }
-        elseif($student_attendance == null && $inputs['prefix'] != 'door-entrance'){
+        } elseif ($student_attendance == null && $inputs['prefix'] != 'door-entrance') {
             return response()->json(['error' => 'Go to Entrance first'], 401);
         }
 
@@ -98,6 +102,15 @@ class AttendanceController extends Controller
                 }
             } elseif ($inputs['prefix'] == 'taks' || $inputs['prefix'] == '/taks') {
                 $response = $this->taksAttendance($inputs['student_id']);
+                if ($response) {
+                    $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
+                    return response()->json([
+                        'student' => $student,
+                        'student_attendance' => $student_attendance
+                    ], 200);
+                }
+            } elseif ($inputs['prefix'] == 'agbeya' || $inputs['prefix'] == '/agbeya') {
+                $response = $this->agbeya_index($inputs['student_id']);
                 if ($response) {
                     $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
                     return response()->json([
@@ -135,7 +148,7 @@ class AttendanceController extends Controller
     {
         $student_attendance = ExamAttendance::where('student_id', $student_id)->first();
         $student = Student::find($student_id);
-        if($student->class_id > 8){
+        if ($student->class_id > 8) {
             $student_attendance->taks = 1;
             $student_attendance->coptic = 1;
         }
@@ -160,22 +173,21 @@ class AttendanceController extends Controller
         return true;
     }
 
+    public function agbeyaAttendance($student_id): bool
+    {
+        $student_attendance = ExamAttendance::where('student_id', $student_id)->first();
+        $student_attendance->agbeya = 1;
+        $student_attendance->save();
+        return true;
+    }
+
 
     public function exitAttendance($student_id): bool
     {
         $student_attendance = ExamAttendance::where('student_id', $student_id)->first();
         $student = Student::find($student_id);
-        if($student->class_id > 8){
-            $student_attendance->alhan = 1;
-            $student_attendance->taks = 1;
-            $student_attendance->coptic = 1;
-        }
-        if ($student_attendance->alhan == 1 && $student_attendance->coptic == 1 && $student_attendance->taks == 1) {
-            $student_attendance->out_hall = 1;
-            $student_attendance->save();
-            return true;
-        } else {
-            return false;
-        }
+        $student_attendance->out_hall = 1;
+        $student_attendance->save();
+        return true;
     }
 }

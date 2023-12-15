@@ -47,7 +47,8 @@
                         </div>
                     </div>
 
-                    <form name="exam-selection" id="exam-selection" method="get" action="{{ route('take-written-exam.create') }}">
+                    <form name="exam-selection" id="exam-selection" method="get"
+                        action="{{ route('take-written-exam.create') }}">
                         @csrf
                         <div class="row">
                             <div class="col-12">
@@ -73,14 +74,8 @@
                                     <label for="type">اسم الامتحان</label>
 
                                     <div class="wrapper">
-                                        <input type="radio" name="type" value="alhan" id="option-1">
                                         <input type="radio" name="type" value="coptic" id="option-2">
                                         <input type="radio" name="type" value="taks" id="option-3">
-
-                                        <label for="option-1" class="option option-1">
-                                            <div class="dot"></div>
-                                            <span>ألحان</span>
-                                        </label>
                                         <label for="option-2" class="option option-2">
                                             <div class="dot"></div>
                                             <span>قبطى</span>

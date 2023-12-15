@@ -28,7 +28,6 @@ Route::prefix('students')->group(function () {
     Route::get('/import', [StudentController::class, 'upload_file'])->name('import-student-view');
     Route::get('/export', [StudentController::class, 'export_exam_attendance'])->name('export-file');
     Route::get('/export-answers', [StudentController::class, 'export_exam_answers'])->name('export-answers');
-
 });
 
 Route::prefix('classes')->group(function () {
@@ -44,6 +43,8 @@ Route::prefix('exams')->group(function () {
 Route::prefix('questions')->group(function () {
     Route::post('/import', [QuestionController::class, 'import_questions'])->name('import-questions');
     Route::get('/import', [QuestionController::class, 'upload_file'])->name('import-question-view');
+    Route::get('/import-array', [QuestionController::class, 'test'])->name('aaa');
+    Route::post('/import-array', [QuestionController::class, 'import_questions_array'])->name('ttt');
 });
 
 Route::prefix('written-exams')->group(function () {
@@ -98,13 +99,20 @@ Route::prefix('taks')->group(function () {
     Route::get('/exam',  [AttendanceController::class, 'taks_index'])->name('attendance.taks_table');
 });
 
+Route::prefix('agbeya')->group(function () {
+    Route::get('/', function () {
+        return view('admin.components.home');
+    });
+    Route::get('/exam',  [AttendanceController::class, 'agbeya_index'])->name('attendance.agbeya_table');
+});
+
 Route::get('/main', function () {
     return view('admin.main');
 });
 
 Route::get('/q', function () {
-    $exams_attendance = ExamAttendance::where('in_hall' , 1)->get();
-    foreach($exams_attendance as $attendance ){
+    $exams_attendance = ExamAttendance::where('in_hall', 1)->get();
+    foreach ($exams_attendance as $attendance) {
         $attendance->coptic = 1;
         $attendance->taks = 1;
         $attendance->save();

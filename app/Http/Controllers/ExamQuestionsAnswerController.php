@@ -67,16 +67,13 @@ class ExamQuestionsAnswerController extends Controller
             $item->examiner =  $inputs['examiner'];
         }
 
-        //        $inputs['answers'] = $questions;
-        // $exam_answer = ExamAnswer::where('student_id', $inputs['student_id'])->where('type', $inputs['type'])->first();
-        // if (!$exam_answer) {
 
-        //     $exam_answer = ExamAnswer::create($inputs);
-        //     $exam_answer->answers = $questions;
-        //     $exam_answer->save();
-        // } else {
-        //     $exam_answer->answers = json_decode($exam_answer->answers);
+        // $question_answer = ExamQuestionsAnswer::where('student_id', $inputs['student_id'])->where('question_id', $questions[0]->id)->first();
+        // if ($question_answer) {
+        //     Session::flash('error', 'لا يمكن الدخول لنفس الامتحان مرتين');
+        //     return redirect()->back()->withInput();
         // }
+
         $exam_answer = null;
         $examiner = $inputs['examiner'];
         return view('admin.components.examiner.written_exam_show', compact('answers', 'teacher_phone', 'class_name', 'teacher_name', 'exam_answer', 'class', 'student', 'exam', 'examiner', 'questions'));
@@ -109,18 +106,18 @@ class ExamQuestionsAnswerController extends Controller
                 ExamQuestionsAnswer::create([
                     'examiner' => $inputs['examiner'],
                     'wight' => $value['wight'],
-                    'score' => $value['score'],
+                    'score' => $value['score'] ?? 0,
                     'question_id' => $value['question_id'],
                     'student_id' => $inputs['student_id'],
                     'type' => $inputs['type']
                 ]);
             }
             else{
-                $question_answer->score = $value['score'];
+                $question_answer->score = $value['score'] ?? 0;
                 $question_answer->save();               
             }
         }
         Session::flash('success', 'لقد تم تسجيل الاجابات بنجاح');
-        return view('admin.components.examiner.index');
+        return view('admin.components.examiner.written');
     }
 }

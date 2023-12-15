@@ -13,6 +13,8 @@
         <h2 style="text-align: center;"> Coptic</h2>
     @elseif(Request::route()->getPrefix() == 'taks')
         <h2 style="text-align: center;"> Taks</h2>
+    @elseif(Request::route()->getPrefix() == 'agbeya')
+        <h2 style="text-align: center;"> Agbeya</h2>
     @endif
     <div class="row" style="text-align: center;">
         <div class="col">
@@ -44,20 +46,37 @@
                     <th>Name</th>
                     <th>Group Number</th>
                     <th>In Hall</th>
-                    @if (Request::route()->getPrefix() == 'alhan' ||
-                        Request::route()->getPrefix() == 'door-entrance' ||
-                        Request::route()->getPrefix() == 'door-exit')
+                    @if (Request::route()->getPrefix() == '/alhan' ||
+                            Request::route()->getPrefix() == 'alhan' ||
+                            Request::route()->getPrefix() == '/door-entrance' ||
+                            Request::route()->getPrefix() == 'door-entrance' ||
+                            Request::route()->getPrefix() == '/door-exit' ||
+                            Request::route()->getPrefix() == 'door-exit')
                         <th>Alhan</th>
                     @endif
-                    @if (Request::route()->getPrefix() == 'coptic' ||
-                        Request::route()->getPrefix() == 'door-entrance' ||
-                        Request::route()->getPrefix() == 'door-exit')
+                    @if (Request::route()->getPrefix() == '/coptic' ||
+                            Request::route()->getPrefix() == 'coptic' ||
+                            Request::route()->getPrefix() == '/door-entrance' ||
+                            Request::route()->getPrefix() == 'door-entrance' ||
+                            Request::route()->getPrefix() == '/door-exit' ||
+                            Request::route()->getPrefix() == 'door-exit')
                         <th>Coptic</th>
                     @endif
-                    @if (Request::route()->getPrefix() == 'taks' ||
-                        Request::route()->getPrefix() == 'door-entrance' ||
-                        Request::route()->getPrefix() == 'door-exit')
+                    @if (Request::route()->getPrefix() == '/taks' ||
+                            Request::route()->getPrefix() == 'taks' ||
+                            Request::route()->getPrefix() == '/door-entrance' ||
+                            Request::route()->getPrefix() == 'door-entrance' ||
+                            Request::route()->getPrefix() == '/door-exit' ||
+                            Request::route()->getPrefix() == 'door-exit')
                         <th>Taks</th>
+                    @endif
+                    @if (Request::route()->getPrefix() == '/agbeya' ||
+                            Request::route()->getPrefix() == 'agbeya' ||
+                            Request::route()->getPrefix() == '/door-entrance' ||
+                            Request::route()->getPrefix() == 'door-entrance' ||
+                            Request::route()->getPrefix() == '/door-exit' ||
+                            Request::route()->getPrefix() == 'door-exit')
+                        <th>Agbeya</th>
                     @endif
                     <th>Out Hall</th>
                 </tr>
@@ -67,26 +86,45 @@
                 <td id="student_name"></td>
                 <td id="student_group_number"></td>
                 <td id="student_inhall"></td>
-                @if (Request::route()->getPrefix() == 'alhan' ||
-                    Request::route()->getPrefix() == 'door-entrance' ||
-                    Request::route()->getPrefix() == 'door-exit')
+                @if (Request::route()->getPrefix() == '/alhan' ||
+                        Request::route()->getPrefix() == 'alhan' ||
+                        Request::route()->getPrefix() == '/door-entrance' ||
+                        Request::route()->getPrefix() == 'door-entrance' ||
+                        Request::route()->getPrefix() == '/door-exit' ||
+                        Request::route()->getPrefix() == 'door-exit')
                     <td id="student_alhan"> </td>
                 @else
                     <td hidden id="student_alhan"> </td>
                 @endif
-                @if (Request::route()->getPrefix() == 'coptic' ||
-                    Request::route()->getPrefix() == 'door-entrance' ||
-                    Request::route()->getPrefix() == 'door-exit')
+                @if (Request::route()->getPrefix() == '/coptic' ||
+                        Request::route()->getPrefix() == 'coptic' ||
+                        Request::route()->getPrefix() == '/door-entrance' ||
+                        Request::route()->getPrefix() == 'door-entrance' ||
+                        Request::route()->getPrefix() == '/door-exit' ||
+                        Request::route()->getPrefix() == 'door-exit')
                     <td id="student_coptic"></td>
                 @else
                     <td hidden id="student_coptic"> </td>
                 @endif
-                @if (Request::route()->getPrefix() == 'taks' ||
-                    Request::route()->getPrefix() == 'door-entrance' ||
-                    Request::route()->getPrefix() == 'door-exit')
+                @if (Request::route()->getPrefix() == '/taks' ||
+                        Request::route()->getPrefix() == 'taks' ||
+                        Request::route()->getPrefix() == '/door-entrance' ||
+                        Request::route()->getPrefix() == 'door-entrance' ||
+                        Request::route()->getPrefix() == '/door-exit' ||
+                        Request::route()->getPrefix() == 'door-exit')
                     <td id="student_taks"></td>
                 @else
                     <td hidden id="student_taks"> </td>
+                @endif
+                @if (Request::route()->getPrefix() == '/agbeya' ||
+                        Request::route()->getPrefix() == 'agbeya' ||
+                        Request::route()->getPrefix() == '/door-entrance' ||
+                        Request::route()->getPrefix() == 'door-entrance' ||
+                        Request::route()->getPrefix() == '/door-exit' ||
+                        Request::route()->getPrefix() == 'door-exit')
+                    <td id="student_agbeya"></td>
+                @else
+                    <td hidden id="student_agbeya"> </td>
                 @endif
                 <td id="student_outhall"></td>
             </tbody>
@@ -196,6 +234,8 @@
             add_cell_style('student_coptic')
             $('#student_taks').html(convert_bool_to_string(student_attendance.taks));
             add_cell_style('student_taks')
+            $('#student_agbeya').html(convert_bool_to_string(student_attendance.agbeya));
+            add_cell_style('student_agbeya')
             $('#student_outhall').html(convert_bool_to_string(student_attendance.out_hall));
             add_cell_style('student_outhall')
             $('table').removeAttr('hidden');

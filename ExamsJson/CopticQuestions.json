@@ -285,6 +285,12 @@
                 }
             ],
             "written_exam_id": 1
+        },
+        {
+            "question": "16- شفوى و ترجمة",
+            "wight": "20",
+            "answers": null,
+            "written_exam_id": 1
         }
     ],
     "key": "122",
@@ -545,6 +551,12 @@
                 }
             ],
             "written_exam_id": 2
+        },
+        {
+            "question": "16- شفوى و ترجمة",
+            "wight": "20",
+            "answers": null,
+            "written_exam_id": 2
         }
     ],
     "key": "311-321-222-231",
@@ -789,7 +801,7 @@
                     "status": 1
                 }
             ],
-            "written_exam_id": 2
+            "written_exam_id": 3
         },
         {
             "question": "15-@ ``fnomoc `m`psoic @ ) @ `m @ اداة ربط ",
@@ -808,7 +820,13 @@
                     "status": 0
                 }
             ],
-            "written_exam_id": 2
+            "written_exam_id": 3
+        },
+        {
+            "question": "16- شفوى و ترجمة",
+            "wight": "20",
+            "answers": null,
+            "written_exam_id": 3
         }
     ],
     "key": "131-132-133",
@@ -1077,6 +1095,12 @@
                     "status": 0
                 }
             ],
+            "written_exam_id": 7
+        },
+        {
+            "question": "16- شفوى و ترجمة",
+            "wight": "20",
+            "answers": null,
             "written_exam_id": 7
         }
     ],  
@@ -1381,6 +1405,12 @@
                     "status": 1
                 }
             ],
+            "written_exam_id": 10
+        },
+        {
+            "question": "16- شفوى و ترجمة",
+            "wight": "20",
+            "answers": null,
             "written_exam_id": 10
         }
        
