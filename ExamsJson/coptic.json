@@ -179,82 +179,423 @@
             "wight": "5"
         }
     ],
-    "key": "121",
+    // "key": "121",
+    // "exam": [
+    //     {
+    //         "instructions": "علي الخادم نُطْقْ الكلمة للمخدوم لأن المخدوم حافظ الكلمة سماعي فقط لا يستطيع القراءة+في حالة وجود أي استفسار يُرجَي الرجوع لخدام المادة:+ت/ مارينا فتح الله (01287124457))"
+    //     },
+    //     {
+    //         "question": "1-  كلمة رقبة يعني ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "2-  اذكر قاعدة حرف Ⳉ ",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "3-  كلمة  يعني Ⲟⲩϫⲁⲓ  ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "4-  كلمة Ⲛⲁⲛⲉ ⲣⲟⲩϩⲓ يعني ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "5-  كلمة رائحة يعني ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "6-  اذكر قاعدة حرف ϯ",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "7-  كلمة Ⲁⲛⲍⲏⲃ يعني ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "8-  عدد الحروف الساكنة  والحروف المتحركة ",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "9-  كلمة فول يعني ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "10-  اذكر قاعدة حرف Ⲩ",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "11-  كلمة Ⲕⲁϣ يعني ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "12-  كلمة داود يعني ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "13-  إيه هما الحروف المتحركة القابلة للكسر ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "14-  كلمة Ϯⲏⲃ يعني ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "15-  كلمة عيد يعني ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "16-  كلمة قدم يعني ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "17-  كلمة Ⲭⲁⲕⲓ يعني ؟",
+    //         "wight": "5"
+    //     },
+    //     {
+    //         "question": "18-  صباح الخير يعني ",
+    //         "wight": "5"
+    //     }
+    // ],
+
+
+
+
+
+    "key": "122 - 121 - 123",
     "exam": [
         {
             "instructions": "علي الخادم نُطْقْ الكلمة للمخدوم لأن المخدوم حافظ الكلمة سماعي فقط لا يستطيع القراءة+في حالة وجود أي استفسار يُرجَي الرجوع لخدام المادة:+ت/ مارينا فتح الله (01287124457))"
         },
         {
-            "question": "1-  كلمة رقبة يعني ؟",
+            "question": "1- @ E0ovab @ معنى  كلمة  (  (  قديس - قدس - كنيسة)",
             "wight": "5"
         },
         {
-            "question": "2-  اذكر قاعدة حرف Ⳉ ",
+            "question": "2- @ V @ كام قاعدة نطق لحرف   (  (  3 - 6 - 4)  ",
             "wight": "5"
         },
         {
-            "question": "3-  كلمة  يعني Ⲟⲩϫⲁⲓ  ؟",
+            "question": "3-عدد حروف اللغة القبطية  (( 32 - 28 - 24)",
             "wight": "5"
         },
         {
-            "question": "4-  كلمة Ⲛⲁⲛⲉ ⲣⲟⲩϩⲓ يعني ؟",
+            "question": "4- معنى كلمة سمكة (  @ T3bt @ - @  T3b @  - @ 2ai @)",
             "wight": "5"
         },
         {
-            "question": "5-  كلمة رائحة يعني ؟",
+            "question": "5- @ #i @ معنى  كلمة  (  (  حائط - بيت - حديقة)",
             "wight": "5"
         },
         {
-            "question": "6-  اذكر قاعدة حرف ϯ",
+            "question": "6-  كلمة ظلمة تعنى (( @ Jenea  @ - @  A7ioc @  - @ Xaki @)",
             "wight": "5"
         },
         {
-            "question": "7-  كلمة Ⲁⲛⲍⲏⲃ يعني ؟",
+            "question": "7-  يوم السبت معناها (( @ Piovai  @ - @  Pi2a24 @  - @ Pi2omt @)",
             "wight": "5"
         },
         {
-            "question": "8-  عدد الحروف الساكنة  والحروف المتحركة ",
+            "question": "8-عدد حروف الحلقية  (( 5 - 4 - 3)",
             "wight": "5"
         },
         {
-            "question": "9-  كلمة فول يعني ؟",
+            "question": "9-   ب اذا جاء بعده حرف متحرك@B@ ينطق حرف    ((    )",
             "wight": "5"
         },
         {
-            "question": "10-  اذكر قاعدة حرف Ⲩ",
+            "question": "10-   من الحروف الحلقية@X@ حرف    ((    )",
             "wight": "5"
         },
         {
-            "question": "11-  كلمة Ⲕⲁϣ يعني ؟",
+            "question": "11-   تعنى وردة@2ai@ كلمة    ((    )",
             "wight": "5"
         },
         {
-            "question": "12-  كلمة داود يعني ؟",
+            "question": "12- عدد الحروف الساكنة 25 حرف ((  )",
             "wight": "5"
         },
         {
-            "question": "13-  إيه هما الحروف المتحركة القابلة للكسر ؟",
+            "question": "13- @ Piovai ((((@  يوم الاثنين معناه ((  )",
             "wight": "5"
         },
         {
-            "question": "14-  كلمة Ϯⲏⲃ يعني ؟",
+            "question": "14- عدد الحروف المتحركة القابلة للكسر3 ((  )",
             "wight": "5"
         },
         {
-            "question": "15-  كلمة عيد يعني ؟",
-            "wight": "5"
-        },
-        {
-            "question": "16-  كلمة قدم يعني ؟",
-            "wight": "5"
-        },
-        {
-            "question": "17-  كلمة Ⲭⲁⲕⲓ يعني ؟",
-            "wight": "5"
-        },
-        {
-            "question": "18-  صباح الخير يعني ",
+            "question": "15-   تعنى ابن@Pi23ri@ كلمة    ((    )",
             "wight": "5"
         }
-    ]
+    ],
+
+
+    "key": "122",
+    "exam": [
+        {
+            "question": "1- @ E0ovab @ معنى  كلمة  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "قديس  ",
+                    "status": 1
+                },
+                {
+                    "answer": "قدس ",
+                    "status": 0
+                },
+                {
+                    "answer": "كنيسة",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "2- @ V @ كام قاعدة نطق لحرف  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "3 ",
+                    "status": 1
+                },
+                {
+                    "answer": "6  ",
+                    "status": 0
+                },
+                {
+                    "answer": "4",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "3-عدد حروف اللغة القبطية  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "32 ",
+                    "status": 1
+                },
+                {
+                    "answer": "28 ",
+                    "status": 0
+                },
+                {
+                    "answer": "24",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "4- معنى كلمة سمكة ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "@ T3bt @",
+                    "status": 1
+                },
+                {
+                    "answer": " @  T3b @ ",
+                    "status": 0
+                },
+                {
+                    "answer": " @ 2ai @ ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "5- @ #i @ معنى  كلمة  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "حائط ",
+                    "status": 0
+                },
+                {
+                    "answer": " بيت ",
+                    "status": 1
+                },
+                {
+                    "answer": " حديقة ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "6-  كلمة ظلمة تعنى ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "@ Jenea  @",
+                    "status": 0
+                },
+                {
+                    "answer": "@  A7ioc @  ",
+                    "status": 0
+                },
+                {
+                    "answer": " @ Xaki @ ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "7-  يوم السبت معناها ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "@ Piovai  @",
+                    "status": 0
+                },
+                {
+                    "answer": " @  Pi2a24 @ ",
+                    "status": 1
+                },
+                {
+                    "answer": " @ Pi2omt @ ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "8-عدد حروف الحلقية ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "3",
+                    "status": 0
+                },
+                {
+                    "answer": "4 ",
+                    "status": 1
+                },
+                {
+                    "answer": " 5 ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "9- ب اذا جاء بعده حرف متحرك@B@ ينطق حرف ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "10-   من الحروف الحلقية@X@ حرف ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "11-   تعنى وردة@2ai@ كلمة    ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "12- عدد الحروف الساكنة 25 حرف ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "13- @ Piovai @  يوم الاثنين معناه ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "14- عدد الحروف المتحركة القابلة للكسر3 ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "15-   تعنى ابن@Pi23ri@ كلمة  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "16- شفوى و ترجمة",
+            "wight": "20",
+            "answers": null,
+            "written_exam_id": 2
+        }
+    ],
+
+
 }

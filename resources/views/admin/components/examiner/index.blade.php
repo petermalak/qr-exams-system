@@ -151,20 +151,23 @@
 
         #option-1:checked:checked~.option-1,
         #option-2:checked:checked~.option-2,
-        #option-3:checked:checked~.option-3 {
+        #option-3:checked:checked~.option-3,
+        #option-3:checked:checked~.option-4 {
             border-color: #888d92;
             background: #888d92;
         }
 
         #option-1:checked:checked~.option-1 .dot,
         #option-2:checked:checked~.option-2 .dot,
-        #option-3:checked:checked~.option-3 .dot {
+        #option-3:checked:checked~.option-3 .dot,
+        #option-4:checked:checked~.option-4 .dot {
             background: #fff;
         }
 
         #option-1:checked:checked~.option-1 .dot::before,
         #option-2:checked:checked~.option-2 .dot::before,
-        #option-3:checked:checked~.option-3 .dot::before {
+        #option-3:checked:checked~.option-3 .dot::before,
+        #option-4:checked:checked~.option-4 .dot::before {
             opacity: 1;
             transform: scale(1);
         }
@@ -176,7 +179,8 @@
 
         #option-1:checked:checked~.option-1 span,
         #option-2:checked:checked~.option-2 span,
-        #option-3:checked:checked~.option-3 span {
+        #option-3:checked:checked~.option-3 span,
+        #option-4:checked:checked~.option-4 span {
             color: #fff;
         }
     </style>

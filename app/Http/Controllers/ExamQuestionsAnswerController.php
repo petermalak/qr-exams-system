@@ -49,6 +49,7 @@ class ExamQuestionsAnswerController extends Controller
         unset($inputs['_token']);
         $class = ClassModel::find($student->class_id);
         $exam = WrittenExam::where('class_id', $student->class_id)->where('type', $inputs['type'])->first();
+
         $teacher_name = '';
 
         $class_name = ClassModel::find($student->class_id)->name;

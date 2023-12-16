@@ -125,7 +125,7 @@
 
 
                                         <td>
-                                            @if (!empty($item->answers))
+                                            @if ($item->answers != "[]")
                                                 @foreach (json_decode($item->answers) as $index => $option)
                                                     @php
                                                         $text = $option->answer;

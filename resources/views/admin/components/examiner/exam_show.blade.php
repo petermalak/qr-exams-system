@@ -173,7 +173,7 @@
                                             </td>
                                             <td>
                                                 <button type="button" class="btn btn-info show-answer-btn"
-                                                    data-answer="{{ $answers[$key - 1] }}">
+                                                    data-answer="{{ isset($answers[$key - 1]) ?? $answers[$key - 1]  }}">
                                                     Show Answer
                                                 </button>
                                             </td>
