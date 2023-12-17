@@ -125,33 +125,39 @@
 
 
                                         <td>
-                                            @if ($item->answers != "[]")
+                                            @if ($item->answers != '[]')
                                                 @foreach (json_decode($item->answers) as $index => $option)
-                                                    @php
-                                                        $text = $option->answer;
-                                                        $parts = explode('@', $text);
-                                                        $parts = array_filter($parts, function ($part) {
-                                                            return trim($part) !== '';
-                                                        });
-                                                    @endphp
+                                                    @if (str_contains($option->answer, 'div'))
+                                                        <input type="radio" name="answers[{{ $key }}][score]"
+                                                            value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
+                                                        {!! html_entity_decode($option->answer) !!}
+                                                    @else
+                                                        @php
+                                                            $text = $option->answer;
+                                                            $parts = explode('@', $text);
+                                                            $parts = array_filter($parts, function ($part) {
+                                                                return trim($part) !== '';
+                                                            });
+                                                        @endphp
 
-                                                    @foreach ($parts as $i => $part)
-                                                        @if ($i % 2 == 0)
-                                                            <label class="m-1">
-                                                                <input type="radio"
-                                                                    name="answers[{{ $key }}][score]"
-                                                                    value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
-                                                                {{ $part }}
-                                                            </label>
-                                                        @else
-                                                            <label class="m-1 coptic-text">
-                                                                <input type="radio"
-                                                                    name="answers[{{ $key }}][score]"
-                                                                    value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
-                                                                {{ $part }}
-                                                            </label>
-                                                        @endif
-                                                    @endforeach
+                                                        @foreach ($parts as $i => $part)
+                                                            @if ($i % 2 == 0)
+                                                                <label class="m-1">
+                                                                    <input type="radio"
+                                                                        name="answers[{{ $key }}][score]"
+                                                                        value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
+                                                                    {{ $part }}
+                                                                </label>
+                                                            @else
+                                                                <label class="m-1 coptic-text">
+                                                                    <input type="radio"
+                                                                        name="answers[{{ $key }}][score]"
+                                                                        value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
+                                                                    {{ $part }}
+                                                                </label>
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
                                                 @endforeach
                                             @else
                                                 <input type="number" min="0" step="0.1"
@@ -235,7 +241,7 @@
 
 
         // Set the timer duration in seconds
-        const timerDuration = 5000; // 5 minutes
+        const timerDuration = 900; // 5 minutes
         let timeRemaining = timerDuration;
 
         // Function to update the timer display
