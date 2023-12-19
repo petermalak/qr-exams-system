@@ -110,7 +110,7 @@ class AttendanceController extends Controller
                     ], 200);
                 }
             } elseif ($inputs['prefix'] == 'agbeya' || $inputs['prefix'] == '/agbeya') {
-                $response = $this->agbeya_index($inputs['student_id']);
+                $response = $this->agbeyaAttendance($inputs['student_id']);
                 if ($response) {
                     $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
                     return response()->json([
