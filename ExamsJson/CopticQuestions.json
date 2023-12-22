@@ -1,5 +1,275 @@
 {
-    "key": "331-222",
+    "key": "331",
+    "exam": [
+        {
+            "question": "1- @ Ov Makarioc Pe Pirwmi @    ( @Ov@   اداة تعريف  )  ,  ( @Pi@ اداة تنكير  )  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "2- @ `Mpe4ohi erat4 hi `fmwit @  الفعل هنا فى زمن الماضى التام الاول فى الاثبات ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "3- @ `Tka0edra `nte niloimoc @    ( @`nte@   اداة ربط مفعول به ) ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "4- @ Nire4ernobi @  معناها الخطاة ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "5- @ Ovde @  حرف عطف قبطى للجملة المنفية  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 0
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "6- @ `E2are `p03ov neh4 @  زمن الفعل هنا فى الحاضر الدال على عادة  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "7- @ Pe4nomoc @  كلمة بها صفة ملكية مصرفة مع هو ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "صح",
+                    "status": 1
+                },
+                {
+                    "answer": "خطا ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "8-@ `Fmwit @ ………………… @ nire4ernobi @ ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "@ `nte @",
+                    "status": 1
+                },
+                {
+                    "answer": "@  `E @ ",
+                    "status": 0
+                },
+                {
+                    "answer": " @ `N @ ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "9- @ Ermeletan @ معناها  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "يلهج",
+                    "status": 1
+                },
+                {
+                    "answer": "يصلى ",
+                    "status": 0
+                },
+                {
+                    "answer": " ارادته ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "10- @Ovgwbi `nta4 `nnec4or4er @   الفعل هنا فى زمن",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "المستقبل اليقينى فى الاثبات",
+                    "status": 0
+                },
+                {
+                    "answer": "المستقبل اليقينى فى النفى ",
+                    "status": 1
+                },
+                {
+                    "answer": " الحاضر الدال على العادة فى النفى  ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "11-@ Ge `Psoic @ ………………… @ `M`fmwit  `nte ni`0m3i @ ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "@ cwovn @",
+                    "status": 1
+                },
+                {
+                    "answer": "@  2e @ ",
+                    "status": 0
+                },
+                {
+                    "answer": " @ er @ ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "12-معنى كلمة صديقين ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "@ Niaceb3c @",
+                    "status": 0
+                },
+                {
+                    "answer": "@  Piaceb3c @ ",
+                    "status": 0
+                },
+                {
+                    "answer": " @ Pi`0m3i @ ",
+                    "status": 0
+                },
+                {
+                    "answer": " @ Ni`0m3i @ ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "13- @ Pe4ovw12 @ معناها  ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "ارادته",
+                    "status": 1
+                },
+                {
+                    "answer": "حكمته   ",
+                    "status": 0
+                },
+                {
+                    "answer": "سلوكه  ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 2
+        },
+        {
+            "question": "14-@ Alla `ere pe4ovw2  @ ………………… @ qen `fnomoc `m`psoic @ ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "@ `Ohi @",
+                    "status": 0
+                },
+                {
+                    "answer": "@  `Nge @ ",
+                    "status": 0
+                },
+                {
+                    "answer": "@ 2wpi @ ",
+                    "status": 1
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "15-@ ``fnomoc `m`psoic @ ) @ `m @ اداة ربط ",
+            "wight": "3",
+            "answers": [
+                {
+                    "answer": "اضافة",
+                    "status": 1
+                },
+                {
+                    "answer": "صفة ",
+                    "status": 0
+                },
+                {
+                    "answer": "مفعول به ",
+                    "status": 0
+                }
+            ],
+            "written_exam_id": 3
+        },
+        {
+            "question": "16- شفوى و ترجمة",
+            "wight": "20",
+            "answers": null,
+            "written_exam_id": 3
+        }
+    ],
+    "key": " 321-311-231- 222",
     "exam": [
         {
             "question": "1--@ M3na@ ……………………@ `Cqai `Mpe1114w2 @",
@@ -559,276 +829,6 @@
             "written_exam_id": 2
         }
     ],
-    "key": "311-321-231",
-    "exam": [
-        {
-            "question": "1- @ Ov Makarioc Pe Pirwmi @    ( @Ov@   اداة تعريف  )  ,  ( @Pi@ اداة تنكير  )  ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "صح",
-                    "status": 0
-                },
-                {
-                    "answer": "خطا ",
-                    "status": 1
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "2- @ `Mpe4ohi erat4 hi `fmwit @  الفعل هنا فى زمن الماضى التام الاول فى الاثبات ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "صح",
-                    "status": 0
-                },
-                {
-                    "answer": "خطا ",
-                    "status": 1
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "3- @ `Tka0edra `nte niloimoc @    ( @`nte@   اداة ربط مفعول به ) ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "صح",
-                    "status": 0
-                },
-                {
-                    "answer": "خطا ",
-                    "status": 1
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "4- @ Nire4ernobi @  معناها الخطاة ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "صح",
-                    "status": 1
-                },
-                {
-                    "answer": "خطا ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "5- @ Ovde @  حرف عطف قبطى للجملة المنفية  ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "صح",
-                    "status": 0
-                },
-                {
-                    "answer": "خطا ",
-                    "status": 1
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "6- @ `E2are `p03ov neh4 @  زمن الفعل هنا فى الحاضر الدال على عادة  ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "صح",
-                    "status": 1
-                },
-                {
-                    "answer": "خطا ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "7- @ Pe4nomoc @  كلمة بها صفة ملكية مصرفة مع هو ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "صح",
-                    "status": 1
-                },
-                {
-                    "answer": "خطا ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "8-@ `Fmwit @ ………………… @ nire4ernobi @ ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ `nte @",
-                    "status": 1
-                },
-                {
-                    "answer": "@  `E @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ `N @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "9- @ Ermeletan @ معناها  ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "يلهج",
-                    "status": 1
-                },
-                {
-                    "answer": "يصلى ",
-                    "status": 0
-                },
-                {
-                    "answer": " ارادته ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "10- @Ovgwbi `nta4 `nnec4or4er @   الفعل هنا فى زمن",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "المستقبل اليقينى فى الاثبات",
-                    "status": 0
-                },
-                {
-                    "answer": "المستقبل اليقينى فى النفى ",
-                    "status": 1
-                },
-                {
-                    "answer": " الحاضر الدال على العادة فى النفى  ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "11-@ Ge `Psoic @ ………………… @ `M`fmwit  `nte ni`0m3i @ ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ cwovn @",
-                    "status": 1
-                },
-                {
-                    "answer": "@  2e @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ er @ ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "12-معنى كلمة صديقين ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ Niaceb3c @",
-                    "status": 0
-                },
-                {
-                    "answer": "@  Piaceb3c @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Pi`0m3i @ ",
-                    "status": 0
-                },
-                {
-                    "answer": " @ Ni`0m3i @ ",
-                    "status": 1
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "13- @ Pe4ovw12 @ معناها  ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "ارادته",
-                    "status": 1
-                },
-                {
-                    "answer": "حكمته   ",
-                    "status": 0
-                },
-                {
-                    "answer": "سلوكه  ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 2
-        },
-        {
-            "question": "14-@ Alla `ere pe4ovw2  @ ………………… @ qen `fnomoc `m`psoic @ ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "@ `Ohi @",
-                    "status": 0
-                },
-                {
-                    "answer": "@  `Nge @ ",
-                    "status": 0
-                },
-                {
-                    "answer": "@ 2wpi @ ",
-                    "status": 1
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "15-@ ``fnomoc `m`psoic @ ) @ `m @ اداة ربط ",
-            "wight": "3",
-            "answers": [
-                {
-                    "answer": "اضافة",
-                    "status": 1
-                },
-                {
-                    "answer": "صفة ",
-                    "status": 0
-                },
-                {
-                    "answer": "مفعول به ",
-                    "status": 0
-                }
-            ],
-            "written_exam_id": 3
-        },
-        {
-            "question": "16- شفوى و ترجمة",
-            "wight": "20",
-            "answers": null,
-            "written_exam_id": 3
-        }
-    ],
     "key": "131-132-133",
     "exam": [
         {
@@ -1083,7 +1083,7 @@
             "wight": "3",
             "answers": [
                 {
-                    "answer": " @ Poic @",
+                    "answer": " @ P=o=c  @",
                     "status": 0
                 },
                 {
@@ -1415,17 +1415,6 @@
         }
     ]
 },
-
-
-
-
-
-
-
-
-
-
-
 {
     [
         "12",
