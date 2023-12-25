@@ -97,6 +97,10 @@ class AttendanceController extends Controller
             $student_attendance = ExamAttendance::create($inputs);
         } elseif ($student_attendance == null && $inputs['prefix'] != 'door-entrance') {
             return response()->json(['error' => 'Go to Entrance first'], 401);
+        } elseif ($student_attendance != null && ($inputs['prefix'] == 'door-entrance' || $inputs['prefix'] == '/door-entrance')) {
+            $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
+            $student_attendance->in_hall = 1;
+            $student_attendance->save();
         }
 
         if ($student_attendance != null && $inputs['prefix'] != 'door-entrance') {
