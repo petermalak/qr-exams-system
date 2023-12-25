@@ -39,7 +39,7 @@ class CopticExamAttendancesDataTable extends DataTable
      */
     public function query(ExamAttendance $model): Builder
     {
-        return $model->newQuery()->where('coptic',0)->andWhere('in_hall',1);
+        return $model->newQuery()->where('coptic',0)->where('in_hall',1);
     }
 
     /**
