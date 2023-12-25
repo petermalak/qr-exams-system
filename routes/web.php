@@ -52,16 +52,18 @@ Route::prefix('written-exams')->group(function () {
     Route::get('/import', [WrittenExamController::class, 'upload_file'])->name('import-written-exams-view');
 });
 
+Route::prefix('attendance')->group(function () {
+    Route::post('/import', [AttendanceController::class, 'import_exmas'])->name('import-attendance');
+    Route::get('/import', [AttendanceController::class, 'upload_file'])->name('import-attendance-view');
+});
+
+
 Route::resource('/take-written-exam', ExamQuestionsAnswerController::class)->only('index', 'create');
 Route::post('/take-written-exam', [ExamQuestionsAnswerController::class, 'update'])->name('take-written-exam.update');
 
 
 Route::resource('/take-exam', ExamAnswerController::class)->only('index', 'create');
 Route::post('/take-exam', [ExamAnswerController::class, 'update'])->name('take-exam.update');
-
-
-
-
 
 
 Route::resource('/exam-attendances', AttendanceController::class)->only('create');

@@ -6,7 +6,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Exam Selection</h1>
+                    <h1>Exam Selection شفوى</h1>
+                </div>
+                <div class="col-sm-6">
+                    <a href="{{ url('/take-written-exam') }}" class="btn btn-block btn-danger"> الذهاب الى الامتحان التحريرى</a>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -23,7 +26,7 @@
                 </div>
             @endif
             <div class="card-header">
-                <h3 class="card-title">Exam Selection</h3>
+                <h3 class="card-title">Exam Selection </h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">

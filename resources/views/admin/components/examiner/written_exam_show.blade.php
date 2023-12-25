@@ -161,8 +161,8 @@
                                                 @endforeach
                                             @else
                                                 <input type="number" min="0" step="0.1"
-                                                    max="{{ $item->wight }}" class="form-control input-name" min="0"
-                                                    id="mark-{{ $key }}"
+                                                    max="{{ $item->wight }}" class="form-control input-name"
+                                                    min="0" id="mark-{{ $key }}"
                                                     name="answers[{{ $key }}][score]" required
                                                     value="{{ $item->score }}">
                                             @endif

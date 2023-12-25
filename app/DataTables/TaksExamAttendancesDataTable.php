@@ -39,7 +39,7 @@ class TaksExamAttendancesDataTable extends DataTable
      */
     public function query(ExamAttendance $model): Builder
     {
-        return $model->newQuery()->where('taks',0);
+        return $model->newQuery()->where('taks',0)->andWhere('in_hall',1);
     }
 
     /**

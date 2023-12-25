@@ -6,6 +6,7 @@ use App\DataTables\AgbeyaExamAttendancesDataTable;
 use App\DataTables\AlhanExamAttendancesDataTable;
 use App\DataTables\CopticExamAttendancesDataTable;
 use App\DataTables\TaksExamAttendancesDataTable;
+use App\Imports\ExamAttendanceImport;
 use App\Models\ExamAttendance;
 use App\Models\Student;
 use Illuminate\Contracts\Foundation\Application;
@@ -16,9 +17,28 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AttendanceController extends Controller
 {
+
+    public function upload_file()
+    {
+        return view('admin.components.attendace.import');
+    }
+
+    public function import_exmas(Request $request): RedirectResponse
+    {
+        $input = $request->all();
+        $validator = Validator::make($input, ['file' => 'required']);
+        if ($validator->fails()) {
+            return redirect()->route('import-attendance-view')->withErrors($validator)->withInput();
+        }
+        Excel::import(new ExamAttendanceImport, $request->file('file'));
+        return redirect()->route('import-attendance-view')->with(['success' => 'Exams Added Successfully']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -80,6 +100,15 @@ class AttendanceController extends Controller
         }
 
         if ($student_attendance != null && $inputs['prefix'] != 'door-entrance') {
+
+
+            ///    Make sure that the out hall equal zero at any case 
+            $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
+            $student_attendance->out_hall = 0;
+            $student_attendance->save();
+            /////////
+
+
 
 
             if ($inputs['prefix'] == 'alhan' || $inputs['prefix'] == '/alhan') {
@@ -186,6 +215,7 @@ class AttendanceController extends Controller
     {
         $student_attendance = ExamAttendance::where('student_id', $student_id)->first();
         $student = Student::find($student_id);
+        $student_attendance->in_hall = 0;
         $student_attendance->out_hall = 1;
         $student_attendance->save();
         return true;
