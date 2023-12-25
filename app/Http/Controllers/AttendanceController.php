@@ -24,7 +24,7 @@ class AttendanceController extends Controller
 
     public function upload_file()
     {
-        return view('admin.components.attendace.import');
+        return view('admin.components.attendance.import');
     }
 
     public function import_exmas(Request $request): RedirectResponse
