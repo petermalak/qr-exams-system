@@ -182,7 +182,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <button type="submit" onclick="showConfirmation()" class="btn btn-primary">Submit</button>
+                        <button type="submit"  class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
@@ -212,17 +212,5 @@
             });
         });
 
-        function showConfirmation() {
-            const confirmation = confirm('Are you sure you want to submit the form?');
-
-            if (confirmation) {
-                // Handle form submission
-                const myForm = document.getElementById('exam-selection');
-                myForm.submit();
-            } else {
-                // Cancel form submission
-                console.log('Form submission cancelled');
-            }
-        }
     </script>
 @endsection
