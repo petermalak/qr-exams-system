@@ -9,11 +9,11 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-class ExamAnswersExport implements FromCollection,WithMapping
+class ExamAnswersExport implements FromCollection, WithMapping, WithHeadings
 {
     public function collection()
     {
-        return ExamAnswer::all();
+        return ExamAnswer::where('type', 'alhan')->get();
     }
 
     public function map($row): array
@@ -22,19 +22,41 @@ class ExamAnswersExport implements FromCollection,WithMapping
         $student = Student::find($row->student_id);
         $class = ClassModel::find($student->class_id);
         $rowData = [
-            $row->created_at,
             $row->student_id,
-            $row->type,
             $student->name,
             $class->name,
             $row->examiner,
+            $row->created_at,
         ];
 
         foreach ($answers as $value) {
+            $rowData[] = isset($value['original-question']) ? $value['original-question'] : '';
+            $rowData[] = $value['wight'];
             $rowData[] = $value['score'];
         }
 
         return $rowData;
+    }
+
+    public function headings(): array
+    {
+        // Define your column headers here
+        $headers = [
+            'Student ID',
+            'Student Name',
+            'Class Name',
+            'Examiner',
+            'Created At'
+        ];
+
+        // Add headers for each answer
+        foreach (json_decode(ExamAnswer::first()->answers, true) as $value) {
+            $headers[] = 'Question';
+            $headers[] = 'Weight';
+            $headers[] = 'Score';
+        }
+
+        return $headers;
     }
     public function query()
     {
