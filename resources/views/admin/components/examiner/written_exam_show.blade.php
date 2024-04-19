@@ -145,14 +145,16 @@
                                                                 <label class="m-1">
                                                                     <input type="radio"
                                                                         name="answers[{{ $key }}][score]"
-                                                                        value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
+                                                                        value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif"
+                                                                        @if ($option->status == 1) {{ "checked" }}  @endif>
                                                                     {{ $part }}
                                                                 </label>
                                                             @else
                                                                 <label class="m-1 coptic-text">
                                                                     <input type="radio"
                                                                         name="answers[{{ $key }}][score]"
-                                                                        value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
+                                                                        value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif"
+                                                                        @if ($option->status == 1) {{ "checked" }}  @endif>
                                                                     {{ $part }}
                                                                 </label>
                                                             @endif
