@@ -57,23 +57,11 @@ class ExamQuestionsAnswerController extends Controller
 
         $questions = Question::where('written_exam_id', $exam->id)->get();
         $answers = [];
-        // foreach ($questions as $question) {
-        //     if (isset($question->answer))
-        //         $answers[] = $question->answer;
-        // }
-        // dd($answers);
 
         foreach ($questions as $item) {
             $item->score = 0;
-            $item->examiner =  $inputs['examiner'];
+            $item->examiner = $inputs['examiner'];
         }
-
-
-        // $question_answer = ExamQuestionsAnswer::where('student_id', $inputs['student_id'])->where('question_id', $questions[0]->id)->first();
-        // if ($question_answer) {
-        //     Session::flash('error', 'لا يمكن الدخول لنفس الامتحان مرتين');
-        //     return redirect()->back()->withInput();
-        // }
 
         $exam_answer = null;
         $examiner = $inputs['examiner'];
@@ -112,13 +100,12 @@ class ExamQuestionsAnswerController extends Controller
                     'student_id' => $inputs['student_id'],
                     'type' => $inputs['type']
                 ]);
-            }
-            else{
+            } else {
                 $question_answer->score = $value['score'] ?? 0;
-                $question_answer->save();               
+                $question_answer->save();
             }
         }
         Session::flash('success', 'لقد تم تسجيل الاجابات بنجاح');
-        return view('admin.components.examiner.written');
+        return view('admin.components.examiner.index');
     }
 }

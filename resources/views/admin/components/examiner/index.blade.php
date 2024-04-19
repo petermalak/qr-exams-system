@@ -2,18 +2,18 @@
 @section('content')
     <script src="{{ asset('./admin/html5-qrcode.min.js') }}"></script>
 
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Exam Selection شفوى</h1>
-                </div>
-                <div class="col-sm-6">
-                    <a href="{{ url('/take-written-exam') }}" class="btn btn-block btn-danger"> الذهاب الى الامتحان التحريرى</a>
-                </div>
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
+{{--    <section class="content-header">--}}
+{{--        <div class="container-fluid">--}}
+{{--            <div class="row mb-2">--}}
+{{--                <div class="col-sm-6">--}}
+{{--                    <h1>Exam Selection شفوى</h1>--}}
+{{--                </div>--}}
+{{--                <div class="col-sm-6">--}}
+{{--                    <a href="{{ url('/take-written-exam') }}" class="btn btn-block btn-danger"> الذهاب الى الامتحان التحريرى</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div><!-- /.container-fluid -->--}}
+{{--    </section>--}}
 
     <!-- Main content -->
     <section class="content">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
 
-                    <form name="exam-selection" id="exam-selection" method="get" action="{{ route('take-exam.create') }}">
+                    <form name="exam-selection" id="exam-selection" method="get" action="{{ route('RouteToExam') }}">
                         @csrf
                         <div class="row">
                             <div class="col-12">
