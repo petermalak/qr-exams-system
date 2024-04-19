@@ -26,10 +26,14 @@ class ExamRouteController extends Controller
 
         $written_start = env("WRITTEN_START");
 
-        if ((int)$class->name < (int)$written_start) {
+        if ($inputs['type'] == 'alhan' || $inputs['type'] == 'agbeya') {
             return (new ExamAnswerController())->create($request);
         } else {
-            return (new ExamQuestionsAnswerController())->create($request);
+            if ((int)$class->name < (int)$written_start && (int)$class->name != 122) {
+                return (new ExamAnswerController())->create($request);
+            } else {
+                return (new ExamQuestionsAnswerController())->create($request);
+            }
         }
     }
 }
