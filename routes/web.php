@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware(['auth'])->group(function () {
+// Route::middleware(['auth'])->group(function () {
     Route::prefix('students')->group(function () {
         Route::post('/import', [StudentController::class, 'import_students'])->name('import-students');
         Route::get('/import', [StudentController::class, 'upload_file'])->name('import-student-view');
@@ -137,4 +137,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/test', function () {
         return view('admin.test');
     });
-});
+// });
