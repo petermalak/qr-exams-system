@@ -146,7 +146,7 @@
                                                                     <input type="radio"
                                                                         name="answers[{{ $key }}][score]"
                                                                         value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif"
-                                                                        @if ($option->status == 1) {{ "checked" }}  @endif>
+                                                                        @if ($option->status == 1) {{ 'checked' }} @endif>
                                                                     {{ $part }}
                                                                 </label>
                                                             @else
@@ -154,7 +154,7 @@
                                                                     <input type="radio"
                                                                         name="answers[{{ $key }}][score]"
                                                                         value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif"
-                                                                        @if ($option->status == 1) {{ "checked" }}  @endif>
+                                                                        @if ($option->status == 1) {{ 'checked' }} @endif>
                                                                     {{ $part }}
                                                                 </label>
                                                             @endif
@@ -163,7 +163,8 @@
                                                 @endforeach
                                             @else
                                                 <input type="number" min="0" step="0.1"
-                                                    max="{{ $item->wight }}" class="form-control input-name"
+                                                    max="{{ $item->wight }}"
+                                                    class="form-control input-named @if ($exam->type == 'coptic') scored-question @endif"
                                                     min="0" id="mark-{{ $key }}"
                                                     name="answers[{{ $key }}][score]" required
                                                     value="{{ $item->score }}">
@@ -173,7 +174,15 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <button type="submit" onclick="showConfirmation()" class="btn btn-primary">Submit</button>
+                        @if ($exam->type == 'coptic')
+                            <button onclick="nextForm(event)" class="btn btn-primary" id="nextBtn">Next</button>
+
+                            <button type="submit" onclick="showConfirmation()" class="btn btn-primary"
+                                id="submitBtn">Submit</button>
+                        @else
+                            <button type="submit" onclick="showConfirmation()" class="btn btn-primary">Submit</button>
+                        @endif
+
                     </form>
                 </div>
             </div>
@@ -192,6 +201,15 @@
             z-index: 100;
             color: white;
             background-color: rgb(31, 31, 31);
+        }
+
+        #submitBtn {
+            display: none;
+
+        }
+
+        .scored-question {
+            display: none;
         }
     </style>
     <script>
@@ -217,29 +235,7 @@
                 });
             });
 
-
-
-
-
         });
-
-        function showConfirmation() {
-            const confirmation = confirm('Are you sure you want to submit the form?');
-
-            if (confirmation) {
-                // Handle form submission
-                const myForm = document.getElementById('exam-selection');
-                myForm.submit();
-            } else {
-                // Cancel form submission
-                console.log('Form submission cancelled');
-            }
-        }
-
-
-
-
-
 
 
         // Set the timer duration in seconds
@@ -258,24 +254,24 @@
             const modalContainer = document.createElement('div');
             modalContainer.id = 'myModal'; // Give it an ID for styling
             modalContainer.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); // Adjust transparency
-    z-index: 100; // Place modal above other elements
-    display: none; // Initially hidden
+                                            position: fixed;
+                                            top: 0;
+                                            left: 0;
+                                            right: 0;
+                                            bottom: 0;
+                                            background-color: rgba(0, 0, 0, 0.5); // Adjust transparency
+                                            z-index: 100; // Place modal above other elements
+                                            display: none; // Initially hidden
 
-  `;
+                                        `;
 
             const modalContent = document.createElement('div');
             modalContent.style.cssText = `
-    margin: auto;
-    width: 50%;
-    background-color: white;
-    padding: 20px;
-  `;
+                                            margin: auto;
+                                            width: 50%;
+                                            background-color: white;
+                                            padding: 20px;
+                                        `;
 
             // Add your desired content to the modal content element
             const text = document.createElement('p');
@@ -310,5 +306,35 @@
         window.onload = function() {
             startTimer();
         };
+
+
+        function showConfirmation() {
+            const confirmation = confirm('Are you sure you want to submit the form?');
+
+            if (confirmation) {
+                // Handle form submission
+                const myForm = document.getElementById('exam-selection');
+                myForm.submit();
+            } else {
+                // Cancel form submission
+                console.log('Form submission cancelled');
+            }
+        }
+
+        function nextForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            document.querySelectorAll('.input-name').forEach(function(input) {
+                input.style.display = 'none';
+            });
+
+            document.querySelectorAll('.scored-question').forEach(function(input) {
+                input.style.display = 'block';
+            });
+
+            document.querySelector('#nextBtn').style.display = 'none';
+            document.querySelector('#submitBtn').style.display = 'block';
+            timeRemaining = 900;
+        }
     </script>
 @endsection
