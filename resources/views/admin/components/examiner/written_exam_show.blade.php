@@ -90,9 +90,14 @@
                                         @if (str_contains($item->question, 'div'))
                                             <td id="question">
                                                 <input type="hidden" class="form-control input-name original-question"
-                                                    name="answers[{{ $key + 1 }}][original-question]"
+                                                    name="answers[{{ $key }}][original-question]"
                                                     value="{{ $item->question }}">
                                                 {!! html_entity_decode($item->question) !!}
+
+                                                <input type="hidden" class="form-control input-name original-question"
+                                                    name="answers[{{ $key }}][question_id]"
+                                                    value="{{ $item->id }}">
+
                                             </td>
                                         @else
                                             <td id="question">
@@ -145,16 +150,14 @@
                                                                 <label class="m-1">
                                                                     <input type="radio"
                                                                         name="answers[{{ $key }}][score]"
-                                                                        value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif"
-                                                                        @if ($option->status == 1) {{ 'checked' }} @endif>
+                                                                        value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
                                                                     {{ $part }}
                                                                 </label>
                                                             @else
                                                                 <label class="m-1 coptic-text">
                                                                     <input type="radio"
                                                                         name="answers[{{ $key }}][score]"
-                                                                        value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif"
-                                                                        @if ($option->status == 1) {{ 'checked' }} @endif>
+                                                                        value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
                                                                     {{ $part }}
                                                                 </label>
                                                             @endif
