@@ -133,9 +133,12 @@
                                             @if ($item->answers != '[]')
                                                 @foreach (json_decode($item->answers) as $index => $option)
                                                     @if (str_contains($option->answer, 'div'))
-                                                        <input type="radio" name="answers[{{ $key }}][score]"
-                                                            value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
-                                                        {!! html_entity_decode($option->answer) !!}
+                                                        <label class="m-1">
+                                                            <input type="radio"
+                                                                name="answers[{{ $key }}][score]"
+                                                                value="@if ($option->status == 1) {{ $item->wight }} @else  0 @endif">
+                                                            {!! html_entity_decode($option->answer) !!}
+                                                        </label>
                                                     @else
                                                         @php
                                                             $text = $option->answer;
