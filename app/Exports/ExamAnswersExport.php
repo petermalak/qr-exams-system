@@ -30,9 +30,11 @@ class ExamAnswersExport implements FromCollection, WithMapping, WithHeadings
         ];
 
         foreach ($answers as $value) {
-            $rowData[] = isset($value['original-question']) ? $value['original-question'] : '';
-            $rowData[] = $value['wight'];
-            $rowData[] = $value['score'];
+            if(isset($value['wight'])){
+                $rowData[] = isset($value['original-question']) ? $value['original-question'] : '';
+                $rowData[] = $value['wight'];
+                $rowData[] = $value['score'];
+            }
         }
 
         return $rowData;

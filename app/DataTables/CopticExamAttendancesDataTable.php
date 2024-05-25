@@ -25,7 +25,7 @@ class CopticExamAttendancesDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn("coptic", function ($data) {
-                return $data->coptic == 0 ? 'Not Examed' : 'Examed';
+                return $data->coptic == 1 ? 'Examed' : 'Not Examed';
             })->editColumn("student name", function ($data) {
                 return Student::find($data->student_id)->name;
             });
@@ -39,7 +39,7 @@ class CopticExamAttendancesDataTable extends DataTable
      */
     public function query(ExamAttendance $model): Builder
     {
-        return $model->newQuery()->where('coptic',0)->where('in_hall',1);
+        return $model->newQuery()->where('coptic',"Day2")->where('in_hall',1);
     }
 
     /**
