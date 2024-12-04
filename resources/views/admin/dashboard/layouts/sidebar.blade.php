@@ -26,13 +26,34 @@
                 data-accordion="false">
 
                 <li class="nav-item">
-                    <a href="{{ route('scores.index') }}"
-                        class="nav-link {{ areActiveRoutes(['scores.index']) }}">
+                    <a href="{{ route('scores.index') }}" class="nav-link {{ areActiveRoutes(['scores.index']) }}">
                         <i class="nav-icon fas fa-table"></i>
                         <p>Score</p>
                     </a>
                 </li>
-                
+
+                <li class="nav-item">
+                    <a href="{{ route('exam-attendances.index') }}"
+                        class="nav-link {{ areActiveRoutes(['exam-attendances.index']) }}">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>Exam Attendance</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('exam-answers.index') }}"
+                        class="nav-link {{ areActiveRoutes(['exam-answers.index']) }}">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>Exam Answers</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('exam-questions-answers.index') }}"
+                        class="nav-link {{ areActiveRoutes(['exam-questions-answers.index']) }}">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>Exam Questions Answers</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

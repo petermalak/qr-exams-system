@@ -39,7 +39,7 @@ class AgbeyaExamAttendancesDataTable extends DataTable
      */
     public function query(ExamAttendance $model): Builder
     {
-        return $model->newQuery()->where('agbeya',"Day2")->where('in_hall',1);
+        return $model->newQuery()->where('agbeya',"Day5")->where('in_hall',1);
     }
 
     /**
@@ -56,7 +56,7 @@ class AgbeyaExamAttendancesDataTable extends DataTable
             ->minifiedAjax()
             ->dom('Blfrtip')
             ->lengthMenu([5, 10, 25, 50, 100])
-            ->pageLength(25)
+            ->pageLength(50)
             ->orderBy(0, "asce")
             ->buttons(
                 Button::make('reset'),

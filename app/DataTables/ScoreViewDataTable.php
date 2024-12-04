@@ -24,6 +24,7 @@ class ScoreViewDataTable extends DataTable
     {
         return datatables()
             ->collection($query)
+            ->rawColumns(['alhan', 'taks', 'coptic', 'agbeya']) // Specify columns that contain HTML
             ->addColumn('student_name', function ($data) {
                 return $data['student_name'];
             })
@@ -31,19 +32,74 @@ class ScoreViewDataTable extends DataTable
                 return $data['group_number'];
             })
             ->addColumn('alhan', function ($data) {
-                return $data['alhan'] !== null ? $data['alhan'] : 'Not Examed';
+                return $this->styleColumn($data['alhan'], 'alhan');
+            })
+            ->addColumn('alhan_score', function ($data) {
+                return $data['alhan_score'];
+            })
+            ->addColumn('alhan_weight', function ($data) {
+                return $data['alhan_weight'];
             })
             ->addColumn('taks', function ($data) {
-                return $data['taks'] !== null ? $data['taks'] : 'Not Examed';
+                return $this->styleColumn($data['taks'], 'taks');
+            })
+            ->addColumn('taks_score', function ($data) {
+                return $data['taks_score'];
+            })
+            ->addColumn('taks_weight', function ($data) {
+                return $data['taks_weight'];
             })
             ->addColumn('coptic', function ($data) {
-                return $data['coptic'] !== null ? $data['coptic'] : 'Not Examed';
+                return $this->styleColumn($data['coptic'], 'coptic');
+            })
+            ->addColumn('coptic_score', function ($data) {
+                return $data['coptic_score'];
+            })
+            ->addColumn('coptic_weight', function ($data) {
+                return $data['coptic_weight'];
             })
             ->addColumn('agbeya', function ($data) {
-                return $data['agbeya'] !== null ? $data['agbeya'] : 'Not Examed';
+                return $this->styleColumn($data['agbeya'], 'agbeya');
+            })
+            ->addColumn('agbeya_score', function ($data) {
+                return $data['agbeya_score'];
+            })
+            ->addColumn('agbeya_weight', function ($data) {
+                return $data['agbeya_weight'];
             });
     }
 
+
+    /**
+     * Apply styles to columns based on their values.
+     *
+     * @param mixed $value
+     * @param string $column
+     * @return string
+     */
+    protected function styleColumn($value, $column)
+    {
+        if ($value === null) {
+            return '<span style="color: red;">Not Examed</span>';
+        }
+
+        $color = 'black';
+        if ($value >= 85) {
+            $color = 'green';
+        } elseif ($value >= 75) {
+            $color = 'blue';
+        } elseif ($value >= 65) {
+            $color = 'yellow';
+        } elseif ($value >= 50) {
+            $color = 'orange';
+        } elseif ($value < 50) {
+            $color = 'red';
+        } else {
+            $color = 'black';
+        }
+
+        return '<span style="color: ' . $color . ';">' . number_format($value, 2) . '%</span>';
+    }
 
     /**
      * Get query source of dataTable.
@@ -57,7 +113,7 @@ class ScoreViewDataTable extends DataTable
 
         $examData = [];
 
-        // Process data from the exam_answers table ( امتحنات الشفوى )
+        // Process data from the exam_answers table (امتحنات الشفوى)
         foreach ($examAnswers as $exam) {
             if (is_string($exam->answers)) {
                 $answers = json_decode($exam->answers, true);
@@ -94,33 +150,34 @@ class ScoreViewDataTable extends DataTable
                     'taks' => null,
                     'coptic' => null,
                     'agbeya' => null,
+                    'alhan_score' => 0,
+                    'alhan_weight' => 0,
+                    'taks_score' => 0,
+                    'taks_weight' => 0,
+                    'coptic_score' => 0,
+                    'coptic_weight' => 0,
+                    'agbeya_score' => 0,
+                    'agbeya_weight' => 0,
                 ];
             }
 
+            $examData[$studentId][$subject . '_score'] = $totalScore;
+            $examData[$studentId][$subject . '_weight'] = $totalWeight;
             $examData[$studentId][$subject] = $percentage;
         }
 
-
-
-        // Process data from the examQuestionsAnswers table ( امتحنات التحريري )
-
-        // Process data from the exam_questions_answers table
+        // Process data from the examQuestionsAnswers table (امتحنات التحريري)
         foreach ($examQuestionsAnswers as $studentId => $subjects) {
             foreach ($subjects as $subject => $subjectAnswers) {
-                // Calculate total score and total weight for the subject
                 $totalScore = $subjectAnswers->sum('score');
                 $totalWeight = $subjectAnswers->sum('wight');
-
-                // Calculate percentage
                 $percentage = $totalWeight > 0 ? round(($totalScore / $totalWeight) * 100, 2) : 0;
-
 
                 $student_id = $subjectAnswers->first()->student_id;
                 $student = Student::find($student_id);
                 $class = ClassModel::find($student->class_id);
-                // Store the data in the examData array
-                $studentName = $student->name; // Assuming all entries have the same examiner
-                $groupNumber = $class->name; // Assuming all entries have the same group number
+                $studentName = $student->name;
+                $groupNumber = $class->name;
 
                 if (!isset($examData[$studentId])) {
                     $examData[$studentId] = [
@@ -131,46 +188,23 @@ class ScoreViewDataTable extends DataTable
                         'taks' => null,
                         'coptic' => null,
                         'agbeya' => null,
+                        'alhan_score' => 0,
+                        'alhan_weight' => 0,
+                        'taks_score' => 0,
+                        'taks_weight' => 0,
+                        'coptic_score' => 0,
+                        'coptic_weight' => 0,
+                        'agbeya_score' => 0,
+                        'agbeya_weight' => 0,
                     ];
                 }
 
-                if (!isset($examData[$studentId][$subject])) {
-                    $examData[$studentId][$subject] = 0;
-                }
-
-                // Sum the percentages
-                $examData[$studentId][$subject] += $percentage;
+                $examData[$studentId][$subject . '_score'] += $totalScore;
+                $examData[$studentId][$subject . '_weight'] += $totalWeight;
+                $examData[$studentId][$subject] = $percentage;
             }
         }
 
-        // foreach ($examQuestionsAnswers as $question) {
-        //     $studentId = $question->student_id;
-        //     $subject = $question->type;
-
-        //     if (!isset($examData[$studentId])) {
-        //         $student = Student::find($studentId);
-        //         $class = ClassModel::find($student->class_id);
-        //         $examData[$studentId] = [
-        //             'student_name' => $student->name,
-        //             'std_id' => $studentId,
-        //             'group_number' => $class->name,
-        //             'alhan' => null,
-        //             'taks' => null,
-        //             'coptic' => null,
-        //             'agbeya' => null,
-        //         ];
-        //     }
-
-        //     $totalScore = $question->score;
-        //     $totalWeight = $question->wight;
-        //     $percentage = $totalWeight ? ($totalScore / $totalWeight) * 100 : 0;
-
-        //     if (!isset($examData[$studentId][$subject])) {
-        //         $examData[$studentId][$subject] = 0;
-        //     }
-
-        //     $examData[$studentId][$subject] += $percentage;
-        // }
         return collect($examData);
     }
 
@@ -186,6 +220,7 @@ class ScoreViewDataTable extends DataTable
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->dom('Blfrtip')
+            ->lengthMenu([[100, 200, 500, -1], [100, 200, 500, 'Show All']])
             ->orderBy(1)
             ->buttons(
                 Button::make('export'),
@@ -206,13 +241,21 @@ class ScoreViewDataTable extends DataTable
             Column::make('student_name')->title('Student Name'),
             Column::make('std_id')->title('Student ID'),
             Column::make('group_number')->title('Group Number'),
-            Column::make('alhan')->title('Alhan'),
-            Column::make('taks')->title('Taks'),
-            Column::make('coptic')->title('Coptic'),
-            Column::make('agbeya')->title('Agbeya'),
+            Column::make('alhan')->title('Alhan (%)'),
+            Column::make('alhan_score')->title('Alhan Score'),
+            Column::make('alhan_weight')->title('Alhan Weight'),
+            Column::make('taks')->title('Taks (%)'),
+            Column::make('taks_score')->title('Taks Score'),
+            Column::make('taks_weight')->title('Taks Weight'),
+            Column::make('coptic')->title('Coptic (%)'),
+            Column::make('coptic_score')->title('Coptic Score'),
+            Column::make('coptic_weight')->title('Coptic Weight'),
+            Column::make('agbeya')->title('Agbeya (%)'),
+            Column::make('agbeya_score')->title('Agbeya Score'),
+            Column::make('agbeya_weight')->title('Agbeya Weight'),
         ];
     }
-
+    
     /**
      * Get filename for export.
      *

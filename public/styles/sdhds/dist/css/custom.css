@@ -24,3 +24,13 @@ table th,
 table td {
     text-align: center;
 }
+
+
+@font-face {
+    font-family: 'AvvaShenouda';
+    src: url('./Avva_Shenouda.ttf') format('truetype');
+}
+
+.coptic-text {
+    font-family: 'AvvaShenouda';
+}
