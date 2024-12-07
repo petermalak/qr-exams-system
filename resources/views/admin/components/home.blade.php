@@ -243,14 +243,10 @@
         $('#student_group_number').html(student.group_number);
         $('#student_inhall').html(convert_bool_to_string(student_attendance.in_hall));
         add_cell_style('student_inhall')
-        $('#student_alhan').html(convert_bool_to_string(student_attendance.alhan));
-        add_cell_style('student_alhan')
-        $('#student_coptic').html(convert_bool_to_string(student_attendance.coptic));
-        add_cell_style('student_coptic')
-        $('#student_taks').html(convert_bool_to_string(student_attendance.taks));
-        add_cell_style('student_taks')
-        $('#student_agbeya').html(convert_bool_to_string(student_attendance.agbeya));
-        add_cell_style('student_agbeya')
+        $('#student_alhan').html(student_attendance.alhan);
+        $('#student_coptic').html(student_attendance.coptic);
+        $('#student_taks').html(student_attendance.taks);
+        $('#student_agbeya').html(student_attendance.agbeya);
         $('#student_outhall').html(convert_bool_to_string(student_attendance.out_hall));
         add_cell_style('student_outhall')
         $('table').removeAttr('hidden');

@@ -192,8 +192,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             const showAnswerButtons = document.querySelectorAll('.show-answer-btn');
 
+            // Handle showing/hiding answers
             showAnswerButtons.forEach(function(button) {
-                // Store the original question outside the loop
                 const originalQuestion = button.closest('tr').querySelector('.original-question').value;
 
                 button.addEventListener('click', function() {
@@ -210,7 +210,26 @@
                     }
                 });
             });
-        });
 
+            // Alert user on refresh or navigation
+            let formIsDirty = false;
+
+            const form = document.querySelector('#exam-selection');
+            const inputs = form.querySelectorAll('input, select, textarea');
+
+            inputs.forEach(input => {
+                input.addEventListener('change', () => {
+                    formIsDirty = true;
+                });
+            });
+
+            window.addEventListener('beforeunload', function(event) {
+                if (formIsDirty) {
+                    event.preventDefault(); // Cancel the event
+                    event.returnValue = ''; // Chrome requires returnValue to be set
+                }
+            });
+        });
     </script>
+
 @endsection

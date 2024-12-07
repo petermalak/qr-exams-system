@@ -2,11 +2,11 @@
 
 use App\Http\Controllers\Admin\ScoreController;
 use App\Http\Controllers\ClassModelController;
-use App\Http\Controllers\Admin\ExamAnswerController;
+use App\Http\Controllers\ExamAnswerController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\Admin\AttendanceController;
-use App\Http\Controllers\Admin\ExamQuestionsAnswerController;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\ExamQuestionsAnswerController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\WrittenExamController;
 use App\Http\Controllers\ExamRouteController;
@@ -35,11 +35,11 @@ Route::get('/login', function () {
 Route::group(['prefix' => 'sdhds', 'middleware' => 'auth'], function () {
     Route::get('/', [ScoreController::class, 'index'])->name("dashboard");
     Route::resource('scores', ScoreController::class);
-    Route::resource('exam-attendances', AttendanceController::class);
-    Route::resource('exam-answers', ExamAnswerController::class);
-    Route::resource('exam-questions-answers', ExamQuestionsAnswerController::class)->except('edit', 'update');
-    Route::get('exam-questions-answers/{studentId}/{type}/edit', [ExamQuestionsAnswerController::class, 'edit'])->name('exam-questions-answers.edit');
-    Route::patch('exam-questions-answers/{studentId}/{type}', [ExamQuestionsAnswerController::class, 'update'])->name('exam-questions-answers.update');
+    Route::resource('exam-attendances', App\Http\Controllers\Admin\AttendanceController::class);
+    Route::resource('exam-answers', App\Http\Controllers\Admin\ExamAnswerController::class);
+    Route::resource('exam-questions-answers', App\Http\Controllers\Admin\ExamQuestionsAnswerController::class)->except('edit', 'update');
+    Route::get('exam-questions-answers/{studentId}/{type}/edit', [App\Http\Controllers\Admin\ExamQuestionsAnswerController::class, 'edit'])->name('exam-questions-answers.edit');
+    Route::patch('exam-questions-answers/{studentId}/{type}', [App\Http\Controllers\Admin\ExamQuestionsAnswerController::class, 'update'])->name('exam-questions-answers.update');
 });
 
 // Route::middleware(['auth'])->group(function () {

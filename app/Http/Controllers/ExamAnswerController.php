@@ -7,6 +7,7 @@ use App\Models\Exam;
 use App\Models\ExamAnswer;
 use App\Models\Student;
 use App\Models\Teatcher;
+use App\Services\ExamService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -103,6 +104,10 @@ class ExamAnswerController extends Controller
         $exam_answer->update($inputs);
         $exam_answer->save();
         Session::flash('success', 'لقد تم تسجيل الاجابات بنجاح');
+
+        $examService = new ExamService();
+        $examService->examOut($inputs['student_id'],$inputs['type']);
+
         return view('admin.components.examiner.index');
     }
 }

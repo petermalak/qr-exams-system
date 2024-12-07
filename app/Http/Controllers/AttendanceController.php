@@ -7,13 +7,13 @@ use App\DataTables\AlhanExamAttendancesDataTable;
 use App\DataTables\CopticExamAttendancesDataTable;
 use App\DataTables\TaksExamAttendancesDataTable;
 use App\Imports\ExamAttendanceImport;
+use App\Models\Booking\BookingStudents;
 use App\Models\ExamAttendance;
 use App\Models\Student;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -89,6 +89,7 @@ class AttendanceController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
+
         $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
         $student = Student::findOrFail($inputs['student_id']);
 
@@ -106,17 +107,37 @@ class AttendanceController extends Controller
         if ($student_attendance != null && $inputs['prefix'] != 'door-entrance') {
 
 
-            ///    Make sure that the out hall equal zero at any case 
+            ///    Make sure that the out hall equal zero at any case
             $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
             $student_attendance->out_hall = 0;
             $student_attendance->save();
-            /////////
 
+            $booking_student = BookingStudents::where('name', $student->name)
+                ->first()
+                ->bookingExams()
+                ->get(['type', 'date']);
 
-
+            if ($booking_student != null && $student_attendance != null) {
+                foreach ($booking_student as $exam) {
+                    switch ($exam->type) {
+                        case 'alhan':
+                            $student_attendance->alhan == 1 ? $student_attendance->alhan = 'Examed ' . $exam->date : $student_attendance->alhan = $exam->date;
+                            break;
+                        case 'coptic':
+                            $student_attendance->coptic == 1 ? $student_attendance->coptic = 'Examed ' . $exam->date : $student_attendance->coptic = $exam->date;
+                            break;
+                        case 'taks':
+                            $student_attendance->taks == 1 ? $student_attendance->taks = 'Examed ' . $exam->date : $student_attendance->taks =  $exam->date;
+                            break;
+                        case 'agbia':
+                            $student_attendance->agbeya == 1 ? $student_attendance->agbeya = 'Examed ' . $exam->date : $student_attendance->agbeya = $exam->date;
+                            break;
+                    }
+                }
+            }
 
             if ($inputs['prefix'] == 'alhan' || $inputs['prefix'] == '/alhan') {
-                $response = $this->alhanAttendance($inputs['student_id']);
+                $response = $this->alhanAttendance($inputs['stud    ent_id']);
                 if ($response) {
                     $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
                     return response()->json([
@@ -181,10 +202,6 @@ class AttendanceController extends Controller
     {
         $student_attendance = ExamAttendance::where('student_id', $student_id)->first();
         $student = Student::find($student_id);
-        // if ($student->class_id > 8) {
-        //     $student_attendance->taks = 1;
-        //     $student_attendance->coptic = 1;
-        // }
         $student_attendance->alhan = 1;
         $student_attendance->save();
         return true;
