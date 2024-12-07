@@ -4,11 +4,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    @if ($exam_answer->type == 'alhan')
+                    @if ($exam_answer->type == 'alhan' || $exam->type == 'Alhan')
                         <h1>امتحان الحان</h1>
-                    @elseif($exam_answer->type == 'coptic')
+                    @elseif($exam_answer->type == 'coptic' || $exam->type == 'Coptic')
                         <h1>امتحان قبطى</h1>
-                    @elseif($exam_answer->type == 'agbeya')
+                    @elseif($exam_answer->type == 'agbeya' || $exam->type == 'Agbeya' || $exam->type == 'Agbia')
                         <h1>امتحان اجبية</h1>
                     @else
                         <h1>امتحان طقس</h1>
@@ -37,11 +37,11 @@
     </div>
     {{-- <div class="card-body text-center">
         <h2><span>اسم الفصل : {{ $class_name }}</span></h2><span>
-            <h2>اسم خادم الفصل : {{ $teacher_name }}</h2>
-        </span><span>
-            <h2> رقم تليفون الخادم : {{ $teacher_phone }}</h2>
-        </span>
-    </div> --}}
+    <h2>اسم خادم الفصل : {{ $teacher_name }}</h2>
+</span><span>
+    <h2> رقم تليفون الخادم : {{ $teacher_phone }}</h2>
+</span>
+</div> --}}
 
 
 
@@ -56,11 +56,11 @@
                 </div>
             @endif
             <div class="card-header">
-                @if ($exam_answer->type == 'alhan')
+                @if ($exam_answer->type == 'alhan' || $exam->type == 'Alhan')
                     <h3 class="card-title">امتحان الحان</h3>
-                @elseif($exam_answer->type == 'coptic')
+                @elseif($exam_answer->type == 'coptic' || $exam->type == 'Coptic')
                     <h3 class="card-title">امتحان قبطى</h3>
-                @elseif($exam_answer->type == 'agbeya')
+                @elseif($exam_answer->type == 'agbeya' || $exam->type == 'Agbeya' || $exam->type == 'Agbia')
                     <h3 class="card-title">امتحان اجبية</h3>
                 @else
                     <h3 class="card-title">امتحان طقس</h3>
@@ -182,7 +182,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <button type="submit"  class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
