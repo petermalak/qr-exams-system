@@ -9,4 +9,11 @@ class BookingExams extends Model
 {
     protected $connection = 'second_mysql';
     protected $table = 'exams';
+
+    public static $cast = [
+        'type' => 'required',
+        'examiner' => 'required',
+        'answers' => 'required',
+        'student_id' => 'required',
+    ];
 }

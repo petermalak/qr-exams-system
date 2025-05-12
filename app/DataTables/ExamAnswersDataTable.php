@@ -38,10 +38,11 @@ class ExamAnswersDataTable extends DataTable
                 return $totalWeight;
             })
             ->addColumn('action', function ($examAnswer) {
-                return view('admin.dashboard.components.table.actions', [
-                    'page' => 'exam-questions-answer',
-                    'data' => $examAnswer,
-                ]);
+                // return view('admin.dashboard.components.table.actions', [
+                //     'page' => 'exam-questions-answer',
+                //     'data' => $examAnswer,
+                // ]);
+                return "a";
             });
     }
 
@@ -56,7 +57,8 @@ class ExamAnswersDataTable extends DataTable
             ->setTableId('exam-answers-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->dom('Bfrtip')
+            ->dom('Blfrtip')
+            ->lengthMenu([[100, 200, 500, -1], [100, 200, 500, 'Show All']])
             ->orderBy(1)
             ->buttons(
                 Button::make('create'),

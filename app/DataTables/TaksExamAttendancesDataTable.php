@@ -2,8 +2,10 @@
 
 namespace App\DataTables;
 
+use App\Models\Booking\BookingExams;
 use App\Models\ExamAttendance;
 use App\Models\Student;
+use App\Services\AttendanceService;
 use Illuminate\Database\Eloquent\Builder;
 use Yajra\DataTables\DataTableAbstract;
 use Yajra\DataTables\Html\Button;
@@ -39,7 +41,20 @@ class TaksExamAttendancesDataTable extends DataTable
      */
     public function query(ExamAttendance $model): Builder
     {
-        return $model->newQuery()->where('taks',"Day5")->where('in_hall',1);
+        $today = date('Y-m-d');
+        // Get the student IDs with exams today
+        $examStudents = BookingExams::all()->filter(function ($exam) use ($today) {
+            $examDate = AttendanceService::parseArabicDate($exam->date);
+            return $examDate && $examDate->format('Y-m-d') === $today && $exam->type == 'taks';
+        })->pluck('name'); // Collect student names with exams today
+
+        // Query the attendance for students with exams today
+        return $model->newQuery()
+            ->whereIn('student_id', function ($query) use ($examStudents) {
+                $query->select('id')
+                    ->from('students')
+                    ->whereIn('name', $examStudents);
+            })->where('in_hall', 1)->where('taks',0); // Ensure they are in the hall
     }
 
     /**

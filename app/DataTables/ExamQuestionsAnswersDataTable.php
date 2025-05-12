@@ -30,11 +30,10 @@ class ExamQuestionsAnswersDataTable extends DataTable
             ->addColumn('percentage', function ($data) {
                 return $data->total_weight ? round(($data->total_score / $data->total_weight) * 100, 2) . '%' : '0%';
             })
+            ->addColumn('examiner', function ($data) {
+                return $data->examiner; // Adding the examiner column
+            })
             ->addColumn('action', function ($data) {
-                // return view('admin.dashboard.components.table.actions', [
-                //     'page' => 'exam-questions-answers',
-                //     'data' => $data,
-                // ]);
                 return "aaaa";
             });
     }
@@ -42,8 +41,8 @@ class ExamQuestionsAnswersDataTable extends DataTable
     public function query(ExamQuestionsAnswer $model)
     {
         $query = $model->newQuery()
-            ->selectRaw('student_id, type, SUM(score) as total_score, SUM(wight) as total_weight')
-            ->groupBy('student_id', 'type');
+            ->selectRaw('student_id, examiner, type, SUM(score) as total_score, SUM(wight) as total_weight')
+            ->groupBy('student_id', 'examiner', 'type'); // Grouping by examiner as well
 
         return $query;
     }
@@ -54,7 +53,8 @@ class ExamQuestionsAnswersDataTable extends DataTable
             ->setTableId('exam-questions-answers-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->dom('Bfrtip')
+            ->dom('Blfrtip')
+            ->lengthMenu([[100, 200, 500, -1], [100, 200, 500, 'Show All']])
             ->orderBy(1)
             ->buttons(
                 Button::make('create'),
@@ -68,6 +68,7 @@ class ExamQuestionsAnswersDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            Column::make('examiner')->title('Examiner Name'), // Adding examiner column
             Column::make('student_id')->title('Student ID'),
             Column::make('student_name')->title('Student Name'),
             Column::make('type')->title('Exam Type'),

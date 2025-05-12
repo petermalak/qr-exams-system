@@ -6,10 +6,9 @@ use Carbon\Carbon;
 
 class AttendanceService
 {
-    function isToday($arabicDate)
+    static function parseArabicDate($arabicDate)
     {
-        // Map Arabic month names to English month names
-        $monthsMap = [
+        $months = [
             'يناير' => 'January',
             'فبراير' => 'February',
             'مارس' => 'March',
@@ -24,22 +23,11 @@ class AttendanceService
             'ديسمبر' => 'December',
         ];
 
-        // Replace Arabic month names with English equivalents
-        foreach ($monthsMap as $arabic => $english) {
-            if (str_contains($arabicDate, $arabic)) {
-                $arabicDate = str_replace($arabic, $english, $arabicDate);
-                break;
-            }
-        }
+        $parts = explode(' ', $arabicDate); // e.g., ["الجمعة", "13", "ديسمبر"]
+        $day = $parts[1]; // "13"
+        $month = $months[$parts[2]]; // Convert "ديسمبر" to "December"
 
-        // Convert the formatted string to a Carbon date
-        try {
-            $date = Carbon::createFromFormat('l d F', $arabicDate);
-
-            // Check if the parsed date matches today
-            return $date->isToday();
-        } catch (\Exception $e) {
-            return false; // Handle invalid dates
-        }
+        $formattedDate = "$day $month " . date('Y'); // e.g., "13 December 2024"
+        return \DateTime::createFromFormat('d F Y', $formattedDate);
     }
 }

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\ExamAttendance;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 /*
@@ -37,6 +38,7 @@ Route::group(['prefix' => 'sdhds', 'middleware' => 'auth'], function () {
     Route::resource('scores', ScoreController::class);
     Route::resource('exam-attendances', App\Http\Controllers\Admin\AttendanceController::class);
     Route::resource('exam-answers', App\Http\Controllers\Admin\ExamAnswerController::class);
+    Route::resource('booking-exams', App\Http\Controllers\Admin\BookingExamController::class);
     Route::resource('exam-questions-answers', App\Http\Controllers\Admin\ExamQuestionsAnswerController::class)->except('edit', 'update');
     Route::get('exam-questions-answers/{studentId}/{type}/edit', [App\Http\Controllers\Admin\ExamQuestionsAnswerController::class, 'edit'])->name('exam-questions-answers.edit');
     Route::patch('exam-questions-answers/{studentId}/{type}', [App\Http\Controllers\Admin\ExamQuestionsAnswerController::class, 'update'])->name('exam-questions-answers.update');
@@ -149,3 +151,35 @@ Route::get('/', function () {
 //     ]);
 //     return "hahahah";
 // });
+
+Route::get('/flat', function () {
+    // Get distinct student IDs
+    $distinctStudentIds = DB::table('exam_attendance')->distinct()->pluck('student_id');
+
+    foreach ($distinctStudentIds as $distinctStudentId) {
+        // Fetch all records for the current student_id
+        $examAttendances = ExamAttendance::where('student_id', $distinctStudentId)->get();
+
+        // Initialize a new attendance record
+        $new_attend = new ExamAttendance();
+        $new_attend->student_id = $distinctStudentId;
+        $new_attend->in_hall = 0; // Always set in_hall to 0
+
+        // Aggregate column values
+        foreach ($examAttendances as $examAttendance) {
+            $new_attend->alhan = $new_attend->alhan ?? $examAttendance->alhan;
+            $new_attend->coptic = $new_attend->coptic ?? $examAttendance->coptic;
+            $new_attend->taks = $new_attend->taks ?? $examAttendance->taks;
+            $new_attend->agbeya = $new_attend->agbeya ?? $examAttendance->agbeya;
+            $new_attend->out_hall = $new_attend->out_hall ?? $examAttendance->out_hall;
+
+            // Delete the processed attendance
+            $examAttendance->delete();
+        }
+
+        // Save the aggregated record
+        $new_attend->save();
+    }
+
+    return "Processed and aggregated all student attendances successfully!";
+});

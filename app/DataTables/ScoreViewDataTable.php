@@ -169,6 +169,10 @@ class ScoreViewDataTable extends DataTable
         // Process data from the examQuestionsAnswers table (امتحنات التحريري)
         foreach ($examQuestionsAnswers as $studentId => $subjects) {
             foreach ($subjects as $subject => $subjectAnswers) {
+                if ($subject == "Taks")
+                    $subject = "taks";
+                if ($subject == "Coptic")
+                    $subject = "coptic";
                 $totalScore = $subjectAnswers->sum('score');
                 $totalWeight = $subjectAnswers->sum('wight');
                 $percentage = $totalWeight > 0 ? round(($totalScore / $totalWeight) * 100, 2) : 0;
@@ -199,11 +203,12 @@ class ScoreViewDataTable extends DataTable
                     ];
                 }
 
-                $examData[$studentId][$subject . '_score'] += $totalScore;
-                $examData[$studentId][$subject . '_weight'] += $totalWeight;
+                $examData[$studentId][$subject . '_score'] += $totalScore ?? 0;
+                $examData[$studentId][$subject . '_weight'] += $totalWeight ?? 0;
                 $examData[$studentId][$subject] = $percentage;
             }
         }
+
 
         return collect($examData);
     }
@@ -255,7 +260,7 @@ class ScoreViewDataTable extends DataTable
             Column::make('agbeya_weight')->title('Agbeya Weight'),
         ];
     }
-    
+
     /**
      * Get filename for export.
      *

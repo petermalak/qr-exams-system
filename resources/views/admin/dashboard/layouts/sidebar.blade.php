@@ -54,6 +54,13 @@
                         <p>Exam Questions Answers</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('booking-exams.index') }}"
+                        class="nav-link {{ areActiveRoutes(['booking-exams.index']) }}">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>Booking Exams</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
