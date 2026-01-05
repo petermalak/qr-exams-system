@@ -24,11 +24,6 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-// Custom login route to use admin login view
-Route::get('/login', function () {
-    return view('admin.dashboard.auth.login');
-})->name('login');
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Admin dashboard route
@@ -131,4 +126,13 @@ Route::get('/', function () {
 
 Route::get('/test', function () {
     return view('admin.test');
+});
+
+// Test routes to verify routing works
+Route::get('/test-login-route', function () {
+    return 'Login route test - Routes are working!';
+});
+
+Route::get('/test-admin-route', function () {
+    return 'Admin route test - Routes are working!';
 });

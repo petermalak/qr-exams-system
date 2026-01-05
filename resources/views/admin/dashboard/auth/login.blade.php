@@ -32,7 +32,7 @@
                     @csrf
                     <div class="input-group mb-3">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ app()->env == 'local' ? 'admin@admin.com' : old('email') }}"
+                            name="email" value="{{ app()->environment('local') ? 'admin@admin.com' : old('email') }}"
                             required autocomplete="email" autofocus>
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -48,8 +48,7 @@
                     <div class="input-group mb-3">
                         <input id="password" type="password"
                             class="form-control @error('password') is-invalid @enderror" name="password"
-                            value="{{ app()->env == 'local' ? '12345678' : '' }}" required
-                            autocomplete="current-password">
+                            required autocomplete="current-password" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -65,7 +64,7 @@
                         <div class="col-8">
                             <div class="icheck-primary">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                    {{ old('remember') ? 'checked' : (app()->env == 'local' ? 'checked' : '') }}>
+                                    {{ old('remember') ? 'checked' : (app()->environment('local') ? 'checked' : '') }}>
                                 <label for="remember" class="form-check-label">
                                     Remember Me
                                 </label>
