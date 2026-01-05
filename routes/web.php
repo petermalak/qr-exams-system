@@ -136,3 +136,8 @@ Route::get('/test-login-route', function () {
 Route::get('/test-admin-route', function () {
     return 'Admin route test - Routes are working!';
 });
+
+// Temporary: Admin route without auth to test if 403 is from middleware
+Route::get('/admin-test', function () {
+    return view('admin.main');
+})->name('admin.test');

@@ -28,17 +28,55 @@ php artisan optimize:clear
 
 ### 3. Verify .htaccess
 
-The `.htaccess` file in `public/` directory should have:
-```
-RewriteBase /system/public/
-```
+The `.htaccess` file in `public/` directory should NOT have RewriteBase if your document root points to `public/`.
+
+**If document root is `/system/public/`:**
+- Remove RewriteBase line (already done)
+- Routes will work as: `https://sdhds.net/system/public/login`
+
+**If document root is `/system/` and you access via `/system/public/`:**
+- You may need RewriteBase, but first try without it
 
 ### 4. Test URLs
 
 After configuration, these URLs should work:
-- `https://sdhds.net/system/public/login`
-- `https://sdhds.net/system/public/admin`
-- `https://sdhds.net/system/public/` (home page)
+- `https://sdhds.net/system/public/login` - Should show login page (currently 404)
+- `https://sdhds.net/system/public/admin` - Should redirect to login if not authenticated (currently 403)
+- `https://sdhds.net/system/public/` - Home page (this works based on your screenshot)
+
+### 5. Troubleshooting 404 on /login
+
+If `/login` still gives 404, check:
+
+1. **Verify routes are registered:**
+   ```bash
+   php artisan route:list | grep login
+   ```
+
+2. **Check if document root is correct:**
+   - Document root should point to: `/path/to/system/public/`
+   - NOT to: `/path/to/system/`
+
+3. **Test with a simple route:**
+   ```bash
+   # Add this to routes/web.php temporarily:
+   Route::get('/test-route-123', function() {
+       return 'Routes are working!';
+   });
+   ```
+   Then test: `https://sdhds.net/system/public/test-route-123`
+
+### 6. Troubleshooting 403 on /admin
+
+403 Forbidden usually means:
+- Route is found but middleware is blocking
+- File permissions issue
+- Web server blocking the request
+
+**To test if it's auth middleware:**
+- Temporarily remove `->middleware('auth')` from admin route
+- If it works, the issue is authentication
+- If still 403, it's a server/permission issue
 
 ### 5. Alternative: If RewriteBase doesn't work
 
