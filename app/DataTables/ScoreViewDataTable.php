@@ -5,6 +5,7 @@ namespace App\DataTables;
 use App\Models\ClassModel;
 use App\Models\ExamAnswer;
 use App\Models\ExamQuestionsAnswer;
+use App\Models\Question;
 use App\Models\Student;
 use Yajra\DataTables\DataTableAbstract;
 use Yajra\DataTables\Html\Button;
@@ -58,6 +59,15 @@ class ScoreViewDataTable extends DataTable
             ->addColumn('coptic_weight', function ($data) {
                 return $data['coptic_weight'];
             })
+            ->addColumn('coptic_oral_translation', function ($data) {
+                if (isset($data['coptic_oral_translation_score']) &&
+                    isset($data['coptic_oral_translation_weight']) &&
+                    $data['coptic_oral_translation_score'] !== null &&
+                    $data['coptic_oral_translation_weight'] !== null) {
+                    return $data['coptic_oral_translation_score'] . ' / ' . $data['coptic_oral_translation_weight'];
+                }
+                return '';
+            })
             ->addColumn('agbeya', function ($data) {
                 return $this->styleColumn($data['agbeya'], 'agbeya');
             })
@@ -108,6 +118,15 @@ class ScoreViewDataTable extends DataTable
      */
     public function query(): Collection
     {
+        // Get the question ID for "شفوى و ترجمة" question
+        $oralTranslationQuestionId = Question::where('question', 'like', '%شفوى و ترجمة%')
+            ->value('id');
+
+        // If question not found, use 0 to ensure no matches
+        if (!$oralTranslationQuestionId) {
+            $oralTranslationQuestionId = 0;
+        }
+
         $examAnswers = ExamAnswer::with('student')->get();
         $examQuestionsAnswers = ExamQuestionsAnswer::all()->groupBy(['student_id', 'type']);
 
@@ -156,6 +175,8 @@ class ScoreViewDataTable extends DataTable
                     'taks_weight' => 0,
                     'coptic_score' => 0,
                     'coptic_weight' => 0,
+                    'coptic_oral_translation_score' => null,
+                    'coptic_oral_translation_weight' => null,
                     'agbeya_score' => 0,
                     'agbeya_weight' => 0,
                 ];
@@ -198,6 +219,8 @@ class ScoreViewDataTable extends DataTable
                         'taks_weight' => 0,
                         'coptic_score' => 0,
                         'coptic_weight' => 0,
+                        'coptic_oral_translation_score' => null,
+                        'coptic_oral_translation_weight' => null,
                         'agbeya_score' => 0,
                         'agbeya_weight' => 0,
                     ];
@@ -206,6 +229,15 @@ class ScoreViewDataTable extends DataTable
                 $examData[$studentId][$subject . '_score'] += $totalScore ?? 0;
                 $examData[$studentId][$subject . '_weight'] += $totalWeight ?? 0;
                 $examData[$studentId][$subject] = $percentage;
+
+                // Extract oral translation question score/weight for coptic exams
+                if ($subject === 'coptic' && $oralTranslationQuestionId) {
+                    $oralTranslationAnswer = $subjectAnswers->where('question_id', $oralTranslationQuestionId)->first();
+                    if ($oralTranslationAnswer) {
+                        $examData[$studentId]['coptic_oral_translation_score'] = $oralTranslationAnswer->score;
+                        $examData[$studentId]['coptic_oral_translation_weight'] = $oralTranslationAnswer->wight;
+                    }
+                }
             }
         }
 
@@ -255,6 +287,7 @@ class ScoreViewDataTable extends DataTable
             Column::make('coptic')->title('Coptic (%)'),
             Column::make('coptic_score')->title('Coptic Score'),
             Column::make('coptic_weight')->title('Coptic Weight'),
+            Column::make('coptic_oral_translation')->title('شفوى و ترجمة (Score / Weight)'),
             Column::make('agbeya')->title('Agbeya (%)'),
             Column::make('agbeya_score')->title('Agbeya Score'),
             Column::make('agbeya_weight')->title('Agbeya Weight'),
