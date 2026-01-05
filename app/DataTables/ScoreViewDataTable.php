@@ -118,19 +118,21 @@ class ScoreViewDataTable extends DataTable
      */
     public function query(): Collection
     {
-        // Get the question ID for "شفوى و ترجمة" question
+        // Get all possible question IDs for "شفوى و ترجمة" question
         // Try multiple variations to ensure we find it
-        $oralTranslationQuestionId = Question::where(function($query) {
+        $oralTranslationQuestionIds = Question::where(function($query) {
                 $query->where('question', 'like', '%شفوى و ترجمة%')
                       ->orWhere('question', 'like', '%شفوي و ترجمة%')
                       ->orWhere('question', 'like', '%شفوى%ترجمة%')
-                      ->orWhere('question', 'like', '%شفوي%ترجمة%');
+                      ->orWhere('question', 'like', '%شفوي%ترجمة%')
+                      ->orWhere('question', 'like', '%شفوى%');
             })
-            ->value('id');
+            ->pluck('id')
+            ->toArray();
 
-        // If question not found, use 0 to ensure no matches
-        if (!$oralTranslationQuestionId) {
-            $oralTranslationQuestionId = 0;
+        // If no questions found, use empty array
+        if (empty($oralTranslationQuestionIds)) {
+            $oralTranslationQuestionIds = [];
         }
 
         $examAnswers = ExamAnswer::with('student')->get();
@@ -193,9 +195,10 @@ class ScoreViewDataTable extends DataTable
             $examData[$studentId][$subject] = $percentage;
 
             // For coptic exams, also check if there's an oral translation question in examQuestionsAnswers
-            if ($subject === 'coptic' && $oralTranslationQuestionId) {
+            if ($subject === 'coptic' && !empty($oralTranslationQuestionIds)) {
+                // Try to find oral translation answer by checking all possible question IDs
                 $oralTranslationAnswer = ExamQuestionsAnswer::where('student_id', $studentId)
-                    ->where('question_id', $oralTranslationQuestionId)
+                    ->whereIn('question_id', $oralTranslationQuestionIds)
                     ->where(function($query) {
                         $query->where('type', 'Coptic')
                               ->orWhere('type', 'coptic');
@@ -255,8 +258,27 @@ class ScoreViewDataTable extends DataTable
                 $examData[$studentId][$subject] = $percentage;
 
                 // Extract oral translation question score/weight for coptic exams
-                if ($subject === 'coptic' && $oralTranslationQuestionId) {
-                    $oralTranslationAnswer = $subjectAnswers->where('question_id', $oralTranslationQuestionId)->first();
+                // Check all possible oral translation question IDs
+                if ($subject === 'coptic' && !empty($oralTranslationQuestionIds)) {
+                    // First, try to find by matching question IDs
+                    $oralTranslationAnswer = $subjectAnswers->whereIn('question_id', $oralTranslationQuestionIds)->first();
+
+                    // If not found by ID, try to get the last question (as it's probably the oral translation)
+                    if (!$oralTranslationAnswer) {
+                        // Get the last answer by ID (assuming higher ID = later question)
+                        $lastAnswer = $subjectAnswers->sortByDesc('id')->first();
+                        if ($lastAnswer) {
+                            // Check if the last question's text matches oral translation pattern
+                            $lastQuestion = Question::find($lastAnswer->question_id);
+                            if ($lastQuestion && (
+                                stripos($lastQuestion->question, 'شفوى') !== false ||
+                                stripos($lastQuestion->question, 'ترجمة') !== false
+                            )) {
+                                $oralTranslationAnswer = $lastAnswer;
+                            }
+                        }
+                    }
+
                     if ($oralTranslationAnswer) {
                         $examData[$studentId]['coptic_oral_translation_score'] = $oralTranslationAnswer->score;
                         $examData[$studentId]['coptic_oral_translation_weight'] = $oralTranslationAnswer->wight;
@@ -274,14 +296,37 @@ class ScoreViewDataTable extends DataTable
 
                 // Look for oral translation in examQuestionsAnswers for this student
                 // Check both "Coptic" and "coptic" case variations
-                if ($oralTranslationQuestionId) {
+                if (!empty($oralTranslationQuestionIds)) {
+                    // First, try to find by matching question IDs
                     $oralTranslationAnswer = ExamQuestionsAnswer::where('student_id', $studentId)
-                        ->where('question_id', $oralTranslationQuestionId)
+                        ->whereIn('question_id', $oralTranslationQuestionIds)
                         ->where(function($query) {
                             $query->where('type', 'Coptic')
                                   ->orWhere('type', 'coptic');
                         })
                         ->first();
+
+                    // If not found by ID, try to get the last question for this student
+                    if (!$oralTranslationAnswer) {
+                        $lastAnswer = ExamQuestionsAnswer::where('student_id', $studentId)
+                            ->where(function($query) {
+                                $query->where('type', 'Coptic')
+                                      ->orWhere('type', 'coptic');
+                            })
+                            ->orderByDesc('id')
+                            ->first();
+
+                        if ($lastAnswer) {
+                            // Check if the last question's text matches oral translation pattern
+                            $lastQuestion = Question::find($lastAnswer->question_id);
+                            if ($lastQuestion && (
+                                stripos($lastQuestion->question, 'شفوى') !== false ||
+                                stripos($lastQuestion->question, 'ترجمة') !== false
+                            )) {
+                                $oralTranslationAnswer = $lastAnswer;
+                            }
+                        }
+                    }
 
                     if ($oralTranslationAnswer) {
                         $examData[$studentId]['coptic_oral_translation_score'] = $oralTranslationAnswer->score;
