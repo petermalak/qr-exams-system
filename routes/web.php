@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\Admin\ScoreController;
 use App\Http\Controllers\ClassModelController;
 use App\Http\Controllers\ExamAnswerController;
 use App\Http\Controllers\ExamController;
@@ -9,7 +11,11 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\WrittenExamController;
 use App\Http\Controllers\ExamRouteController;
 use Illuminate\Support\Facades\Route;
+use App\Models\ExamAttendance;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,14 +28,21 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Auth::routes();
+Auth::routes(['register' => true]);
+Route::get('/login', function () {
+    return view('admin.dashboard.auth.login');
+})->name('login');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Admin dashboard route
-Route::get('/admin', function () {
-    return view('admin.main');
-})->middleware('auth')->name('admin');
+Route::group(['prefix' => 'sdhds', 'middleware' => 'auth'], function () {
+    Route::get('/', [ScoreController::class, 'index'])->name("dashboard");
+    Route::resource('scores', ScoreController::class);
+    Route::resource('exam-attendances', App\Http\Controllers\Admin\AttendanceController::class);
+    Route::resource('exam-answers', App\Http\Controllers\Admin\ExamAnswerController::class);
+    Route::resource('booking-exams', App\Http\Controllers\Admin\BookingExamController::class);
+    Route::resource('exam-questions-answers', App\Http\Controllers\Admin\ExamQuestionsAnswerController::class)->except('edit', 'update');
+    Route::get('exam-questions-answers/{studentId}/{type}/edit', [App\Http\Controllers\Admin\ExamQuestionsAnswerController::class, 'edit'])->name('exam-questions-answers.edit');
+    Route::patch('exam-questions-answers/{studentId}/{type}', [App\Http\Controllers\Admin\ExamQuestionsAnswerController::class, 'update'])->name('exam-questions-answers.update');
+});
 
 // Route::middleware(['auth'])->group(function () {
 Route::prefix('students')->group(function () {
@@ -37,6 +50,7 @@ Route::prefix('students')->group(function () {
     Route::get('/import', [StudentController::class, 'upload_file'])->name('import-student-view');
     Route::get('/export', [StudentController::class, 'export_exam_attendance'])->name('export-file');
     Route::get('/export-answers', [StudentController::class, 'export_exam_answers'])->name('export-answers');
+    Route::get('/exportAnswers', [StudentController::class, 'examAnswersIndex']);
 });
 
 Route::prefix('classes')->group(function () {
@@ -68,14 +82,17 @@ Route::prefix('attendance')->group(function () {
 
 Route::get('/examRoute', [ExamRouteController::class, 'RouteToExam'])->name('RouteToExam');
 
+
 Route::resource('/take-written-exam', ExamQuestionsAnswerController::class)->only('index', 'create');
-Route::post('/take-written-exam/update', [ExamQuestionsAnswerController::class, 'update'])->name('take-written-exam.update');
+Route::post('/take-written-exam', [ExamQuestionsAnswerController::class, 'update'])->name('take-written-exam.update');
+
 
 Route::resource('/take-exam', ExamAnswerController::class)->only('index', 'create');
-Route::post('/take-exam/update', [ExamAnswerController::class, 'update'])->name('take-exam.update');
+Route::post('/take-exam', [ExamAnswerController::class, 'update'])->name('take-exam.update');
+
 
 Route::resource('/exam-attendances', AttendanceController::class)->only('create');
-Route::post('/exam-attendances/update',  [AttendanceController::class, 'update'])->name('exam-attendances.update');
+Route::post('/exam-attendances',  [AttendanceController::class, 'get_student_exam_data'])->name('exam-attendances.show');
 
 Route::prefix('door-entrance')->group(function () {
     Route::get('/', function () {
@@ -120,24 +137,49 @@ Route::get('/main', function () {
     return view('admin.main');
 });
 
+
 Route::get('/', function () {
     return view('admin.main');
 });
 
-Route::get('/test', function () {
-    return view('admin.test');
-});
 
-// Test routes to verify routing works
-Route::get('/test-login-route', function () {
-    return 'Login route test - Routes are working!';
-});
+// Route::get('/peter', function () {
+//     User::create([
+//         'name' => 'Admin',
+//         'email' => 'admin@admin.com',
+//         'password' => Hash::make('123456789'),
+//     ]);
+//     return "hahahah";
+// });
 
-Route::get('/test-admin-route', function () {
-    return 'Admin route test - Routes are working!';
-});
+Route::get('/flat', function () {
+    // Get distinct student IDs
+    $distinctStudentIds = DB::table('exam_attendance')->distinct()->pluck('student_id');
 
-// Temporary: Admin route without auth to test if 403 is from middleware
-Route::get('/admin-test', function () {
-    return view('admin.main');
-})->name('admin.test');
+    foreach ($distinctStudentIds as $distinctStudentId) {
+        // Fetch all records for the current student_id
+        $examAttendances = ExamAttendance::where('student_id', $distinctStudentId)->get();
+
+        // Initialize a new attendance record
+        $new_attend = new ExamAttendance();
+        $new_attend->student_id = $distinctStudentId;
+        $new_attend->in_hall = 0; // Always set in_hall to 0
+
+        // Aggregate column values
+        foreach ($examAttendances as $examAttendance) {
+            $new_attend->alhan = $new_attend->alhan ?? $examAttendance->alhan;
+            $new_attend->coptic = $new_attend->coptic ?? $examAttendance->coptic;
+            $new_attend->taks = $new_attend->taks ?? $examAttendance->taks;
+            $new_attend->agbeya = $new_attend->agbeya ?? $examAttendance->agbeya;
+            $new_attend->out_hall = $new_attend->out_hall ?? $examAttendance->out_hall;
+
+            // Delete the processed attendance
+            $examAttendance->delete();
+        }
+
+        // Save the aggregated record
+        $new_attend->save();
+    }
+
+    return "Processed and aggregated all student attendances successfully!";
+});
