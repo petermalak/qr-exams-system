@@ -10,6 +10,7 @@ use App\Models\ExamQuestionsAnswer;
 use App\Models\Question;
 use App\Models\Student;
 use App\Models\WrittenExam;
+use App\Services\ExamService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -106,6 +107,10 @@ class ExamQuestionsAnswerController extends Controller
             }
         }
         Session::flash('success', 'لقد تم تسجيل الاجابات بنجاح');
+
+        $examService = new ExamService();
+        $examService->examOut($inputs['student_id'],$inputs['type']);
+
         return view('admin.components.examiner.index');
     }
 }

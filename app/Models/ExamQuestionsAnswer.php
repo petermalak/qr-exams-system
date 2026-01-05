@@ -19,4 +19,13 @@ class ExamQuestionsAnswer extends Model
         'student_id',
         'type'
     ];
+
+    public static $cast = [
+        'examiner' => 'required',
+        'wight' => 'required',
+        'score' => 'required',
+        'question_id' => 'required',
+        'student_id' => 'required',
+        'type' => 'required'
+    ];
 }

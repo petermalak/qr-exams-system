@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- <title>@yield("title", title())</title> --}}
+    <title>SDHDS Exams</title>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('./admin/dist/img/favicon.png') }}" />
+    <link rel="icon" href="{{ asset('./favicon.ico') }}" />
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="{{ asset('./admin/googleFonts.css') }}">

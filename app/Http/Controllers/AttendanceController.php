@@ -7,13 +7,15 @@ use App\DataTables\AlhanExamAttendancesDataTable;
 use App\DataTables\CopticExamAttendancesDataTable;
 use App\DataTables\TaksExamAttendancesDataTable;
 use App\Imports\ExamAttendanceImport;
+use App\Models\Booking\BookingExams;
+use App\Models\Booking\BookingStudents;
 use App\Models\ExamAttendance;
 use App\Models\Student;
+use App\Services\AttendanceService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -89,16 +91,15 @@ class AttendanceController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
         $student = Student::findOrFail($inputs['student_id']);
-
+        $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first(); // Prevent multiple entries by checking if a record already exists
+        // if ($student_attendance && ($inputs['prefix'] == 'door-entrance' || $inputs['prefix'] == '/door-entrance')) {
+        //     return response()->json(['error' => 'Attendance already recorded for this student'], 403);
+        // }
         if ($student_attendance == null && ($inputs['prefix'] == 'door-entrance' || $inputs['prefix'] == '/door-entrance')) {
             $inputs['in_hall'] = 1;
             $student_attendance = ExamAttendance::create($inputs);
-        } elseif ($student_attendance == null && $inputs['prefix'] != 'door-entrance') {
-            return response()->json(['error' => 'Go to Entrance first'], 401);
         } elseif ($student_attendance != null && ($inputs['prefix'] == 'door-entrance' || $inputs['prefix'] == '/door-entrance')) {
-            $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
             $student_attendance->in_hall = 1;
             $student_attendance->save();
         }
@@ -106,19 +107,39 @@ class AttendanceController extends Controller
         if ($student_attendance != null && $inputs['prefix'] != 'door-entrance') {
 
 
-            ///    Make sure that the out hall equal zero at any case 
+            ///    Make sure that the out hall equal zero at any case
             $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
             $student_attendance->out_hall = 0;
             $student_attendance->save();
-            /////////
 
+            $booking_student = BookingStudents::where('name', $student->name)
+                ->first()
+                ->bookingExams()
+                ->get(['type', 'date']);
 
-
+            if ($booking_student != null && $student_attendance != null) {
+                foreach ($booking_student as $exam) {
+                    switch ($exam->type) {
+                        case 'alhan':
+                            $student_attendance->alhan == 1 ? $student_attendance->alhan = 'Examed ' . $exam->date : $student_attendance->alhan = $exam->date;
+                            break;
+                        case 'coptic':
+                            $student_attendance->coptic == 1 ? $student_attendance->coptic = 'Examed ' . $exam->date : $student_attendance->coptic = $exam->date;
+                            break;
+                        case 'taks':
+                            $student_attendance->taks == 1 ? $student_attendance->taks = 'Examed ' . $exam->date : $student_attendance->taks =  $exam->date;
+                            break;
+                        case 'agbia':
+                            $student_attendance->agbeya == 1 ? $student_attendance->agbeya = 'Examed ' . $exam->date : $student_attendance->agbeya = $exam->date;
+                            break;
+                    }
+                }
+            }
 
             if ($inputs['prefix'] == 'alhan' || $inputs['prefix'] == '/alhan') {
-                $response = $this->alhanAttendance($inputs['student_id']);
+                $response = $this->alhanAttendance($inputs['stud    ent_id']);
                 if ($response) {
-                    $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
+                    // $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
                     return response()->json([
                         'student' => $student,
                         'student_attendance' => $student_attendance
@@ -127,7 +148,7 @@ class AttendanceController extends Controller
             } elseif ($inputs['prefix'] == 'coptic' || $inputs['prefix'] == '/coptic') {
                 $response = $this->copticAttendance($inputs['student_id']);
                 if ($response) {
-                    $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
+                    // $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
                     return response()->json([
                         'student' => $student,
                         'student_attendance' => $student_attendance
@@ -136,7 +157,7 @@ class AttendanceController extends Controller
             } elseif ($inputs['prefix'] == 'taks' || $inputs['prefix'] == '/taks') {
                 $response = $this->taksAttendance($inputs['student_id']);
                 if ($response) {
-                    $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
+                    // $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
                     return response()->json([
                         'student' => $student,
                         'student_attendance' => $student_attendance
@@ -145,7 +166,7 @@ class AttendanceController extends Controller
             } elseif ($inputs['prefix'] == 'agbeya' || $inputs['prefix'] == '/agbeya') {
                 $response = $this->agbeyaAttendance($inputs['student_id']);
                 if ($response) {
-                    $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
+                    // $student_attendasnce = ExamAttendance::where('student_id', $inputs['student_id'])->first();
                     return response()->json([
                         'student' => $student,
                         'student_attendance' => $student_attendance
@@ -157,9 +178,9 @@ class AttendanceController extends Controller
                     'student_attendance' => $student_attendance
                 ], 200);
             } elseif ($inputs['prefix'] == 'door-exit' || $inputs['prefix'] == '/door-exit') {
-                $response = $this->exitAttendance($inputs['student_id']);
+                $response = $this->exitAttendance($student);
                 if ($response) {
-                    $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
+                    // $student_attendance = ExamAttendance::where('student_id', $inputs['student_id'])->first();
                     return response()->json([
                         'student' => $student,
                         'student_attendance' => $student_attendance
@@ -181,10 +202,6 @@ class AttendanceController extends Controller
     {
         $student_attendance = ExamAttendance::where('student_id', $student_id)->first();
         $student = Student::find($student_id);
-        // if ($student->class_id > 8) {
-        //     $student_attendance->taks = 1;
-        //     $student_attendance->coptic = 1;
-        // }
         $student_attendance->alhan = 1;
         $student_attendance->save();
         return true;
@@ -215,14 +232,40 @@ class AttendanceController extends Controller
     }
 
 
-    public function exitAttendance($student_id): bool
+    public function exitAttendance(Student $student): bool
     {
-        $student_attendance = ExamAttendance::where('student_id', $student_id)->first();
-        $student = Student::find($student_id);
+        $today = date('Y-m-d');
+        $student_booking = BookingExams::where('name', $student->name)->get();
+        $student_attendance = ExamAttendance::where('student_id', $student->id)->first();
+
+
+        $flag = true;
+
+        foreach ($student_booking as $exam) {
+            switch ($exam->type) {
+                case 'alhan':
+                    if (AttendanceService::parseArabicDate($exam->date)->format('Y-m-d') == $today && !$student_attendance->alhan)
+                        return false;
+                    break;
+                case 'coptic':
+                    if (AttendanceService::parseArabicDate($exam->date)->format('Y-m-d') == $today && !$student_attendance->coptic)
+                        return false;
+                    break;
+                case 'taks':
+                    if (AttendanceService::parseArabicDate($exam->date)->format('Y-m-d') == $today && !$student_attendance->taks)
+                        return false;
+                    break;
+                case 'agbia':
+                    if (AttendanceService::parseArabicDate($exam->date)->format('Y-m-d') == $today && !$student_attendance->agbeya)
+                        return false;
+                    break;
+            }
+        }
+
         $student_attendance->in_hall = 0;
         $student_attendance->out_hall = 1;
         $student_attendance->save();
-        return true;
+        return $flag;
     }
 
     public function update(Request $request)
