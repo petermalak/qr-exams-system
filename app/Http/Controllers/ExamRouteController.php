@@ -29,7 +29,7 @@ class ExamRouteController extends Controller
         if ($inputs['type'] == 'alhan' || $inputs['type'] == 'agbeya') {
             return (new ExamAnswerController())->create($request);
         } else {
-            if ((int)$class->name < (int)$written_start && (int)$class->name != 122) {
+            if ((int)$class->id < (int)$written_start) {
                 return (new ExamAnswerController())->create($request);
             } else {
                 return (new ExamQuestionsAnswerController())->create($request);

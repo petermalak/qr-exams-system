@@ -224,4 +224,36 @@ class AttendanceController extends Controller
         $student_attendance->save();
         return true;
     }
+
+    public function update(Request $request)
+    {
+        // Validate the request data
+        $request->validate([
+            'exam_id' => 'required|integer',
+            'student_id' => 'required|integer',
+            'attendance_status' => 'required|boolean',
+        ]);
+
+        // Log the request data for debugging
+        \Log::info($request->all());
+
+        // Find the ExamAttendance record
+        $examAttendance = ExamAttendance::where('exam_id', $request->exam_id)
+                                        ->where('student_id', $request->student_id)
+                                        ->first();
+
+        // If the record exists, update it
+        if ($examAttendance) {
+            $examAttendance->update([
+                'attendance_status' => $request->attendance_status,
+            ]);
+
+            return redirect()->back()->with('success', 'Attendance updated successfully.');
+        }
+
+        // If the record doesn't exist, return an error
+        return redirect()->back()->with('error', 'Attendance record not found.');
+    }
+
+    
 }

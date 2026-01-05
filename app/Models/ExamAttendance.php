@@ -8,14 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class ExamAttendance extends Model
 {
     use HasFactory;
+
+    // Specify the table if it doesn't follow Laravel's naming conventions
     protected $table = 'exam_attendance';
-    protected $fillable = [
-        'in_hall',
-        'alhan',
-        'coptic',
-        'taks',
-        'agbeya',
-        'out_hall',
-        'student_id'
-    ];
+
+    // Define fillable properties if needed
+    protected $fillable = ['student_id', 'alhan', 'coptic', 'taks'];
 }

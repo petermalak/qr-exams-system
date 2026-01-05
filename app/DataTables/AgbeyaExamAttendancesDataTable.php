@@ -25,7 +25,7 @@ class AgbeyaExamAttendancesDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn("agbeya", function ($data) {
-                return $data->agbeya == 0 ? 'Not Examed' : 'Examed';
+                return $data->agbeya == 1 ? 'Examed' : 'Not Examed';
             })->editColumn("student name", function ($data) {
                 return Student::find($data->student_id)->name;
             });
@@ -39,7 +39,7 @@ class AgbeyaExamAttendancesDataTable extends DataTable
      */
     public function query(ExamAttendance $model): Builder
     {
-        return $model->newQuery()->where('agbeya',0)->where('in_hall',1);
+        return $model->newQuery()->where('agbeya', "Day2")->where('in_hall', 1);
     }
 
     /**
