@@ -23,7 +23,18 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Auth::routes();
+
+// Custom login route to use admin login view
+Route::get('/login', function () {
+    return view('admin.dashboard.auth.login');
+})->name('login');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Admin dashboard route
+Route::get('/admin', function () {
+    return view('admin.main');
+})->middleware('auth')->name('admin');
 
 // Route::middleware(['auth'])->group(function () {
 Route::prefix('students')->group(function () {
