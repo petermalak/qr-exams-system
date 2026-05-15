@@ -125,10 +125,13 @@ class ScoreViewDataTable extends DataTable
             $totalScore = 0;
 
             foreach ($answers as $key => $value) {
-                if (isset($value['wight']) && isset($value['score'])) {
-                    $totalWeight += $value['wight'];
-                    $totalScore += $value['score'];
+                if (!is_array($value) || !isset($value['wight'])) {
+                    continue;
                 }
+                $totalWeight += (float) $value['wight'];
+                $totalScore += isset($value['score']) && $value['score'] !== '' && $value['score'] !== null
+                    ? (float) $value['score']
+                    : 0;
             }
 
             $percentage = $totalWeight ? round(($totalScore / $totalWeight) * 100, 2) : 0;
@@ -140,7 +143,7 @@ class ScoreViewDataTable extends DataTable
 
             $studentName = $student->name;
             $groupNumber = $class->name;
-            $subject = $exam->type;
+            $subject = $this->normalizeSubject($exam->type);
             if (!isset($examData[$studentId])) {
                 $examData[$studentId] = [
                     'student_name' => $studentName,
@@ -169,13 +172,9 @@ class ScoreViewDataTable extends DataTable
         // Process data from the examQuestionsAnswers table (امتحنات التحريري)
         foreach ($examQuestionsAnswers as $studentId => $subjects) {
             foreach ($subjects as $subject => $subjectAnswers) {
-                if ($subject == "Taks")
-                    $subject = "taks";
-                if ($subject == "Coptic")
-                    $subject = "coptic";
+                $subject = $this->normalizeSubject($subject);
                 $totalScore = $subjectAnswers->sum('score');
                 $totalWeight = $subjectAnswers->sum('wight');
-                $percentage = $totalWeight > 0 ? round(($totalScore / $totalWeight) * 100, 2) : 0;
 
                 $student_id = $subjectAnswers->first()->student_id;
                 $student = Student::find($student_id);
@@ -205,12 +204,29 @@ class ScoreViewDataTable extends DataTable
 
                 $examData[$studentId][$subject . '_score'] += $totalScore ?? 0;
                 $examData[$studentId][$subject . '_weight'] += $totalWeight ?? 0;
-                $examData[$studentId][$subject] = $percentage;
+                $combinedWeight = $examData[$studentId][$subject . '_weight'];
+                $combinedScore = $examData[$studentId][$subject . '_score'];
+                $examData[$studentId][$subject] = $combinedWeight > 0
+                    ? round(($combinedScore / $combinedWeight) * 100, 2)
+                    : 0;
             }
         }
 
 
         return collect($examData);
+    }
+
+    /**
+     * Normalize exam type/subject to a consistent key.
+     */
+    protected function normalizeSubject(string $subject): string
+    {
+        $subject = strtolower($subject);
+
+        return match ($subject) {
+            'agbia' => 'agbeya',
+            default => $subject,
+        };
     }
 
     /**
